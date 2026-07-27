@@ -7,6 +7,11 @@ import SummaryMetrics from "@/components/dashboard/SummaryMetrics";
 import ShipmentStatisticChart from "@/components/dashboard/ShipmentStatisticChart";
 import ProfitSummaryChart from "@/components/dashboard/ProfitSummaryChart";
 import ShipmentTypeChart from "@/components/dashboard/ShipmentTypeChart";
+import ProductCategories from "@/components/dashboard/ProductCategories";
+import LiveTracking from "@/components/dashboard/LiveTracking";
+import ShipmentAlerts from "@/components/dashboard/ShipmentAlerts";
+import RecentShipments from "@/components/dashboard/RecentShipments";
+import RecentActivity from "@/components/dashboard/RecentActivity";
 
 export default function DashboardPage() {
   return (
@@ -34,6 +39,23 @@ export default function DashboardPage() {
             {/* Right Area: Shipment Type Donut Chart Card */}
             <div className="lg:col-span-3 flex">
               <ShipmentTypeChart />
+            </div>
+          </div>
+
+          {/* Middle Row: Product Categories (370) + Live Tracking (469) + Shipment Alerts (299) */}
+          <div className="grid grid-cols-1 lg:grid-cols-[370fr_469fr_299fr] gap-5 items-stretch">
+            <ProductCategories />
+            <LiveTracking />
+            <ShipmentAlerts />
+          </div>
+
+          {/* Bottom Row: Recent Shipments (858) + Recent Activity (299) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+            <div className="lg:col-span-9">
+              <RecentShipments />
+            </div>
+            <div className="lg:col-span-3">
+              <RecentActivity />
             </div>
           </div>
         </div>

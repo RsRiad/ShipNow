@@ -87,11 +87,11 @@ function CustomTooltip({ active, payload }: CustomTooltipProps) {
   }
   const item = payload[0].payload;
   return (
-    <div className="bg-[#EAE6FF] text-[#212124] px-3 py-1.5 rounded-[10px] text-center shadow-xs">
+    <div className="bg-[#EAE6FF] text-[#333333] px-3 py-1.5 rounded-[10px] text-center shadow-xs">
       <div className="text-[10px] text-[#757575] font-normal leading-tight">
         {item.fullLabel}
       </div>
-      <div className="text-[14px] font-bold text-[#212124] leading-tight mt-0.5">
+      <div className="text-[14px] font-bold text-[#333333] leading-tight mt-0.5">
         {item.shipments.toLocaleString()}
       </div>
     </div>

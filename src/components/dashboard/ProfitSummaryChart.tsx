@@ -39,18 +39,18 @@ const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
     return (
-      <div className="bg-[#F2F2F4] text-[#212124] px-3.5 py-2 rounded-[12px] shadow-sm pointer-events-none text-[12px] font-semibold space-y-1 mb-2 select-none">
+      <div className="bg-[#F2F2F4] text-[#333333] px-3.5 py-2 rounded-[12px] shadow-sm pointer-events-none text-[12px] font-semibold space-y-1 mb-2 select-none">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-xs bg-[#856DF3]" />
           <span className="text-[#757575] font-normal">Revenue</span>
-          <span className="text-[#212124] font-bold ml-auto">
+          <span className="text-[#333333] font-bold ml-auto">
             ${data.revenue.toLocaleString()}
           </span>
         </div>
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-xs bg-[#262626]" />
           <span className="text-[#757575] font-normal">Cost</span>
-          <span className="text-[#212124] font-bold ml-auto">
+          <span className="text-[#333333] font-bold ml-auto">
             ${data.cost.toLocaleString()}
           </span>
         </div>
@@ -121,7 +121,11 @@ export default function ProfitSummaryChart() {
             }}
             onMouseLeave={() => setActiveIndex(null)}
           >
-            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#F0F0F2" />
+            <CartesianGrid
+              strokeDasharray="3 3"
+              vertical={false}
+              stroke="#F0F0F2"
+            />
             <XAxis
               dataKey="month"
               axisLine={false}

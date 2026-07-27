@@ -23,7 +23,7 @@ export default function GoProCard({ isTabletRail = false }: GoProCardProps) {
   }
 
   return (
-    <div className="mx-3 mt-auto mb-3 p-3.5 rounded-[12px] bg-[#232325] text-white relative overflow-hidden shrink-0 shadow-sm">
+    <div className="mx-3 mt-auto mb-4 p-5 rounded-[12px] bg-[#232325] text-white relative overflow-hidden shrink-0 shadow-sm">
       {/* Top Right Decorative Brand Parallelograms Accent */}
       <div className="absolute top-0 right-0 w-24 h-24 pointer-events-none translate-x-3 -translate-y-2 opacity-60">
         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
@@ -41,14 +41,14 @@ export default function GoProCard({ isTabletRail = false }: GoProCardProps) {
         </h3>
 
         {/* Description */}
-        <p className="font-normal text-[11px] leading-[1.4] text-[#E0E0E0] mt-2">
+        <p className="font-normal text-[11px] leading-[1.4] text-[#E0E0E0] mt-2.5">
           Go Pro to access priority support, real-time tracking, and full analytics.
         </p>
 
         {/* Button */}
         <button
           type="button"
-          className="mt-3 w-full py-2.5 px-3 bg-white hover:bg-gray-100 active:bg-gray-200 text-[#232325] font-semibold text-[13px] leading-none rounded-[8px] transition duration-150 cursor-pointer text-center"
+          className="mt-4 w-full py-3 px-3 bg-white hover:bg-gray-100 active:bg-gray-200 text-[#232325] font-semibold text-[13px] leading-none rounded-[8px] transition duration-150 cursor-pointer text-center"
         >
           Go Pro Today
         </button>

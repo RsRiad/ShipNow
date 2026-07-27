@@ -18,7 +18,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${nunitoSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
+      <body className="h-full overflow-hidden flex flex-col font-sans" suppressHydrationWarning>
         {children}
       </body>
     </html>

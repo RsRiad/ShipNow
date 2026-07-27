@@ -23,3 +23,28 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
 }
+
+/* Custom slim scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4C4C8;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A0A0A5;
+}
+
+/* Standard scrollbar for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #C4C4C8 transparent;
+}
