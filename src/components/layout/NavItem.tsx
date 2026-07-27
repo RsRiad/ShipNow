@@ -32,28 +32,28 @@ export default function NavItem({
             : "text-[#757575] hover:bg-[#F5F5F7] hover:text-[#333333]"
         }`}
       >
-        <div
-          className={`w-5 h-5 transition-colors duration-150 ${
-            isActive ? "bg-[#2A1298]" : "bg-[#757575] group-hover:bg-[#333333]"
-          }`}
-          style={{
-            maskImage: `url(${iconSrc})`,
-            WebkitMaskImage: `url(${iconSrc})`,
-            maskRepeat: "no-repeat",
-            WebkitMaskRepeat: "no-repeat",
-            maskPosition: "center",
-            WebkitMaskPosition: "center",
-            maskSize: "contain",
-            WebkitMaskSize: "contain",
-          }}
-          aria-hidden="true"
-        />
+        <div className="relative">
+          <div
+            className={`w-5 h-5 transition-colors duration-150 ${
+              isActive ? "bg-[#2A1298]" : "bg-[#757575] group-hover:bg-[#333333]"
+            }`}
+            style={{
+              maskImage: `url(${iconSrc})`,
+              WebkitMaskImage: `url(${iconSrc})`,
+              maskRepeat: "no-repeat",
+              WebkitMaskRepeat: "no-repeat",
+              maskPosition: "center",
+              WebkitMaskPosition: "center",
+              maskSize: "contain",
+              WebkitMaskSize: "contain",
+            }}
+            aria-hidden="true"
+          />
 
-        {badgeCount !== undefined && badgeCount > 0 && (
-          <span className="absolute -top-1 -right-1 flex items-center justify-center min-w-[18px] h-[18px] px-1 bg-[#856DF3] text-white text-[10px] font-bold rounded-[6px] border border-white">
-            {badgeCount}
-          </span>
-        )}
+          {badgeCount !== undefined && badgeCount > 0 && (
+            <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-[#856DF3] rounded-full ring-2 ring-white" />
+          )}
+        </div>
       </button>
     );
   }

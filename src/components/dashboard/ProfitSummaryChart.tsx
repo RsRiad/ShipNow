@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronDown, TrendingUp } from "lucide-react";
+import Image from "next/image";
+import { ChevronDown } from "lucide-react";
 import {
   BarChart,
   Bar,
@@ -67,41 +68,41 @@ export default function ProfitSummaryChart() {
     <div className="w-full bg-[#FEFEFE] pt-4 px-4 pb-3 rounded-[12px] border border-[#F0F0F2] shadow-2xs flex flex-col justify-between h-full">
       {/* Top Header Row */}
       <div className="flex items-center justify-between gap-2">
-        <h3 className="font-semibold text-[16px] leading-[19px] text-[#333333]">
+        <h3 className="font-semibold text-[14px] md:text-[16px] leading-[19px] text-[#333333]">
           Profit Summary
         </h3>
 
         {/* Filter Dropdown */}
         <button
           type="button"
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-[#F5F5F7] hover:bg-[#EAEAEA] rounded-lg text-[13px] font-medium text-[#333333] transition duration-150 cursor-pointer"
+          className="flex items-center gap-1.5 px-2.5 py-1 md:px-3 md:py-1.5 bg-[#F5F5F7] hover:bg-[#EAEAEA] rounded-lg text-[11px] md:text-[13px] font-medium text-[#333333] transition duration-150 cursor-pointer"
         >
-          <span>Last 8 Months</span>
+          <span className="font-bold">Last 8 Months</span>
           <ChevronDown className="w-3.5 h-3.5 text-[#757575]" />
         </button>
       </div>
 
       {/* Metric & Legend Row */}
-      <div className="flex items-center justify-between flex-wrap gap-4 mt-3 mb-2">
+      <div className="flex items-center justify-between gap-2 mt-3 mb-2 min-w-0">
         {/* Metric Value & Trend */}
-        <div className="flex items-center gap-1">
-          <span className="font-bold text-[24px] leading-[26px] text-[#333333] tracking-tight">
+        <div className="flex items-center gap-1 shrink-0">
+          <span className="font-bold text-[18px] sm:text-[20px] md:text-[20px] lg:text-[24px] leading-[26px] text-[#333333] tracking-tight whitespace-nowrap">
             $624,550
           </span>
-          <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-[10px] bg-[#D9F9E7] text-[#007837] font-normal text-[10px] leading-[13px]">
-            <TrendingUp className="w-3 h-3 stroke-[2.5]" />
+          <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-[10px] bg-[#D9F9E7] text-[#007837] font-normal text-[9px] md:text-[10px] leading-[13px] shrink-0">
+            <Image src="/Assets/Icon (17).svg" alt="Trend up" width={12} height={12} />
             <span>5.62%</span>
           </span>
         </div>
 
         {/* Chart Legend */}
-        <div className="flex items-center gap-4 text-[12px] font-medium text-[#757575]">
-          <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-xs bg-[#856DF3]" />
+        <div className="flex items-center gap-2 md:gap-3 text-[10px] md:text-[11px] lg:text-[12px] font-medium text-[#757575] shrink-0">
+          <div className="flex items-center gap-1">
+            <span className="w-2 h-2 rounded-xs bg-[#856DF3]" />
             <span>Revenue</span>
           </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-xs bg-[#262626]" />
+          <div className="flex items-center gap-1">
+            <span className="w-2 h-2 rounded-xs bg-[#262626]" />
             <span>Cost</span>
           </div>
         </div>

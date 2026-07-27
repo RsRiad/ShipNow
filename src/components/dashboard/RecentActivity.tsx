@@ -36,6 +36,12 @@ const activities: ActivityItem[] = [
     username: "@AdminLisa",
     time: "10:15 AM",
   },
+  {
+    iconSrc: "/Assets/ra3.svg",
+    text: "updated the shipping address for Order ID 67890ABC",
+    username: "@Mickey92",
+    time: "09:45 AM",
+  },
 ];
 
 function actorLabel(item: ActivityItem): { prefix: string; suffix: string } {
@@ -44,16 +50,17 @@ function actorLabel(item: ActivityItem): { prefix: string; suffix: string } {
     "@SupportKen": "Customer Support",
     "@SallyMae88": "User",
     "@AdminLisa": "Administrator",
+    "@Mickey92": "User",
   };
   return { prefix: map[item.username] ?? "", suffix: item.text };
 }
 
 export default function RecentActivity() {
   return (
-    <div className="w-full bg-[#FEFEFE] p-4 rounded-[12px] border border-[#F0F0F2] flex flex-col gap-4 h-full">
+    <div className="w-full bg-[#FEFEFE] p-4 md:p-5 rounded-[12px] border border-[#F0F0F2] flex flex-col justify-between gap-4 h-full shadow-2xs">
       {/* Header */}
       <div className="flex items-center justify-between gap-2">
-        <h3 className="font-bold text-[16px] leading-[19px] text-[#333333]">
+        <h3 className="font-bold text-[14px] md:text-[16px] leading-[19px] text-[#333333]">
           Recent Activity
         </h3>
         <button
@@ -66,13 +73,16 @@ export default function RecentActivity() {
       </div>
 
       {/* Timeline */}
-      <div className="flex flex-col gap-0">
+      <div className="flex-1 flex flex-col justify-between gap-2 py-1">
         {activities.map((item, i) => {
           const { prefix, suffix } = actorLabel(item);
           const isLast = i === activities.length - 1;
 
           return (
-            <div key={`${item.username}-${i}`} className="flex gap-3">
+            <div
+              key={`${item.username}-${i}`}
+              className={`flex gap-3 items-stretch ${i === 4 ? "lg:hidden" : ""}`}
+            >
               {/* Icon + vertical line */}
               <div className="flex flex-col items-center">
                 <div className="w-9 h-9 shrink-0 flex items-center justify-center">
@@ -84,15 +94,19 @@ export default function RecentActivity() {
                   />
                 </div>
                 {!isLast && (
-                  <div className="w-px flex-1 bg-[#E5E5E7] my-1 min-h-[20px]" />
+                  <div
+                    className={`w-px flex-1 bg-[#E5E5E7] my-1 min-h-[14px] ${
+                      i === 3 ? "lg:hidden" : ""
+                    }`}
+                  />
                 )}
               </div>
 
               {/* Content */}
-              <div className={`flex flex-col gap-0.5 pb-4 min-w-0 ${isLast ? "" : ""}`}>
-                <p className="font-normal text-[12px] leading-[18px] text-[#333333]">
+              <div className="flex flex-col gap-0.5 min-w-0 flex-1 justify-center">
+                <p className="font-normal text-[12px] leading-[17px] text-[#333333]">
                   {prefix}{" "}
-                  <span className="font-semibold text-[#856DF3]">{item.username}</span>{" "}
+                  <span className="font-semibold text-[#235BC2]">{item.username}</span>{" "}
                   {suffix}
                 </p>
                 <span className="font-normal text-[10px] leading-[13px] text-[#757575]">

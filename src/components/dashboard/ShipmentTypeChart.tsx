@@ -64,7 +64,7 @@ export default function ShipmentTypeChart() {
     <div className="w-full bg-[#FEFEFE] p-4 rounded-[12px] border border-[#F0F0F2] shadow-2xs flex flex-col gap-6 h-full">
       {/* Header Row */}
       <div className="flex items-center justify-between gap-2">
-        <h3 className="font-semibold text-[16px] leading-[19px] text-[#333333]">
+        <h3 className="font-semibold text-[14px] md:text-[16px] leading-[19px] text-[#333333]">
           Shipment Type
         </h3>
         <button
@@ -101,10 +101,10 @@ export default function ShipmentTypeChart() {
 
         {/* Center Text Overlay */}
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 pointer-events-none">
-          <span className="font-normal text-[12px] leading-[16px] text-[#757575]">
+          <span className="font-normal text-[11px] md:text-[12px] leading-[16px] text-[#757575]">
             Total Shipment
           </span>
-          <span className="font-bold text-[28px] leading-[31px] text-[#333333] tracking-tight">
+          <span className="font-bold text-[22px] md:text-[24px] lg:text-[28px] leading-[31px] text-[#333333] tracking-tight">
             {totalShipments.toLocaleString()}
           </span>
         </div>
@@ -116,7 +116,7 @@ export default function ShipmentTypeChart() {
           <div key={item.name} className="flex items-center gap-2.5">
             {/* Percentage Pill Badge */}
             <div
-              className="w-[36px] h-[36px] rounded-[10px] flex items-center justify-center font-bold text-[12px] leading-none shrink-0"
+              className="w-[36px] h-[36px] rounded-[10px] flex items-center justify-center font-bold text-[11px] md:text-[12px] leading-none shrink-0"
               style={{
                 backgroundColor: item.badgeBg,
                 color: item.badgeTextColor,
@@ -127,10 +127,10 @@ export default function ShipmentTypeChart() {
 
             {/* Item Title & Shipment Count */}
             <div className="flex flex-col gap-0.5 min-w-0">
-              <span className="font-semibold text-[12px] leading-[16px] text-[#333333] truncate">
+              <span className="font-semibold text-[11px] md:text-[12px] leading-[16px] text-[#333333] truncate">
                 {item.name}
               </span>
-              <span className="font-normal text-[10px] leading-[13px] text-[#757575] truncate">
+              <span className="font-normal text-[9px] md:text-[10px] leading-[13px] text-[#757575] truncate">
                 {item.unitText}
               </span>
             </div>

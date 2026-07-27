@@ -32,7 +32,7 @@ export const summaryMetricsData: MetricCardProps[] = [
 
 export default function SummaryMetrics() {
   return (
-    <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-5">
       {summaryMetricsData.map((metric) => (
         <MetricCard
           key={metric.title}
