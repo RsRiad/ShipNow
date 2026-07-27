@@ -1,0 +1,58 @@
+"use client";
+
+import React from "react";
+import { Sparkles } from "lucide-react";
+
+interface GoProCardProps {
+  isTabletRail?: boolean;
+}
+
+export default function GoProCard({ isTabletRail = false }: GoProCardProps) {
+  if (isTabletRail) {
+    return (
+      <div className="p-2 my-2 text-center">
+        <button
+          type="button"
+          title="Go Pro Today"
+          className="w-10 h-10 mx-auto flex items-center justify-center bg-[#232325] text-[#856DF3] hover:text-white rounded-xl shadow-xs transition duration-150 group cursor-pointer"
+        >
+          <Sparkles className="w-5 h-5 group-hover:scale-110 transition duration-150" />
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mx-3 mt-auto mb-3 p-3.5 rounded-[12px] bg-[#232325] text-white relative overflow-hidden shrink-0 shadow-sm">
+      {/* Top Right Decorative Brand Parallelograms Accent */}
+      <div className="absolute top-0 right-0 w-24 h-24 pointer-events-none translate-x-3 -translate-y-2 opacity-60">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          <path d="M22.6667 17.3333H36L29.3333 38.6667H16L22.6667 17.3333Z" fill="#5844A8" />
+          <path d="M10.6667 1.33334H24L17.3333 22.6667H4L10.6667 1.33334Z" fill="#433282" />
+        </svg>
+      </div>
+
+      <div className="relative z-10 flex flex-col">
+        {/* Title */}
+        <h3 className="font-bold text-[20px] leading-[1.18] text-white tracking-tight">
+          Loving <br />
+          ShipNow <br />
+          Free?
+        </h3>
+
+        {/* Description */}
+        <p className="font-normal text-[11px] leading-[1.4] text-[#E0E0E0] mt-2">
+          Go Pro to access priority support, real-time tracking, and full analytics.
+        </p>
+
+        {/* Button */}
+        <button
+          type="button"
+          className="mt-3 w-full py-2.5 px-3 bg-white hover:bg-gray-100 active:bg-gray-200 text-[#232325] font-semibold text-[13px] leading-none rounded-[8px] transition duration-150 cursor-pointer text-center"
+        >
+          Go Pro Today
+        </button>
+      </div>
+    </div>
+  );
+}
