@@ -1,0 +1,276 @@
+"use client";
+
+import React, { useState } from "react";
+import { Search, Filter, SlidersHorizontal, ChevronDown, X, Plus } from "lucide-react";
+import Button from "@/components/common/Button";
+import IconButton from "@/components/common/IconButton";
+
+export type ShipmentStatusFilter =
+  | "All"
+  | "Delivered"
+  | "In Transit"
+  | "Processing"
+  | "Out for Delivery";
+
+export type SortOption = "Newest" | "Oldest" | "Highest Value" | "Lowest Value";
+
+interface ShipmentToolbarProps {
+  activeStatus?: string;
+  onStatusChange?: (status: string) => void;
+  searchQuery?: string;
+  onSearchChange?: (query: string) => void;
+  sortBy?: string;
+  onSortChange?: (sort: string) => void;
+  onFilterClick?: () => void;
+  onNewShipment?: () => void;
+}
+
+const statusOptions: ShipmentStatusFilter[] = [
+  "All",
+  "Delivered",
+  "In Transit",
+  "Processing",
+  "Out for Delivery",
+];
+
+const sortOptions: SortOption[] = [
+  "Newest",
+  "Oldest",
+  "Highest Value",
+  "Lowest Value",
+];
+
+export default function ShipmentToolbar({
+  activeStatus = "All",
+  onStatusChange,
+  searchQuery = "",
+  onSearchChange,
+  sortBy = "Newest",
+  onSortChange,
+  onFilterClick,
+  onNewShipment,
+}: ShipmentToolbarProps) {
+  const [isSortOpen, setIsSortOpen] = useState(false);
+  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
+  const [internalSearch, setInternalSearch] = useState(searchQuery);
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setInternalSearch(val);
+    onSearchChange?.(val);
+  };
+
+  const handleClearSearch = () => {
+    setInternalSearch("");
+    onSearchChange?.("");
+    setIsMobileSearchOpen(false);
+  };
+
+  return (
+    <>
+      {/* MOBILE VIEW ONLY: Integrated Search, Sliders Filter & Add Button Bar (sm:hidden) */}
+      <div className="sm:hidden flex flex-col gap-3 py-2 px-4 bg-transparent">
+        {/* Mobile Top Row: Integrated Search, Sliders Icon & Dark Plus Button */}
+        <div className="w-full h-12 bg-[#F4F4F6] rounded-[16px] p-1.5 flex items-center gap-2 border border-[#E5E5E7]/50 shadow-2xs">
+          <Search className="w-4 h-4 text-[#757575] ml-2 shrink-0" />
+          <input
+            type="text"
+            value={internalSearch}
+            onChange={handleSearch}
+            placeholder="Search id, company, etc"
+            className="w-full bg-transparent text-[13px] text-[#333333] placeholder:text-[#9E9E9E] outline-none font-normal"
+          />
+          {internalSearch && (
+            <button
+              type="button"
+              onClick={handleClearSearch}
+              className="p-1 text-[#9E9E9E] hover:text-[#333333] shrink-0 cursor-pointer"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
+          )}
+          <button
+            type="button"
+            onClick={onFilterClick}
+            className="p-1 text-[#555555] hover:text-[#18181B] shrink-0 cursor-pointer"
+            title="Filter Options"
+          >
+            <SlidersHorizontal className="w-4 h-4" />
+          </button>
+          <button
+            type="button"
+            onClick={onNewShipment}
+            className="w-9 h-9 bg-[#232325] hover:bg-[#1A1A1A] text-white rounded-[12px] flex items-center justify-center shrink-0 shadow-2xs cursor-pointer"
+            title="New Shipment"
+          >
+            <Plus className="w-4.5 h-4.5 stroke-[2.5]" />
+          </button>
+        </div>
+
+        {/* Mobile Bottom Row: Soft Rounded Status Filter Chips */}
+        <div className="w-full bg-[#F4F4F6] rounded-[16px] p-1 flex items-center gap-1 overflow-x-auto no-scrollbar">
+          {statusOptions.map((status) => {
+            const isActive = activeStatus === status;
+            return (
+              <Button
+                key={status}
+                variant="chip"
+                size="sm"
+                isActive={isActive}
+                onClick={() => onStatusChange?.(status)}
+              >
+                {status}
+              </Button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* TABLET & DESKTOP VIEW: Single-Line Bar (hidden on mobile, visible on sm and above) */}
+      <div className="hidden sm:flex w-full flex-row items-center justify-between gap-2 sm:gap-4 py-3 px-5 md:px-8 bg-transparent overflow-x-auto no-scrollbar">
+        {/* Left: Status Filter Tabs */}
+        <div className="flex items-center gap-1 shrink-0 overflow-x-auto no-scrollbar py-1">
+          {statusOptions.map((status) => {
+            const isActive = activeStatus === status;
+            return (
+              <Button
+                key={status}
+                variant="chip"
+                size="sm"
+                isActive={isActive}
+                onClick={() => onStatusChange?.(status)}
+              >
+                {status}
+              </Button>
+            );
+          })}
+        </div>
+
+        {/* Right: Search, Filter, Sort by */}
+        <div className="flex items-center gap-2 sm:gap-2.5 shrink-0 justify-end ml-auto">
+          {/* Desktop Search Field */}
+          <div className="hidden lg:flex relative items-center w-[240px]">
+            <Search className="absolute left-3 w-4 h-4 text-[#757575] pointer-events-none" />
+            <input
+              type="text"
+              value={internalSearch}
+              onChange={handleSearch}
+              placeholder="Search Shipment"
+              className="w-full h-9 pl-9 pr-8 bg-white border border-[#E5E5E7] rounded-[10px] text-[13px] text-[#333333] placeholder:text-[#9E9E9E] outline-none focus:ring-2 focus:ring-[#856DF3]/20 focus:border-[#856DF3] transition duration-150"
+            />
+            {internalSearch && (
+              <button
+                type="button"
+                onClick={handleClearSearch}
+                className="absolute right-2.5 p-0.5 text-[#9E9E9E] hover:text-[#333333] cursor-pointer"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            )}
+          </div>
+
+          {/* Tablet Search Button & Expandable Field */}
+          <div className="lg:hidden relative flex items-center">
+            {isMobileSearchOpen ? (
+              <div className="relative flex items-center w-[170px] sm:w-[220px]">
+                <Search className="absolute left-3 w-4 h-4 text-[#757575] pointer-events-none" />
+                <input
+                  type="text"
+                  autoFocus
+                  value={internalSearch}
+                  onChange={handleSearch}
+                  placeholder="Search..."
+                  className="w-full h-9 pl-9 pr-8 bg-white border border-[#E5E5E7] rounded-[10px] text-[13px] text-[#333333] placeholder:text-[#9E9E9E] outline-none focus:ring-2 focus:ring-[#856DF3]/20 focus:border-[#856DF3]"
+                />
+                <button
+                  type="button"
+                  onClick={handleClearSearch}
+                  className="absolute right-2.5 p-0.5 text-[#9E9E9E] hover:text-[#333333]"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            ) : (
+              <IconButton
+                icon={<Search className="w-4 h-4 text-[#333333]" />}
+                variant="outline"
+                size="md"
+                onClick={() => setIsMobileSearchOpen(true)}
+                aria-label="Search"
+              />
+            )}
+          </div>
+
+          {/* Desktop Filter Button */}
+          <div className="hidden lg:block">
+            <Button
+              variant="outline"
+              size="md"
+              onClick={onFilterClick}
+              leftIcon={<Filter className="w-3.5 h-3.5 text-[#555555]" />}
+              rightIcon={<ChevronDown className="w-3.5 h-3.5 text-[#757575]" />}
+            >
+              Filter
+            </Button>
+          </div>
+
+          {/* Tablet Filter Icon Button */}
+          <div className="lg:hidden">
+            <IconButton
+              icon={<SlidersHorizontal className="w-4 h-4 text-[#333333]" />}
+              variant="outline"
+              size="md"
+              onClick={onFilterClick}
+              aria-label="Filter Options"
+            />
+          </div>
+
+          {/* Sort Dropdown */}
+          <div className="relative flex items-center">
+            <span className="text-[#757575] text-[13px] font-normal mr-2 whitespace-nowrap hidden sm:inline">
+              Sort by:
+            </span>
+            <div className="relative">
+              <Button
+                variant="outline"
+                size="md"
+                onClick={() => setIsSortOpen(!isSortOpen)}
+                rightIcon={<ChevronDown className="w-3.5 h-3.5 text-[#757575]" />}
+              >
+                {sortBy}
+              </Button>
+
+              {isSortOpen && (
+                <>
+                  <div
+                    className="fixed inset-0 z-20"
+                    onClick={() => setIsSortOpen(false)}
+                  />
+                  <div className="absolute right-0 mt-1 w-40 bg-white border border-[#E5E5E7] rounded-[10px] shadow-lg py-1 z-30 animate-in fade-in-50 duration-100">
+                    {sortOptions.map((opt) => (
+                      <button
+                        key={opt}
+                        type="button"
+                        onClick={() => {
+                          onSortChange?.(opt);
+                          setIsSortOpen(false);
+                        }}
+                        className={`w-full text-left px-3.5 py-2 text-[13px] hover:bg-[#F5F5F7] transition cursor-pointer ${
+                          sortBy === opt
+                            ? "font-semibold text-[#856DF3]"
+                            : "text-[#333333]"
+                        }`}
+                      >
+                        {opt}
+                      </button>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}

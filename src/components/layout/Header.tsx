@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import {Search } from "lucide-react";
+import { Search } from "lucide-react";
+import Button from "@/components/common/Button";
 
 interface HeaderProps {
   userName?: string;
@@ -53,14 +54,14 @@ export default function Header({
         </div>
 
         {/* New Shipping Action Button */}
-        <button
-          type="button"
+        <Button
+          variant="primary"
+          size="lg"
           onClick={onAddShipping}
-          className="flex items-center justify-center h-10 px-4 bg-[#232325] hover:bg-[#1a1a1a] active:bg-black text-white font-medium text-[13px] md:text-[14px] rounded-[10px] transition duration-150 shadow-2xs shrink-0 cursor-pointer whitespace-nowrap"
         >
           <span className="lg:hidden">New Shipping</span>
           <span className="hidden lg:inline">Add New Shipping</span>
-        </button>
+        </Button>
       </div>
     </div>
   );

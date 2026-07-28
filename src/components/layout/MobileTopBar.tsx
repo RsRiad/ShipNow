@@ -34,6 +34,7 @@ export default function MobileTopBar({
   const [searchValue, setSearchValue] = useState("");
 
   const pageTitle = PATH_TITLES[pathname] || "Dashboard";
+  const isShipmentsPage = pathname === "/shipments";
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value;
@@ -75,30 +76,32 @@ export default function MobileTopBar({
         </button>
       </div>
 
-      {/* Second Row: Search input + Dark Plus Action Button */}
-      <div className="flex items-center gap-2.5 px-4 pb-3 pt-0.5">
-        {/* Search Field */}
-        <div className="relative flex items-center flex-1 min-w-0 bg-[#F0F0F0] rounded-[10px] px-3.5 py-2">
-          <Search className="w-4 h-4 text-[#757575] shrink-0 mr-2" />
-          <input
-            type="text"
-            value={searchValue}
-            onChange={handleSearch}
-            placeholder="Search anything"
-            className="w-full bg-transparent text-[13px] text-[#333333] placeholder:text-[#757575] outline-none font-normal"
-          />
-        </div>
+      {/* Second Row: Search input + Dark Plus Action Button (Hidden on Shipments page mobile view) */}
+      {!isShipmentsPage && (
+        <div className="flex items-center gap-2.5 px-4 pb-3 pt-0.5">
+          {/* Search Field */}
+          <div className="relative flex items-center flex-1 min-w-0 bg-[#F0F0F0] rounded-[10px] px-3.5 py-2">
+            <Search className="w-4 h-4 text-[#757575] shrink-0 mr-2" />
+            <input
+              type="text"
+              value={searchValue}
+              onChange={handleSearch}
+              placeholder="Search anything"
+              className="w-full bg-transparent text-[13px] text-[#333333] placeholder:text-[#757575] outline-none font-normal"
+            />
+          </div>
 
-        {/* Dark Square Plus Action Button */}
-        <button
-          type="button"
-          onClick={onAddShipping}
-          aria-label="Add new shipping"
-          className="w-9 h-9 bg-[#232325] hover:bg-[#1a1a1a] active:bg-black text-white rounded-[10px] flex items-center justify-center shrink-0 transition duration-150 cursor-pointer shadow-2xs"
-        >
-          <Plus className="w-5 h-5 stroke-[2]" />
-        </button>
-      </div>
+          {/* Dark Square Plus Action Button */}
+          <button
+            type="button"
+            onClick={onAddShipping}
+            aria-label="Add new shipping"
+            className="w-9 h-9 bg-[#232325] hover:bg-[#1a1a1a] active:bg-black text-white rounded-[10px] flex items-center justify-center shrink-0 transition duration-150 cursor-pointer shadow-2xs"
+          >
+            <Plus className="w-5 h-5 stroke-[2]" />
+          </button>
+        </div>
+      )}
     </header>
   );
 }

@@ -6,37 +6,64 @@ import UserProfileCard from "./UserProfileCard";
 import NavItem from "./NavItem";
 import GoProCard from "./GoProCard";
 
+import { usePathname, useRouter } from "next/navigation";
+
 interface SidebarProps {
   isMobileOpen?: boolean;
   onCloseMobile?: () => void;
 }
 
 export const primaryNavItems = [
-  { label: "Dashboard", href: "/dashboard", iconSrc: "/Assets/IconDashboard.svg" },
-  { label: "Analytics", href: "/analytics", iconSrc: "/Assets/IconAnalytics.svg" },
-  { label: "Calendar", href: "/calendar", iconSrc: "/Assets/IconCalendar.svg" },
-  { label: "Shipments", href: "/shipments", iconSrc: "/Assets/IconShipments.svg" },
-  { label: "Tracking", href: "/tracking", iconSrc: "/Assets/IconTracking.svg" },
-  { label: "Warehouse", href: "/warehouse", iconSrc: "/Assets/IconWarehouse.svg" },
-  { label: "Fleets", href: "/fleets", iconSrc: "/Assets/IconFleets.svg" },
-  { label: "Drivers", href: "/drivers", iconSrc: "/Assets/IconDrivers.svg" },
-  { label: "Invoices & Billing", href: "/invoices", iconSrc: "/Assets/IconInvoice.svg" },
+  {
+    label: "Dashboard",
+    href: "/dashboard",
+    iconSrc: "/Assets/IconDashboard.svg",
+  },
+  { label: "Analytics", href: "#", iconSrc: "/Assets/IconAnalytics.svg" },
+  { label: "Calendar", href: "#", iconSrc: "/Assets/IconCalendar.svg" },
+  {
+    label: "Shipments",
+    href: "/shipments",
+    iconSrc: "/Assets/IconShipments.svg",
+  },
+  { label: "Tracking", href: "#", iconSrc: "/Assets/IconTracking.svg" },
+  { label: "Warehouse", href: "#", iconSrc: "/Assets/IconWarehouse.svg" },
+  { label: "Fleets", href: "#", iconSrc: "/Assets/IconFleets.svg" },
+  { label: "Drivers", href: "#", iconSrc: "/Assets/IconDrivers.svg" },
+  {
+    label: "Invoices & Billing",
+    href: "#",
+    iconSrc: "/Assets/IconInvoice.svg",
+  },
 ];
 
 export const secondaryNavItems = [
-  { label: "Message", href: "/messages", iconSrc: "/Assets/IconMessage.svg", badgeCount: 19 },
-  { label: "Notification", href: "/notifications", iconSrc: "/Assets/IconNotification.svg", badgeCount: 5 },
-  { label: "Settings", href: "/settings", iconSrc: "/Assets/IconSetting.svg" },
+  {
+    label: "Message",
+    href: "#",
+    iconSrc: "/Assets/IconMessage.svg",
+    badgeCount: 19,
+  },
+  {
+    label: "Notification",
+    href: "#",
+    iconSrc: "/Assets/IconNotification.svg",
+    badgeCount: 5,
+  },
+  { label: "Settings", href: "#", iconSrc: "/Assets/IconSetting.svg" },
 ];
 
 export default function Sidebar({
   isMobileOpen = false,
   onCloseMobile,
 }: SidebarProps) {
-  const [selectedNav, setSelectedNav] = useState("Dashboard");
+  const pathname = usePathname();
+  const router = useRouter();
 
-  const handleSelectNav = (label: string, isMobile: boolean) => {
-    setSelectedNav(label);
+  const handleSelectNav = (href: string, isMobile: boolean) => {
+    if (href && href !== "#") {
+      router.push(href);
+    }
     if (isMobile && onCloseMobile) {
       onCloseMobile();
     }
@@ -56,17 +83,23 @@ export default function Sidebar({
 
       {/* Main Nav Items */}
       <nav className="flex flex-col py-1 space-y-0.5">
-        {primaryNavItems.map((item) => (
-          <NavItem
-            key={item.label}
-            href={item.href}
-            label={item.label}
-            iconSrc={item.iconSrc}
-            isActive={selectedNav === item.label}
-            isTabletRail={isTablet}
-            onClick={() => handleSelectNav(item.label, isMobile)}
-          />
-        ))}
+        {primaryNavItems.map((item) => {
+          const isActive =
+            item.href !== "#" &&
+            (pathname === item.href ||
+              (item.href !== "/" && pathname.startsWith(item.href)));
+          return (
+            <NavItem
+              key={item.label}
+              href={item.href}
+              label={item.label}
+              iconSrc={item.iconSrc}
+              isActive={isActive}
+              isTabletRail={isTablet}
+              onClick={() => handleSelectNav(item.href, isMobile)}
+            />
+          );
+        })}
       </nav>
 
       {/* Divider */}
@@ -74,18 +107,24 @@ export default function Sidebar({
 
       {/* Secondary Nav Items */}
       <nav className="flex flex-col py-1 space-y-0.5">
-        {secondaryNavItems.map((item) => (
-          <NavItem
-            key={item.label}
-            href={item.href}
-            label={item.label}
-            iconSrc={item.iconSrc}
-            badgeCount={item.badgeCount}
-            isActive={selectedNav === item.label}
-            isTabletRail={isTablet}
-            onClick={() => handleSelectNav(item.label, isMobile)}
-          />
-        ))}
+        {secondaryNavItems.map((item) => {
+          const isActive =
+            item.href !== "#" &&
+            (pathname === item.href ||
+              (item.href !== "/" && pathname.startsWith(item.href)));
+          return (
+            <NavItem
+              key={item.label}
+              href={item.href}
+              label={item.label}
+              iconSrc={item.iconSrc}
+              badgeCount={item.badgeCount}
+              isActive={isActive}
+              isTabletRail={isTablet}
+              onClick={() => handleSelectNav(item.href, isMobile)}
+            />
+          );
+        })}
       </nav>
 
       {/* Spacer & Bottom GoPro Card */}
