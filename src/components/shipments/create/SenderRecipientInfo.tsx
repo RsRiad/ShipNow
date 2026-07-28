@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { ChevronDown } from "lucide-react";
 
 interface SenderRecipientInfoProps {
   senderCompany: string;
@@ -44,44 +45,44 @@ export default function SenderRecipientInfo({
   addressError,
 }: SenderRecipientInfoProps) {
   return (
-    <div className="w-full bg-[#F4F4F6] border border-[#E5E5E7]/60 rounded-[20px] p-5 md:p-6 mb-6">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+    <div className="w-full bg-[#F5F5F7] rounded-[24px] p-6 md:p-8 mb-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
         {/* Left Column: Sender Info */}
         <div className="flex flex-col gap-4">
-          <h3 className="text-[16px] font-bold text-[#1E293B]">Sender Info</h3>
+          <h3 className="text-[17px] font-bold text-[#1E293B] mb-1">Sender Info</h3>
 
           {/* Company */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-[13px] font-medium text-[#64748B]">Company</label>
+            <label className="text-[13px] font-medium text-[#757575]">Company</label>
             <input
               type="text"
               value={senderCompany}
               onChange={(e) => setSenderCompany(e.target.value)}
-              placeholder="Company Name"
-              className="w-full bg-white border border-[#E5E5E7] rounded-[12px] px-3.5 py-2.5 text-[14px] text-[#1E293B] outline-none focus:border-[#856DF3] focus:ring-2 focus:ring-[#856DF3]/20 transition"
+              placeholder="GreenHaven"
+              className="w-full bg-white rounded-[14px] px-4 py-3 text-[14px] text-[#1E293B] outline-none shadow-2xs focus:ring-2 focus:ring-[#856DF3]/20 transition"
             />
           </div>
 
           {/* Email & Phone Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5">
-              <label className="text-[13px] font-medium text-[#64748B]">Email</label>
+              <label className="text-[13px] font-medium text-[#757575]">Email</label>
               <input
                 type="email"
                 value={senderEmail}
                 onChange={(e) => setSenderEmail(e.target.value)}
-                placeholder="Email Address"
-                className="w-full bg-white border border-[#E5E5E7] rounded-[12px] px-3.5 py-2.5 text-[14px] text-[#1E293B] outline-none focus:border-[#856DF3] focus:ring-2 focus:ring-[#856DF3]/20 transition"
+                placeholder="logistics@greenhaven.com"
+                className="w-full bg-white rounded-[14px] px-4 py-3 text-[14px] text-[#1E293B] outline-none shadow-2xs focus:ring-2 focus:ring-[#856DF3]/20 transition"
               />
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <label className="text-[13px] font-medium text-[#64748B]">Phone Number</label>
-              <div className="flex items-center gap-1.5 bg-white border border-[#E5E5E7] rounded-[12px] px-2.5 py-2 focus-within:border-[#856DF3] focus-within:ring-2 focus-within:ring-[#856DF3]/20 transition">
-                <div className="flex items-center gap-1 text-[13px] font-medium text-[#334155] shrink-0 border-r border-[#E5E5E7] pr-2">
-                  <span className="text-[15px]">🇺🇸</span>
+              <label className="text-[13px] font-medium text-[#757575]">Phone Number</label>
+              <div className="flex items-center gap-2 bg-white rounded-[14px] px-3 py-2.5 shadow-2xs focus-within:ring-2 focus-within:ring-[#856DF3]/20 transition">
+                <div className="flex items-center gap-1.5 text-[13px] font-medium text-[#334155] shrink-0 border-r border-[#E5E5E7] pr-2.5">
+                  <span className="text-[16px]">🇺🇸</span>
                   <span>+1</span>
-                  <span className="text-[10px] text-[#94A3B8]">▼</span>
+                  <ChevronDown className="w-3.5 h-3.5 text-[#94A3B8]" />
                 </div>
                 <input
                   type="text"
@@ -96,53 +97,53 @@ export default function SenderRecipientInfo({
 
           {/* Pickup Address */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-[13px] font-medium text-[#64748B]">Pickup Address</label>
+            <label className="text-[13px] font-medium text-[#757575]">Pickup Address</label>
             <input
               type="text"
               value={pickupAddress}
               onChange={(e) => setPickupAddress(e.target.value)}
-              placeholder="Street address, city, state, ZIP code"
-              className="w-full bg-white border border-[#E5E5E7] rounded-[12px] px-3.5 py-2.5 text-[14px] text-[#1E293B] outline-none focus:border-[#856DF3] focus:ring-2 focus:ring-[#856DF3]/20 transition"
+              placeholder="1120 Birch Street, Portland, OR 97205, USA"
+              className="w-full bg-white rounded-[14px] px-4 py-3 text-[14px] text-[#1E293B] outline-none shadow-2xs focus:ring-2 focus:ring-[#856DF3]/20 transition"
             />
           </div>
         </div>
 
         {/* Right Column: Recipient Info */}
         <div className="flex flex-col gap-4">
-          <h3 className="text-[16px] font-bold text-[#1E293B]">Recipient Info</h3>
+          <h3 className="text-[17px] font-bold text-[#1E293B] mb-1">Recipient Info</h3>
 
           {/* Company */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-[13px] font-medium text-[#64748B]">Company</label>
+            <label className="text-[13px] font-medium text-[#757575]">Company</label>
             <input
               type="text"
               value={recipientCompany}
               onChange={(e) => setRecipientCompany(e.target.value)}
-              placeholder="Company Name"
-              className="w-full bg-white border border-[#E5E5E7] rounded-[12px] px-3.5 py-2.5 text-[14px] text-[#1E293B] outline-none focus:border-[#856DF3] focus:ring-2 focus:ring-[#856DF3]/20 transition"
+              placeholder="FreshNest"
+              className="w-full bg-white rounded-[14px] px-4 py-3 text-[14px] text-[#1E293B] outline-none shadow-2xs focus:ring-2 focus:ring-[#856DF3]/20 transition"
             />
           </div>
 
           {/* Email & Phone Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5">
-              <label className="text-[13px] font-medium text-[#64748B]">Email</label>
+              <label className="text-[13px] font-medium text-[#757575]">Email</label>
               <input
                 type="email"
                 value={recipientEmail}
                 onChange={(e) => setRecipientEmail(e.target.value)}
-                placeholder="Email Address"
-                className="w-full bg-white border border-[#E5E5E7] rounded-[12px] px-3.5 py-2.5 text-[14px] text-[#1E293B] outline-none focus:border-[#856DF3] focus:ring-2 focus:ring-[#856DF3]/20 transition"
+                placeholder="warehouse@freshnest.com"
+                className="w-full bg-white rounded-[14px] px-4 py-3 text-[14px] text-[#1E293B] outline-none shadow-2xs focus:ring-2 focus:ring-[#856DF3]/20 transition"
               />
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <label className="text-[13px] font-medium text-[#64748B]">Phone Number</label>
-              <div className="flex items-center gap-1.5 bg-white border border-[#E5E5E7] rounded-[12px] px-2.5 py-2 focus-within:border-[#856DF3] focus-within:ring-2 focus-within:ring-[#856DF3]/20 transition">
-                <div className="flex items-center gap-1 text-[13px] font-medium text-[#334155] shrink-0 border-r border-[#E5E5E7] pr-2">
-                  <span className="text-[15px]">🇺🇸</span>
+              <label className="text-[13px] font-medium text-[#757575]">Phone Number</label>
+              <div className="flex items-center gap-2 bg-white rounded-[14px] px-3 py-2.5 shadow-2xs focus-within:ring-2 focus-within:ring-[#856DF3]/20 transition">
+                <div className="flex items-center gap-1.5 text-[13px] font-medium text-[#334155] shrink-0 border-r border-[#E5E5E7] pr-2.5">
+                  <span className="text-[16px]">🇺🇸</span>
                   <span>+1</span>
-                  <span className="text-[10px] text-[#94A3B8]">▼</span>
+                  <ChevronDown className="w-3.5 h-3.5 text-[#94A3B8]" />
                 </div>
                 <input
                   type="text"
@@ -157,20 +158,20 @@ export default function SenderRecipientInfo({
 
           {/* Delivery Address (With Error State matching Figma screenshot) */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-[13px] font-medium text-[#64748B]">Delivery Address</label>
+            <label className="text-[13px] font-medium text-[#757575]">Delivery Address</label>
             <input
               type="text"
               value={deliveryAddress}
               onChange={(e) => setDeliveryAddress(e.target.value)}
               placeholder="Street address, city, state/province, ZIP code"
-              className={`w-full bg-white rounded-[12px] px-3.5 py-2.5 text-[14px] text-[#1E293B] outline-none transition ${
+              className={`w-full rounded-[14px] px-4 py-3 text-[14px] text-[#1E293B] outline-none transition ${
                 addressError
-                  ? "border-2 border-[#856DF3] shadow-2xs"
-                  : "border border-[#E5E5E7] focus:border-[#856DF3] focus:ring-2 focus:ring-[#856DF3]/20"
+                  ? "bg-white border-2 border-[#856DF3] text-[#856DF3] placeholder:text-[#94A3B8]"
+                  : "bg-white shadow-2xs focus:ring-2 focus:ring-[#856DF3]/20"
               }`}
             />
             {addressError && (
-              <span className="text-[#6366F1] text-[12px] font-medium mt-0.5">
+              <span className="text-[#6366F1] text-[12px] font-semibold mt-1">
                 {addressError}
               </span>
             )}

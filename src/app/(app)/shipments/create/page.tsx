@@ -154,10 +154,10 @@ export default function CreateShipmentPage() {
               addressError={addressError}
             />
 
-            {/* 2. Package Details & Shipping Details (2-Column Grid) */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              {/* Left Column: Package Details (5/12 cols) */}
-              <div className="lg:col-span-5 bg-white rounded-[20px] p-5 md:p-6 border border-[#E5E5E7]">
+            {/* 2. Package Details & Shipping Details (Unified Grid Layout) */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-0 items-start pt-2">
+              {/* Left Column: Package Details (4/12 cols) */}
+              <div className="lg:col-span-4 pr-0 lg:pr-6">
                 <PackageDetailsForm
                   itemDescription={itemDescription}
                   setItemDescription={setItemDescription}
@@ -178,8 +178,8 @@ export default function CreateShipmentPage() {
                 />
               </div>
 
-              {/* Right Column: Shipping Details (7/12 cols) */}
-              <div className="lg:col-span-7 bg-white rounded-[20px] p-5 md:p-6 border border-[#E5E5E7]">
+              {/* Right Column: Shipping Details (8/12 cols) */}
+              <div className="lg:col-span-8">
                 <ShippingDetailsForm
                   freightType={freightType}
                   setFreightType={setFreightType}
