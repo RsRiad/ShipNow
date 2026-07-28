@@ -2,7 +2,6 @@
 
 import React from "react";
 import { ChevronDown } from "lucide-react";
-import USFlag from "@/components/common/USFlag";
 
 interface SenderRecipientInfoProps {
   senderCompany: string;
@@ -80,7 +79,6 @@ export default function SenderRecipientInfo({
             <label className="text-[14px] font-medium text-[#757575]">Phone Number</label>
             <div className="flex items-center gap-2 bg-white rounded-[12px] px-3 py-2.5 focus-within:ring-2 focus-within:ring-[#856DF3]/20 transition">
               <div className="flex items-center gap-1 text-[14px] font-medium text-[#334155] shrink-0 border-r border-[#E5E5E7] pr-2.5">
-                <USFlag className="w-5 h-3.5 mr-0.5" />
                 <span>+1</span>
                 <ChevronDown className="w-3.5 h-3.5 text-[#94A3B8]" />
               </div>
@@ -140,7 +138,6 @@ export default function SenderRecipientInfo({
             <label className="text-[14px] font-medium text-[#757575]">Phone Number</label>
             <div className="flex items-center gap-2 bg-white rounded-[12px] px-3 py-2.5 focus-within:ring-2 focus-within:ring-[#856DF3]/20 transition">
               <div className="flex items-center gap-1 text-[14px] font-medium text-[#334155] shrink-0 border-r border-[#E5E5E7] pr-2.5">
-                <USFlag className="w-5 h-3.5 mr-0.5" />
                 <span>+1</span>
                 <ChevronDown className="w-3.5 h-3.5 text-[#94A3B8]" />
               </div>
