@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react";
 
 export default function CreateShipmentHeader() {
   return (
-    <div className="w-full flex flex-col gap-3 py-4 px-4 md:px-8 bg-transparent border-b border-[#E5E5E7]/50">
+    <div className="hidden md:flex flex-col gap-3 py-4 px-4 md:px-8 bg-transparent border-b border-[#E5E5E7]/50">
       {/* Back Arrow & Title */}
       <div className="flex items-center gap-3">
         <Link
