@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Calendar, ChevronDown } from "lucide-react";
+import ToggleSwitch from "@/components/common/ToggleSwitch";
 
 interface ShippingDetailsFormProps {
   freightType: string;
@@ -271,25 +272,12 @@ export default function ShippingDetailsForm({
         {/* Tracking & Status Updates Toggle (Right 5 Cols) */}
         <div className="sm:col-span-5 flex flex-col gap-3">
           <label className="text-[14px] font-medium text-[#757575]">Tracking & Status Updates</label>
-          <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={() => setNotifyRecipient(!notifyRecipient)}
-              className={`w-11 h-6 rounded-full transition duration-200 relative p-0.5 cursor-pointer ${
-                notifyRecipient ? "bg-[#856DF3]" : "bg-[#E2E8F0]"
-              }`}
-              aria-label="Toggle Notify Recipient"
-            >
-              <div
-                className={`w-5 h-5 rounded-full bg-white shadow-xs transition-transform duration-200 ${
-                  notifyRecipient ? "translate-x-5" : "translate-x-0"
-                }`}
-              />
-            </button>
-            <span className="text-[14px] font-medium text-[#334155]">
-              Notify Recipient via Email/SMS
-            </span>
-          </div>
+          <ToggleSwitch
+            checked={notifyRecipient}
+            onChange={setNotifyRecipient}
+            label="Notify Recipient via Email/SMS"
+            ariaLabel="Toggle Notify Recipient"
+          />
         </div>
       </div>
     </div>
