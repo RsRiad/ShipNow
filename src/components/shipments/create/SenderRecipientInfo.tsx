@@ -63,35 +63,33 @@ export default function SenderRecipientInfo({
             />
           </div>
 
-          {/* Email & Phone Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-            <div className="flex flex-col gap-1.5">
-              <label className="text-[14px] font-medium text-[#757575]">Email</label>
-              <input
-                type="email"
-                value={senderEmail}
-                onChange={(e) => setSenderEmail(e.target.value)}
-                placeholder="logistics@greenhaven.com"
-                className="w-full bg-white rounded-[12px] px-4 py-3 text-[15px] text-[#1E293B] outline-none focus:ring-2 focus:ring-[#856DF3]/20 transition"
-              />
-            </div>
+          {/* Email & Phone */}
+          <div className="flex flex-col gap-1.5">
+            <label className="text-[14px] font-medium text-[#757575]">Email</label>
+            <input
+              type="email"
+              value={senderEmail}
+              onChange={(e) => setSenderEmail(e.target.value)}
+              placeholder="logistics@greenhaven.com"
+              className="w-full bg-white rounded-[12px] px-4 py-3 text-[15px] text-[#1E293B] outline-none focus:ring-2 focus:ring-[#856DF3]/20 transition"
+            />
+          </div>
 
-            <div className="flex flex-col gap-1.5">
-              <label className="text-[14px] font-medium text-[#757575]">Phone Number</label>
-              <div className="flex items-center gap-2 bg-white rounded-[12px] px-3 py-2.5 focus-within:ring-2 focus-within:ring-[#856DF3]/20 transition">
-                <div className="flex items-center gap-1 text-[14px] font-medium text-[#334155] shrink-0 border-r border-[#E5E5E7] pr-2.5">
-                  <span className="text-[16px]">🇺🇸</span>
-                  <span>+1</span>
-                  <ChevronDown className="w-3.5 h-3.5 text-[#94A3B8]" />
-                </div>
-                <input
-                  type="text"
-                  value={senderPhone}
-                  onChange={(e) => setSenderPhone(e.target.value)}
-                  placeholder="408-555-7210"
-                  className="w-full bg-transparent text-[15px] text-[#1E293B] outline-none"
-                />
+          <div className="flex flex-col gap-1.5">
+            <label className="text-[14px] font-medium text-[#757575]">Phone Number</label>
+            <div className="flex items-center gap-2 bg-white rounded-[12px] px-3 py-2.5 focus-within:ring-2 focus-within:ring-[#856DF3]/20 transition">
+              <div className="flex items-center gap-1 text-[14px] font-medium text-[#334155] shrink-0 border-r border-[#E5E5E7] pr-2.5">
+                <span className="text-[16px]">🇺🇸</span>
+                <span>+1</span>
+                <ChevronDown className="w-3.5 h-3.5 text-[#94A3B8]" />
               </div>
+              <input
+                type="text"
+                value={senderPhone}
+                onChange={(e) => setSenderPhone(e.target.value)}
+                placeholder="408-555-7210"
+                className="w-full bg-transparent text-[15px] text-[#1E293B] outline-none"
+              />
             </div>
           </div>
 
@@ -125,35 +123,33 @@ export default function SenderRecipientInfo({
             />
           </div>
 
-          {/* Email & Phone Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-            <div className="flex flex-col gap-1.5">
-              <label className="text-[14px] font-medium text-[#757575]">Email</label>
-              <input
-                type="email"
-                value={recipientEmail}
-                onChange={(e) => setRecipientEmail(e.target.value)}
-                placeholder="warehouse@freshnest.com"
-                className="w-full bg-white rounded-[12px] px-4 py-3 text-[15px] text-[#1E293B] outline-none focus:ring-2 focus:ring-[#856DF3]/20 transition"
-              />
-            </div>
+          {/* Email & Phone */}
+          <div className="flex flex-col gap-1.5">
+            <label className="text-[14px] font-medium text-[#757575]">Email</label>
+            <input
+              type="email"
+              value={recipientEmail}
+              onChange={(e) => setRecipientEmail(e.target.value)}
+              placeholder="warehouse@freshnest.com"
+              className="w-full bg-white rounded-[12px] px-4 py-3 text-[15px] text-[#1E293B] outline-none focus:ring-2 focus:ring-[#856DF3]/20 transition"
+            />
+          </div>
 
-            <div className="flex flex-col gap-1.5">
-              <label className="text-[14px] font-medium text-[#757575]">Phone Number</label>
-              <div className="flex items-center gap-2 bg-white rounded-[12px] px-3 py-2.5 focus-within:ring-2 focus-within:ring-[#856DF3]/20 transition">
-                <div className="flex items-center gap-1 text-[14px] font-medium text-[#334155] shrink-0 border-r border-[#E5E5E7] pr-2.5">
-                  <span className="text-[16px]">🇺🇸</span>
-                  <span>+1</span>
-                  <ChevronDown className="w-3.5 h-3.5 text-[#94A3B8]" />
-                </div>
-                <input
-                  type="text"
-                  value={recipientPhone}
-                  onChange={(e) => setRecipientPhone(e.target.value)}
-                  placeholder="786-555-4432"
-                  className="w-full bg-transparent text-[15px] text-[#1E293B] outline-none"
-                />
+          <div className="flex flex-col gap-1.5">
+            <label className="text-[14px] font-medium text-[#757575]">Phone Number</label>
+            <div className="flex items-center gap-2 bg-white rounded-[12px] px-3 py-2.5 focus-within:ring-2 focus-within:ring-[#856DF3]/20 transition">
+              <div className="flex items-center gap-1 text-[14px] font-medium text-[#334155] shrink-0 border-r border-[#E5E5E7] pr-2.5">
+                <span className="text-[16px]">🇺🇸</span>
+                <span>+1</span>
+                <ChevronDown className="w-3.5 h-3.5 text-[#94A3B8]" />
               </div>
+              <input
+                type="text"
+                value={recipientPhone}
+                onChange={(e) => setRecipientPhone(e.target.value)}
+                placeholder="786-555-4432"
+                className="w-full bg-transparent text-[15px] text-[#1E293B] outline-none"
+              />
             </div>
           </div>
 
