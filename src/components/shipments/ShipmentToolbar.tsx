@@ -69,9 +69,9 @@ export default function ShipmentToolbar({
   return (
     <>
       {/* MOBILE VIEW ONLY: Integrated Search, Sliders Filter & Add Button Bar (sm:hidden) */}
-      <div className="sm:hidden flex flex-col gap-3 py-2 px-4 bg-transparent">
+      <div className="sm:hidden flex flex-col gap-2 py-1 px-4 bg-transparent">
         {/* Mobile Top Row: Integrated Search, Sliders Icon & Dark Plus Button */}
-        <div className="w-full h-12 bg-[#F4F4F6] rounded-[16px] p-1.5 flex items-center gap-2 border border-[#E5E5E7]/50 shadow-2xs">
+        <div className="w-full h-11 bg-[#F4F4F6] rounded-[14px] p-1 flex items-center gap-2 border border-[#E5E5E7]/50 shadow-2xs">
           <Search className="w-4 h-4 text-[#757575] ml-2 shrink-0" />
           <input
             type="text"
@@ -100,15 +100,15 @@ export default function ShipmentToolbar({
           <button
             type="button"
             onClick={onNewShipment}
-            className="w-9 h-9 bg-[#232325] hover:bg-[#1A1A1A] text-white rounded-[12px] flex items-center justify-center shrink-0 shadow-2xs cursor-pointer"
+            className="w-8.5 h-8.5 bg-[#232325] hover:bg-[#1A1A1A] text-white rounded-[10px] flex items-center justify-center shrink-0 shadow-2xs cursor-pointer"
             title="New Shipment"
           >
-            <Plus className="w-4.5 h-4.5 stroke-[2.5]" />
+            <Plus className="w-4 h-4 stroke-[2.5]" />
           </button>
         </div>
 
         {/* Mobile Bottom Row: Soft Rounded Status Filter Chips */}
-        <div className="w-full bg-[#F4F4F6] rounded-[16px] p-1 flex items-center gap-1 overflow-x-auto no-scrollbar">
+        <div className="w-full bg-[#F4F4F6] rounded-[14px] p-0.5 flex items-center gap-1 overflow-x-auto no-scrollbar">
           {statusOptions.map((status) => {
             const isActive = activeStatus === status;
             return (
@@ -127,7 +127,7 @@ export default function ShipmentToolbar({
       </div>
 
       {/* TABLET & DESKTOP VIEW: Single-Line Bar (hidden on mobile, visible on sm and above) */}
-      <div className="hidden sm:flex w-full flex-row items-center justify-between gap-2 sm:gap-4 py-3 px-5 md:px-8 bg-transparent overflow-x-auto no-scrollbar">
+      <div className="hidden sm:flex w-full flex-row items-center justify-between gap-2 sm:gap-4 py-1.5 px-5 md:px-8 bg-transparent overflow-x-auto no-scrollbar">
         {/* Left: Status Filter Tabs */}
         <div className="flex items-center gap-1 shrink-0 overflow-x-auto no-scrollbar py-1">
           {statusOptions.map((status) => {

@@ -3,48 +3,14 @@
 import React from "react";
 import Image from "next/image";
 import { Shipment } from "@/data/data";
-import { Plane, Truck, Ship, Train, MapPin } from "lucide-react";
+import { getCompanyLogoPath, renderModeIcon } from "@/utils/shipmentHelpers";
 
 interface ShipmentCardProps {
   shipment: Shipment;
   onClick?: () => void;
 }
 
-const getCompanyLogoPath = (company: string, logoKey?: string): string => {
-  const key = (logoKey || company).toLowerCase();
-  if (key.includes("techgear")) return "/Assets/TechGear.svg";
-  if (key.includes("stylehub") || key.includes("modawear"))
-    return "/Assets/StyleHub.svg";
-  if (key.includes("freshnest")) return "/Assets/FreshNest.svg";
-  if (key.includes("autoparts") || key.includes("auto"))
-    return "/Assets/AutoParts.svg";
-  if (key.includes("ecolights")) return "/Assets/EcoLights.svg";
-  if (key.includes("greenhaven")) return "/Assets/GreenHaven.svg";
-  if (key.includes("quickparts")) return "/Assets/QuickParts.svg";
-  if (key.includes("styledepot")) return "/Assets/StyleDeport.svg";
-  if (key.includes("suncore")) return "/Assets/SunCore.svg";
-  if (key.includes("vitafresh")) return "/Assets/VItaFresh.svg";
-  return "/Assets/TechGear.svg";
-};
-
 export default function ShipmentCard({ shipment, onClick }: ShipmentCardProps) {
-  // Render Freight Mode Icon
-  const renderModeIcon = () => {
-    const iconClass = "w-5 h-5 text-[#333333]";
-    switch (shipment.mode) {
-      case "Air Freight":
-        return <Plane className={iconClass} />;
-      case "Road Freight":
-        return <Truck className={iconClass} />;
-      case "Ocean Freight":
-        return <Ship className={iconClass} />;
-      case "Rail Freight":
-        return <Train className={iconClass} />;
-      default:
-        return <Plane className={iconClass} />;
-    }
-  };
-
   // Status Badge Styling matching design tokens
   const getStatusBadgeStyle = () => {
     switch (shipment.status) {
@@ -74,7 +40,7 @@ export default function ShipmentCard({ shipment, onClick }: ShipmentCardProps) {
           {/* Left: Mode Icon + (ID & Status Badge) */}
           <div className="flex items-center gap-2.5">
             <div className="w-10 h-10 bg-[#EBEBEB] rounded-[12px] flex items-center justify-center shrink-0">
-              {renderModeIcon()}
+              {renderModeIcon(shipment.mode, "w-5 h-5 text-[#333333]")}
             </div>
             <div className="flex flex-col gap-1">
               <h3 className="font-bold text-[16px] leading-none text-[#1E293B] tracking-tight">
@@ -131,7 +97,7 @@ export default function ShipmentCard({ shipment, onClick }: ShipmentCardProps) {
 
             {/* Freight Mode Icon Box */}
             <div className="w-10.5 h-10.5 bg-[#EBEBEB] rounded-[12px] flex items-center justify-center shrink-0">
-              {renderModeIcon()}
+              {renderModeIcon(shipment.mode, "w-5 h-5 text-[#333333]")}
             </div>
           </div>
 

@@ -21,11 +21,9 @@ export default function Pagination({
   onPageChange,
   onPageSizeChange,
   pageSizeOptions = [6, 9, 12, 24],
-  itemLabel = "shipments",
+  itemLabel = "results",
 }: PaginationProps) {
   const totalPages = Math.ceil(totalItems / pageSize) || 1;
-  const startIndex = totalItems === 0 ? 0 : (currentPage - 1) * pageSize + 1;
-  const endIndex = Math.min(startIndex + pageSize - 1, totalItems);
 
   const getPageNumbers = () => {
     const pages: (number | string)[] = [];
@@ -46,15 +44,9 @@ export default function Pagination({
   };
 
   return (
-    <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-4 py-4 px-2 bg-transparent text-[13px] text-[#757575]">
-      {/* Showing entries count & Page size dropdown */}
-      <div className="flex items-center gap-3 flex-wrap">
-        <span>
-          Showing <strong className="text-[#1E293B]">{startIndex}</strong> to{" "}
-          <strong className="text-[#1E293B]">{endIndex}</strong> of{" "}
-          <strong className="text-[#1E293B]">{totalItems}</strong> {itemLabel}
-        </span>
-
+    <div className="w-full flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 py-3 sm:py-4 px-2 bg-transparent text-[13px] text-[#757575]">
+      {/* Showing entries count & Page size dropdown (Hidden on mobile view) */}
+      <div className="hidden sm:flex items-center gap-3 flex-wrap">
         <div className="flex items-center gap-1.5 ml-2">
           <span>Show:</span>
           <select
@@ -68,11 +60,12 @@ export default function Pagination({
               </option>
             ))}
           </select>
+          <strong className="text-[#1E293B]">of {totalItems}</strong> {itemLabel}
         </div>
       </div>
 
-      {/* Page Navigation Buttons */}
-      <div className="flex items-center gap-1">
+      {/* Page Navigation Buttons (Centered on Mobile view) */}
+      <div className="flex items-center justify-center gap-1 w-full sm:w-auto">
         <IconButton
           icon={<ChevronLeft className="w-4 h-4" />}
           disabled={currentPage === 1}

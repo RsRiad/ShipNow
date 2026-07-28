@@ -5,6 +5,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import AppShell from "@/components/layout/AppShell";
 import ShipmentHeader, { ShipmentViewMode } from "@/components/shipments/ShipmentHeader";
 import ShipmentToolbar from "@/components/shipments/ShipmentToolbar";
+import ShipmentMetricCards from "@/components/shipments/ShipmentMetricCards";
+import ShipmentTableView from "@/components/shipments/ShipmentTableView";
 import ShipmentGridView from "@/components/shipments/ShipmentGridView";
 import { shipments as mockShipments } from "@/data/data";
 
@@ -77,7 +79,12 @@ function ShipmentsContent() {
           onNewShipment={handleNewShipment}
         />
 
-        {/* Shipment Filter & Search Toolbar */}
+        {/* MOBILE VIEW ONLY: 2x2 Metric Cards FIRST above Toolbar */}
+        <div className="sm:hidden px-4 pt-3 pb-1">
+          <ShipmentMetricCards shipments={filteredShipments} />
+        </div>
+
+        {/* Shipment Filter & Search Toolbar (Renders BELOW Metric Cards on Mobile View) */}
         <ShipmentToolbar
           activeStatus={activeStatus}
           onStatusChange={(st) => {
@@ -95,17 +102,30 @@ function ShipmentsContent() {
         />
 
         {/* View Content Area */}
-        <div className="px-5 md:px-8 py-4">
-          <ShipmentGridView
-            shipments={filteredShipments}
-            currentPage={currentPage}
-            onPageChange={setCurrentPage}
-            pageSize={pageSize}
-            onPageSizeChange={(size) => {
-              setPageSize(size);
-              setCurrentPage(1);
-            }}
-          />
+        <div className="px-5 md:px-8 pt-2 pb-6">
+          {currentView === "table" ? (
+            <ShipmentTableView
+              shipments={filteredShipments}
+              currentPage={currentPage}
+              onPageChange={setCurrentPage}
+              pageSize={pageSize}
+              onPageSizeChange={(size) => {
+                setPageSize(size);
+                setCurrentPage(1);
+              }}
+            />
+          ) : (
+            <ShipmentGridView
+              shipments={filteredShipments}
+              currentPage={currentPage}
+              onPageChange={setCurrentPage}
+              pageSize={pageSize}
+              onPageSizeChange={(size) => {
+                setPageSize(size);
+                setCurrentPage(1);
+              }}
+            />
+          )}
         </div>
       </div>
     </div>
