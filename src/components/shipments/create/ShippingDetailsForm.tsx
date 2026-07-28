@@ -70,7 +70,7 @@ export default function ShippingDetailsForm({
       {/* Freight Type Radio Group */}
       <div className="flex flex-col gap-1.5">
         <label className="text-[14px] font-medium text-[#757575]">Freight Type</label>
-        <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
+        <div className="grid grid-cols-3 sm:flex sm:items-center sm:gap-6 gap-3.5">
           {freightOptions.map((opt) => {
             const isSelected = freightType === opt.label;
             return (
