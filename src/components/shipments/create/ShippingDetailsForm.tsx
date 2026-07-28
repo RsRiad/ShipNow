@@ -96,8 +96,8 @@ export default function ShippingDetailsForm({
         </div>
       </div>
 
-      {/* Carrier, Shipping Method, Shipment ID, Date Controls Row */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+      {/* Carrier, Shipping Method, Shipment ID, Date Controls Row (4 Columns in Tablet & Desktop View) */}
+      <div className="grid grid-cols-1 sm:grid-cols-4 gap-3.5 sm:gap-4">
         {/* Carrier */}
         <div className="flex flex-col gap-1.5">
           <label className="text-[14px] font-medium text-[#757575]">Carrier</label>
@@ -185,7 +185,7 @@ export default function ShippingDetailsForm({
       </div>
 
       {/* Bottom Section: Additional Services & Tracking Preferences */}
-      <div className="pt-4 border-t border-[#E5E5E7]/70 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+      <div className="pt-4 border-t border-[#E5E5E7]/70 grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
         {/* Additional Services */}
         <div className="flex flex-col gap-3">
           <label className="text-[14px] font-medium text-[#757575]">Additional Services</label>
