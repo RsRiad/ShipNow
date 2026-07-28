@@ -56,8 +56,9 @@ export default function PackageDetailsForm({
         />
       </div>
 
-      {/* Quantity & Value Row */}
-      <div className="grid grid-cols-2 gap-4">
+      {/* Quantity, Value, Weight, Units (4 Columns in Tablet & Desktop View) */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4">
+        {/* Quantity */}
         <div className="flex flex-col gap-1.5">
           <label className="text-[14px] font-medium text-[#757575]">Quantity</label>
           <div className="relative flex items-center">
@@ -65,9 +66,9 @@ export default function PackageDetailsForm({
               type="text"
               value={quantity}
               onChange={(e) => setQuantity(e.target.value)}
-              className="w-full bg-[#F4F4F6] rounded-[12px] pl-4 pr-9 py-3 text-[15px] font-bold text-[#1E293B] outline-none"
+              className="w-full bg-[#F4F4F6] rounded-[12px] pl-3.5 pr-8 py-3 text-[15px] font-bold text-[#1E293B] outline-none"
             />
-            <div className="absolute right-3 flex flex-col gap-0.5 text-[#757575] shrink-0">
+            <div className="absolute right-2.5 flex flex-col gap-0.5 text-[#757575] shrink-0">
               <ChevronUp
                 className="w-3.5 h-3.5 cursor-pointer hover:text-[#1E293B]"
                 onClick={() => setQuantity(Number(quantity || 0) + 1)}
@@ -80,6 +81,7 @@ export default function PackageDetailsForm({
           </div>
         </div>
 
+        {/* Value */}
         <div className="flex flex-col gap-1.5">
           <label className="text-[14px] font-medium text-[#757575]">Value</label>
           <input
@@ -87,13 +89,11 @@ export default function PackageDetailsForm({
             value={value}
             onChange={(e) => setValue(e.target.value)}
             placeholder="$3,200"
-            className="w-full bg-[#F4F4F6] rounded-[12px] px-4 py-3 text-[15px] font-bold text-[#1E293B] outline-none focus:bg-white focus:ring-2 focus:ring-[#856DF3]/20 transition"
+            className="w-full bg-[#F4F4F6] rounded-[12px] px-3.5 py-3 text-[15px] font-bold text-[#1E293B] outline-none focus:bg-white focus:ring-2 focus:ring-[#856DF3]/20 transition"
           />
         </div>
-      </div>
 
-      {/* Weight & Units Row */}
-      <div className="grid grid-cols-2 gap-4">
+        {/* Weight */}
         <div className="flex flex-col gap-1.5">
           <label className="text-[14px] font-medium text-[#757575]">Weight</label>
           <input
@@ -101,23 +101,24 @@ export default function PackageDetailsForm({
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
             placeholder="125"
-            className="w-full bg-[#F4F4F6] rounded-[12px] px-4 py-3 text-[15px] font-bold text-[#1E293B] outline-none focus:bg-white focus:ring-2 focus:ring-[#856DF3]/20 transition"
+            className="w-full bg-[#F4F4F6] rounded-[12px] px-3.5 py-3 text-[15px] font-bold text-[#1E293B] outline-none focus:bg-white focus:ring-2 focus:ring-[#856DF3]/20 transition"
           />
         </div>
 
+        {/* Units */}
         <div className="flex flex-col gap-1.5">
           <label className="text-[14px] font-medium text-[#757575]">Units</label>
           <div className="relative flex items-center">
             <select
               value={units}
               onChange={(e) => setUnits(e.target.value)}
-              className="w-full bg-[#F4F4F6] rounded-[12px] px-4 py-3 text-[15px] font-medium text-[#1E293B] outline-none appearance-none cursor-pointer"
+              className="w-full bg-[#F4F4F6] rounded-[12px] pl-3.5 pr-8 py-3 text-[15px] font-medium text-[#1E293B] outline-none appearance-none cursor-pointer"
             >
               <option value="Kg">Kg</option>
               <option value="Lbs">Lbs</option>
               <option value="Tons">Tons</option>
             </select>
-            <ChevronDown className="w-4 h-4 text-[#757575] absolute right-3 pointer-events-none" />
+            <ChevronDown className="w-4 h-4 text-[#757575] absolute right-2.5 pointer-events-none" />
           </div>
         </div>
       </div>
