@@ -184,56 +184,92 @@ export default function ShippingDetailsForm({
         />
       </div>
 
-      {/* Bottom Section: Additional Services & Tracking Preferences */}
-      <div className="pt-4 border-t border-[#E5E5E7]/70 grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
-        {/* Additional Services */}
-        <div className="flex flex-col gap-3">
+      {/* Bottom Section: Additional Services & Tracking Preferences (Enclosed between Top & Bottom Horizontal Lines) */}
+      <div className="pt-4 pb-4 border-t border-b border-[#E5E5E7] grid grid-cols-1 sm:grid-cols-12 gap-6 items-start my-1">
+        {/* Additional Services (Left 7 Cols) */}
+        <div className="sm:col-span-7 flex flex-col gap-3">
           <label className="text-[14px] font-medium text-[#757575]">Additional Services</label>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
+            {/* Insurance Coverage */}
             <label className="flex items-center gap-2.5 cursor-pointer text-[14px] text-[#334155] font-medium select-none">
-              <input
-                type="checkbox"
-                checked={insuranceCoverage}
-                onChange={(e) => setInsuranceCoverage(e.target.checked)}
-                className="w-4 h-4 rounded text-[#856DF3] border-[#CBD5E1] focus:ring-[#856DF3]/20 cursor-pointer"
-              />
-              <span>Insurance Coverage</span>
+              <div
+                onClick={() => setInsuranceCoverage(!insuranceCoverage)}
+                className={`w-4.5 h-4.5 rounded-[5px] flex items-center justify-center transition cursor-pointer ${
+                  insuranceCoverage
+                    ? "bg-[#856DF3] text-white"
+                    : "bg-[#F4F4F6] border border-[#D1D5DB]"
+                }`}
+              >
+                {insuranceCoverage && (
+                  <svg className="w-3 h-3 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                )}
+              </div>
+              <span onClick={() => setInsuranceCoverage(!insuranceCoverage)}>Insurance Coverage</span>
             </label>
 
+            {/* Temperature Control */}
             <label className="flex items-center gap-2.5 cursor-pointer text-[14px] text-[#334155] font-medium select-none">
-              <input
-                type="checkbox"
-                checked={temperatureControl}
-                onChange={(e) => setTemperatureControl(e.target.checked)}
-                className="w-4 h-4 rounded text-[#856DF3] border-[#CBD5E1] focus:ring-[#856DF3]/20 cursor-pointer"
-              />
-              <span>Temperature Control</span>
+              <div
+                onClick={() => setTemperatureControl(!temperatureControl)}
+                className={`w-4.5 h-4.5 rounded-[5px] flex items-center justify-center transition cursor-pointer ${
+                  temperatureControl
+                    ? "bg-[#856DF3] text-white"
+                    : "bg-[#F4F4F6] border border-[#D1D5DB]"
+                }`}
+              >
+                {temperatureControl && (
+                  <svg className="w-3 h-3 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                )}
+              </div>
+              <span onClick={() => setTemperatureControl(!temperatureControl)}>Temperature Control</span>
             </label>
 
+            {/* Signature on Delivery */}
             <label className="flex items-center gap-2.5 cursor-pointer text-[14px] text-[#334155] font-medium select-none">
-              <input
-                type="checkbox"
-                checked={signatureOnDelivery}
-                onChange={(e) => setSignatureOnDelivery(e.target.checked)}
-                className="w-4 h-4 rounded text-[#856DF3] border-[#CBD5E1] focus:ring-[#856DF3]/20 cursor-pointer"
-              />
-              <span>Signature on Delivery</span>
+              <div
+                onClick={() => setSignatureOnDelivery(!signatureOnDelivery)}
+                className={`w-4.5 h-4.5 rounded-[5px] flex items-center justify-center transition cursor-pointer ${
+                  signatureOnDelivery
+                    ? "bg-[#856DF3] text-white"
+                    : "bg-[#F4F4F6] border border-[#D1D5DB]"
+                }`}
+              >
+                {signatureOnDelivery && (
+                  <svg className="w-3 h-3 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                )}
+              </div>
+              <span onClick={() => setSignatureOnDelivery(!signatureOnDelivery)}>Signature on Delivery</span>
             </label>
 
+            {/* Fragile Item Handling */}
             <label className="flex items-center gap-2.5 cursor-pointer text-[14px] text-[#334155] font-medium select-none">
-              <input
-                type="checkbox"
-                checked={fragileHandling}
-                onChange={(e) => setFragileHandling(e.target.checked)}
-                className="w-4 h-4 rounded text-[#856DF3] border-[#CBD5E1] focus:ring-[#856DF3]/20 cursor-pointer"
-              />
-              <span>Fragile Item Handling</span>
+              <div
+                onClick={() => setFragileHandling(!fragileHandling)}
+                className={`w-4.5 h-4.5 rounded-[5px] flex items-center justify-center transition cursor-pointer ${
+                  fragileHandling
+                    ? "bg-[#856DF3] text-white"
+                    : "bg-[#F4F4F6] border border-[#D1D5DB]"
+                }`}
+              >
+                {fragileHandling && (
+                  <svg className="w-3 h-3 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                )}
+              </div>
+              <span onClick={() => setFragileHandling(!fragileHandling)}>Fragile Item Handling</span>
             </label>
           </div>
         </div>
 
-        {/* Tracking & Status Updates Toggle */}
-        <div className="flex flex-col gap-3">
+        {/* Tracking & Status Updates Toggle (Right 5 Cols) */}
+        <div className="sm:col-span-5 flex flex-col gap-3">
           <label className="text-[14px] font-medium text-[#757575]">Tracking & Status Updates</label>
           <div className="flex items-center gap-3">
             <button
