@@ -34,7 +34,7 @@ export default function MobileTopBar({
   const [searchValue, setSearchValue] = useState("");
 
   const pageTitle = PATH_TITLES[pathname] || "Dashboard";
-  const isShipmentsPage = pathname === "/shipments";
+  const isShipmentsPage = pathname.startsWith("/shipments");
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value;
