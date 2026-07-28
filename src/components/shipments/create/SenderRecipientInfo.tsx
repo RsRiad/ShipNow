@@ -45,10 +45,10 @@ export default function SenderRecipientInfo({
   addressError,
 }: SenderRecipientInfoProps) {
   return (
-    <div className="w-full bg-[#F5F5F7] rounded-[20px] p-5 md:p-6 mb-6">
+    <div className="w-full bg-[#F5F5F7] rounded-[20px] p-4 md:p-5 mb-3.5">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-0">
         {/* Left Column: Sender Info (with Vertical Dividing Line on Desktop) */}
-        <div className="flex flex-col gap-4 pr-0 lg:pr-6 border-b lg:border-b-0 lg:border-r border-[#E5E5E7]/80 pb-6 lg:pb-0">
+        <div className="flex flex-col gap-4 pr-0 lg:pr-6 border-b lg:border-b-0 lg:border-r border-[#E5E5E7] pb-6 lg:pb-0">
           <h3 className="text-[18px] sm:text-[20px] font-bold text-[#1E293B]">Sender Info</h3>
 
           {/* Company */}

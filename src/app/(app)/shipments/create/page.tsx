@@ -129,10 +129,10 @@ export default function CreateShipmentPage() {
         <CreateShipmentHeader />
 
         {/* Main Form Content Container */}
-        <div className="max-w-[1440px] w-full mx-auto px-4 md:px-8 py-6 flex flex-col gap-6">
-          <h2 className="text-[20px] font-bold text-[#1E293B]">Shipment Form</h2>
+        <div className="max-w-[1440px] w-full mx-auto px-4 md:px-8 py-3 sm:py-4 flex flex-col gap-3.5">
+          <h2 className="text-[18px] sm:text-[20px] font-bold text-[#1E293B]">Shipment Form</h2>
 
-          <form onSubmit={handleSubmit} className="w-full flex flex-col gap-6">
+          <form onSubmit={handleSubmit} className="w-full flex flex-col gap-3.5">
             {/* 1. Sender & Recipient Info (Split Card) */}
             <SenderRecipientInfo
               senderCompany={senderCompany}

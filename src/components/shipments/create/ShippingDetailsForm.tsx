@@ -63,7 +63,7 @@ export default function ShippingDetailsForm({
   ];
 
   return (
-    <div className="flex flex-col gap-5 border-t lg:border-t-0 lg:border-l border-[#E5E5E7] pt-6 lg:pt-0 lg:pl-8 xl:pl-10">
+    <div className="flex flex-col gap-3.5 border-t lg:border-t-0 lg:border-l border-[#E5E5E7] pt-5 lg:pt-0 lg:pl-8 xl:pl-10">
       <h3 className="text-[18px] sm:text-[20px] font-bold text-[#1E293B]">Shipping Details</h3>
 
       {/* Freight Type Radio Group */}
