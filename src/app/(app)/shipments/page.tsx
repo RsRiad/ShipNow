@@ -31,7 +31,7 @@ function ShipmentsContent() {
   };
 
   const handleNewShipment = () => {
-    router.push("/create-shipment");
+    router.push("/shipments/create");
   };
 
   // Filter & Sort shipments dataset
