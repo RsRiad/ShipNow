@@ -63,30 +63,30 @@ export default function ShippingDetailsForm({
   ];
 
   return (
-    <div className="flex flex-col gap-5 border-t lg:border-t-0 lg:border-l border-[#E5E5E7] pt-6 lg:pt-0 lg:pl-8 xl:pl-10">
-      <h3 className="text-[17px] font-bold text-[#1E293B] mb-1">Shipping Details</h3>
+    <div className="flex flex-col gap-4 border-t lg:border-t-0 lg:border-l border-[#E5E5E7] pt-5 lg:pt-0 lg:pl-6 xl:pl-8">
+      <h3 className="text-[15px] sm:text-[16px] font-bold text-[#1E293B]">Shipping Details</h3>
 
       {/* Freight Type Radio Group */}
-      <div className="flex flex-col gap-2">
-        <label className="text-[13px] font-medium text-[#757575]">Freight Type</label>
+      <div className="flex flex-col gap-1.5">
+        <label className="text-[12px] font-medium text-[#757575]">Freight Type</label>
         <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
           {freightOptions.map((opt) => {
             const isSelected = freightType === opt.label;
             return (
               <label
                 key={opt.id}
-                className="flex items-center gap-2 cursor-pointer text-[13px] sm:text-[14px] text-[#334155] font-medium select-none"
+                className="flex items-center gap-2 cursor-pointer text-[12px] sm:text-[13px] text-[#334155] font-medium select-none"
                 onClick={() => setFreightType(opt.label)}
               >
                 <div
-                  className={`w-4 h-4 rounded-full border flex items-center justify-center transition ${
+                  className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center transition ${
                     isSelected
                       ? "border-[#856DF3] bg-white"
                       : "border-[#CBD5E1] bg-white"
                   }`}
                 >
                   {isSelected && (
-                    <div className="w-2 h-2 rounded-full bg-[#856DF3]" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#856DF3]" />
                   )}
                 </div>
                 <span>{opt.label}</span>
@@ -97,33 +97,33 @@ export default function ShippingDetailsForm({
       </div>
 
       {/* Carrier, Shipping Method, Shipment ID, Date Controls Row */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3.5">
         {/* Carrier */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-[13px] font-medium text-[#757575]">Carrier</label>
+        <div className="flex flex-col gap-1">
+          <label className="text-[12px] font-medium text-[#757575]">Carrier</label>
           <div className="relative flex items-center">
             <select
               value={carrier}
               onChange={(e) => setCarrier(e.target.value)}
-              className="w-full bg-[#F4F4F6] rounded-[14px] px-4 py-3 text-[14px] font-medium text-[#1E293B] outline-none appearance-none cursor-pointer"
+              className="w-full bg-[#F4F4F6] rounded-[12px] px-3.5 py-2.5 text-[13px] font-medium text-[#1E293B] outline-none appearance-none cursor-pointer"
             >
               <option value="FedEx">FedEx</option>
               <option value="DHL Express">DHL Express</option>
               <option value="UPS Freight">UPS Freight</option>
               <option value="Maersk Line">Maersk Line</option>
             </select>
-            <ChevronDown className="w-4 h-4 text-[#757575] absolute right-3 pointer-events-none" />
+            <ChevronDown className="w-3.5 h-3.5 text-[#757575] absolute right-3 pointer-events-none" />
           </div>
         </div>
 
         {/* Shipping Method (With Error State matching Figma screenshot) */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-[13px] font-medium text-[#757575]">Shipping Method</label>
+        <div className="flex flex-col gap-1">
+          <label className="text-[12px] font-medium text-[#757575]">Shipping Method</label>
           <div className="relative flex items-center">
             <select
               value={shippingMethod}
               onChange={(e) => setShippingMethod(e.target.value)}
-              className={`w-full rounded-[14px] px-4 py-3 text-[14px] font-medium text-[#1E293B] outline-none appearance-none cursor-pointer transition ${
+              className={`w-full rounded-[12px] px-3.5 py-2.5 text-[13px] font-medium text-[#1E293B] outline-none appearance-none cursor-pointer transition ${
                 shippingMethodError
                   ? "bg-[#F4F4F6] border-2 border-[#856DF3] text-[#757575]"
                   : "bg-[#F4F4F6] focus:bg-white focus:ring-2 focus:ring-[#856DF3]/20"
@@ -134,98 +134,98 @@ export default function ShippingDetailsForm({
               <option value="Standard">Standard</option>
               <option value="Economy">Economy</option>
             </select>
-            <ChevronDown className="w-4 h-4 text-[#757575] absolute right-3 pointer-events-none" />
+            <ChevronDown className="w-3.5 h-3.5 text-[#757575] absolute right-3 pointer-events-none" />
           </div>
           {shippingMethodError && (
-            <span className="text-[#6366F1] text-[12px] font-semibold mt-0.5">
+            <span className="text-[#6366F1] text-[11px] font-semibold mt-0.5">
               {shippingMethodError}
             </span>
           )}
         </div>
 
         {/* Shipment ID */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-[13px] font-medium text-[#757575]">Shipment ID</label>
+        <div className="flex flex-col gap-1">
+          <label className="text-[12px] font-medium text-[#757575]">Shipment ID</label>
           <input
             type="text"
             value={shipmentId}
             disabled
             readOnly
-            className="w-full bg-[#EAEAEA] rounded-[14px] px-4 py-3 text-[14px] font-semibold text-[#64748B] outline-none cursor-not-allowed"
+            className="w-full bg-[#EAEAEA] rounded-[12px] px-3.5 py-2.5 text-[13px] font-semibold text-[#64748B] outline-none cursor-not-allowed"
           />
-          <span className="text-[12px] text-[#94A3B8] font-normal">Auto-generated</span>
+          <span className="text-[11px] text-[#94A3B8] font-normal">Auto-generated</span>
         </div>
 
         {/* Shipment Date */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-[13px] font-medium text-[#757575]">Shipment Date</label>
+        <div className="flex flex-col gap-1">
+          <label className="text-[12px] font-medium text-[#757575]">Shipment Date</label>
           <div className="relative flex items-center">
             <input
               type="text"
               value={shipmentDate}
               onChange={(e) => setShipmentDate(e.target.value)}
               placeholder="March 21, 2035"
-              className="w-full bg-[#F4F4F6] rounded-[14px] pl-4 pr-10 py-3 text-[14px] font-medium text-[#1E293B] outline-none"
+              className="w-full bg-[#F4F4F6] rounded-[12px] pl-3.5 pr-9 py-2.5 text-[13px] font-medium text-[#1E293B] outline-none"
             />
-            <Calendar className="w-4 h-4 text-[#757575] absolute right-3.5 pointer-events-none" />
+            <Calendar className="w-3.5 h-3.5 text-[#757575] absolute right-3 pointer-events-none" />
           </div>
         </div>
       </div>
 
       {/* Notes Textarea */}
-      <div className="flex flex-col gap-1.5">
-        <label className="text-[13px] font-medium text-[#757575]">Notes</label>
+      <div className="flex flex-col gap-1">
+        <label className="text-[12px] font-medium text-[#757575]">Notes</label>
         <textarea
           rows={3}
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
           placeholder="Add special delivery notes (optional)"
-          className="w-full bg-[#F4F4F6] rounded-[14px] px-4 py-3 text-[14px] text-[#1E293B] placeholder:text-[#94A3B8] outline-none focus:bg-white focus:ring-2 focus:ring-[#856DF3]/20 transition resize-none"
+          className="w-full bg-[#F4F4F6] rounded-[12px] px-3.5 py-2.5 text-[13px] text-[#1E293B] placeholder:text-[#94A3B8] outline-none focus:bg-white focus:ring-2 focus:ring-[#856DF3]/20 transition resize-none"
         />
       </div>
 
       {/* Bottom Section: Additional Services & Tracking Preferences */}
-      <div className="pt-4 border-t border-[#E5E5E7]/70 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+      <div className="pt-3 border-t border-[#E5E5E7]/70 grid grid-cols-1 md:grid-cols-2 gap-5 items-start">
         {/* Additional Services */}
-        <div className="flex flex-col gap-3">
-          <label className="text-[13px] font-medium text-[#757575]">Additional Services</label>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <label className="flex items-center gap-2 cursor-pointer text-[13px] text-[#334155] font-medium select-none">
+        <div className="flex flex-col gap-2.5">
+          <label className="text-[12px] font-medium text-[#757575]">Additional Services</label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <label className="flex items-center gap-2 cursor-pointer text-[12px] text-[#334155] font-medium select-none">
               <input
                 type="checkbox"
                 checked={insuranceCoverage}
                 onChange={(e) => setInsuranceCoverage(e.target.checked)}
-                className="w-4 h-4 rounded text-[#856DF3] border-[#CBD5E1] focus:ring-[#856DF3]/20 cursor-pointer"
+                className="w-3.5 h-3.5 rounded text-[#856DF3] border-[#CBD5E1] focus:ring-[#856DF3]/20 cursor-pointer"
               />
               <span>Insurance Coverage</span>
             </label>
 
-            <label className="flex items-center gap-2 cursor-pointer text-[13px] text-[#334155] font-medium select-none">
+            <label className="flex items-center gap-2 cursor-pointer text-[12px] text-[#334155] font-medium select-none">
               <input
                 type="checkbox"
                 checked={temperatureControl}
                 onChange={(e) => setTemperatureControl(e.target.checked)}
-                className="w-4 h-4 rounded text-[#856DF3] border-[#CBD5E1] focus:ring-[#856DF3]/20 cursor-pointer"
+                className="w-3.5 h-3.5 rounded text-[#856DF3] border-[#CBD5E1] focus:ring-[#856DF3]/20 cursor-pointer"
               />
               <span>Temperature Control</span>
             </label>
 
-            <label className="flex items-center gap-2 cursor-pointer text-[13px] text-[#334155] font-medium select-none">
+            <label className="flex items-center gap-2 cursor-pointer text-[12px] text-[#334155] font-medium select-none">
               <input
                 type="checkbox"
                 checked={signatureOnDelivery}
                 onChange={(e) => setSignatureOnDelivery(e.target.checked)}
-                className="w-4 h-4 rounded text-[#856DF3] border-[#CBD5E1] focus:ring-[#856DF3]/20 cursor-pointer"
+                className="w-3.5 h-3.5 rounded text-[#856DF3] border-[#CBD5E1] focus:ring-[#856DF3]/20 cursor-pointer"
               />
               <span>Signature on Delivery</span>
             </label>
 
-            <label className="flex items-center gap-2 cursor-pointer text-[13px] text-[#334155] font-medium select-none">
+            <label className="flex items-center gap-2 cursor-pointer text-[12px] text-[#334155] font-medium select-none">
               <input
                 type="checkbox"
                 checked={fragileHandling}
                 onChange={(e) => setFragileHandling(e.target.checked)}
-                className="w-4 h-4 rounded text-[#856DF3] border-[#CBD5E1] focus:ring-[#856DF3]/20 cursor-pointer"
+                className="w-3.5 h-3.5 rounded text-[#856DF3] border-[#CBD5E1] focus:ring-[#856DF3]/20 cursor-pointer"
               />
               <span>Fragile Item Handling</span>
             </label>
@@ -233,24 +233,24 @@ export default function ShippingDetailsForm({
         </div>
 
         {/* Tracking & Status Updates Toggle */}
-        <div className="flex flex-col gap-3">
-          <label className="text-[13px] font-medium text-[#757575]">Tracking & Status Updates</label>
-          <div className="flex items-center gap-3">
+        <div className="flex flex-col gap-2.5">
+          <label className="text-[12px] font-medium text-[#757575]">Tracking & Status Updates</label>
+          <div className="flex items-center gap-2.5">
             <button
               type="button"
               onClick={() => setNotifyRecipient(!notifyRecipient)}
-              className={`w-11 h-6 rounded-full transition duration-200 relative p-0.5 cursor-pointer ${
+              className={`w-10 h-5.5 rounded-full transition duration-200 relative p-0.5 cursor-pointer ${
                 notifyRecipient ? "bg-[#856DF3]" : "bg-[#E2E8F0]"
               }`}
               aria-label="Toggle Notify Recipient"
             >
               <div
-                className={`w-5 h-5 rounded-full bg-white shadow-xs transition-transform duration-200 ${
-                  notifyRecipient ? "translate-x-5" : "translate-x-0"
+                className={`w-4.5 h-4.5 rounded-full bg-white shadow-xs transition-transform duration-200 ${
+                  notifyRecipient ? "translate-x-4.5" : "translate-x-0"
                 }`}
               />
             </button>
-            <span className="text-[13px] font-medium text-[#334155]">
+            <span className="text-[12px] font-medium text-[#334155]">
               Notify Recipient via Email/SMS
             </span>
           </div>
