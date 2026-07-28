@@ -46,9 +46,9 @@ export default function SenderRecipientInfo({
 }: SenderRecipientInfoProps) {
   return (
     <div className="w-full bg-[#F5F5F7] rounded-[20px] p-4 md:p-5 mb-3.5">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-0">
-        {/* Left Column: Sender Info (with Vertical Dividing Line on Desktop) */}
-        <div className="flex flex-col gap-4 pr-0 lg:pr-6 border-b lg:border-b-0 lg:border-r border-[#E5E5E7] pb-6 lg:pb-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-0">
+        {/* Left Column: Sender Info (with Vertical Dividing Line on Tablet/Desktop) */}
+        <div className="flex flex-col gap-4 pr-0 sm:pr-5 md:pr-6 border-b sm:border-b-0 sm:border-r border-[#E5E5E7] pb-6 sm:pb-0">
           <h3 className="text-[18px] sm:text-[20px] font-bold text-[#1E293B]">Sender Info</h3>
 
           {/* Company */}
@@ -110,7 +110,7 @@ export default function SenderRecipientInfo({
 
 
         {/* Right Column: Recipient Info */}
-        <div className="flex flex-col gap-4 pl-0 lg:pl-6">
+        <div className="flex flex-col gap-4 pl-0 sm:pl-5 md:pl-6">
           <h3 className="text-[18px] sm:text-[20px] font-bold text-[#1E293B]">Recipient Info</h3>
 
           {/* Company */}
