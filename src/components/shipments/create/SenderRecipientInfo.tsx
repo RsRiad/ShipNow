@@ -59,7 +59,7 @@ export default function SenderRecipientInfo({
               value={senderCompany}
               onChange={(e) => setSenderCompany(e.target.value)}
               placeholder="GreenHaven"
-              className="w-full bg-white rounded-[12px] px-3.5 py-2.5 text-[13px] text-[#1E293B] outline-none shadow-2xs focus:ring-2 focus:ring-[#856DF3]/20 transition"
+              className="w-full bg-white rounded-[12px] px-3.5 py-2.5 text-[13px] text-[#1E293B] outline-none focus:ring-2 focus:ring-[#856DF3]/20 transition"
             />
           </div>
 
@@ -72,13 +72,13 @@ export default function SenderRecipientInfo({
                 value={senderEmail}
                 onChange={(e) => setSenderEmail(e.target.value)}
                 placeholder="logistics@greenhaven.com"
-                className="w-full bg-white rounded-[12px] px-3.5 py-2.5 text-[13px] text-[#1E293B] outline-none shadow-2xs focus:ring-2 focus:ring-[#856DF3]/20 transition"
+                className="w-full bg-white rounded-[12px] px-3.5 py-2.5 text-[13px] text-[#1E293B] outline-none focus:ring-2 focus:ring-[#856DF3]/20 transition"
               />
             </div>
 
             <div className="flex flex-col gap-1">
               <label className="text-[12px] font-medium text-[#757575]">Phone Number</label>
-              <div className="flex items-center gap-1.5 bg-white rounded-[12px] px-3 py-2 shadow-2xs focus-within:ring-2 focus-within:ring-[#856DF3]/20 transition">
+              <div className="flex items-center gap-1.5 bg-white rounded-[12px] px-3 py-2 focus-within:ring-2 focus-within:ring-[#856DF3]/20 transition">
                 <div className="flex items-center gap-1 text-[12px] font-medium text-[#334155] shrink-0 border-r border-[#E5E5E7] pr-2">
                   <span className="text-[15px]">🇺🇸</span>
                   <span>+1</span>
@@ -103,7 +103,7 @@ export default function SenderRecipientInfo({
               value={pickupAddress}
               onChange={(e) => setPickupAddress(e.target.value)}
               placeholder="1120 Birch Street, Portland, OR 97205, USA"
-              className="w-full bg-white rounded-[12px] px-3.5 py-2.5 text-[13px] text-[#1E293B] outline-none shadow-2xs focus:ring-2 focus:ring-[#856DF3]/20 transition"
+              className="w-full bg-white rounded-[12px] px-3.5 py-2.5 text-[13px] text-[#1E293B] outline-none focus:ring-2 focus:ring-[#856DF3]/20 transition"
             />
           </div>
         </div>
@@ -120,7 +120,7 @@ export default function SenderRecipientInfo({
               value={recipientCompany}
               onChange={(e) => setRecipientCompany(e.target.value)}
               placeholder="FreshNest"
-              className="w-full bg-white rounded-[12px] px-3.5 py-2.5 text-[13px] text-[#1E293B] outline-none shadow-2xs focus:ring-2 focus:ring-[#856DF3]/20 transition"
+              className="w-full bg-white rounded-[12px] px-3.5 py-2.5 text-[13px] text-[#1E293B] outline-none focus:ring-2 focus:ring-[#856DF3]/20 transition"
             />
           </div>
 
@@ -133,13 +133,13 @@ export default function SenderRecipientInfo({
                 value={recipientEmail}
                 onChange={(e) => setRecipientEmail(e.target.value)}
                 placeholder="warehouse@freshnest.com"
-                className="w-full bg-white rounded-[12px] px-3.5 py-2.5 text-[13px] text-[#1E293B] outline-none shadow-2xs focus:ring-2 focus:ring-[#856DF3]/20 transition"
+                className="w-full bg-white rounded-[12px] px-3.5 py-2.5 text-[13px] text-[#1E293B] outline-none focus:ring-2 focus:ring-[#856DF3]/20 transition"
               />
             </div>
 
             <div className="flex flex-col gap-1">
               <label className="text-[12px] font-medium text-[#757575]">Phone Number</label>
-              <div className="flex items-center gap-1.5 bg-white rounded-[12px] px-3 py-2 shadow-2xs focus-within:ring-2 focus-within:ring-[#856DF3]/20 transition">
+              <div className="flex items-center gap-1.5 bg-white rounded-[12px] px-3 py-2 focus-within:ring-2 focus-within:ring-[#856DF3]/20 transition">
                 <div className="flex items-center gap-1 text-[12px] font-medium text-[#334155] shrink-0 border-r border-[#E5E5E7] pr-2">
                   <span className="text-[15px]">🇺🇸</span>
                   <span>+1</span>
@@ -167,7 +167,7 @@ export default function SenderRecipientInfo({
               className={`w-full rounded-[12px] px-3.5 py-2.5 text-[13px] text-[#1E293B] outline-none transition ${
                 addressError
                   ? "bg-white border-2 border-[#856DF3] text-[#856DF3] placeholder:text-[#94A3B8]"
-                  : "bg-white shadow-2xs focus:ring-2 focus:ring-[#856DF3]/20"
+                  : "bg-white focus:ring-2 focus:ring-[#856DF3]/20"
               }`}
             />
             {addressError && (
