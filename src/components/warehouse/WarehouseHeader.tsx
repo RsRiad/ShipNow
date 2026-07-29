@@ -33,7 +33,7 @@ export default function WarehouseHeader({
   return (
     <div className="w-full flex flex-col bg-transparent">
       {/* DESKTOP VIEW ONLY (hidden on mobile md:flex) */}
-      <div className="hidden md:flex flex-row items-center justify-between gap-4 py-4 px-8 border-b border-border/50">
+      <div className="hidden md:flex flex-row items-center justify-between gap-4 py-4 px-4 lg:px-8 border-b border-border/50">
         {/* Left: Title & Breadcrumb Navigation */}
         <div className="flex flex-col gap-1.5">
           <h1 className="text-[28px] lg:text-[30px] font-bold text-slate tracking-tight leading-none">
@@ -55,7 +55,7 @@ export default function WarehouseHeader({
         </div>
 
         {/* Right: Desktop Freight Mode Selector Tabs */}
-        <div className="flex items-center gap-2 py-1">
+        <div className="flex items-center gap-1.5 lg:gap-2 py-1">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -65,13 +65,13 @@ export default function WarehouseHeader({
                 key={tab.id}
                 type="button"
                 onClick={() => handleTabClick(tab.id)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-[10px] text-[14px] font-semibold transition duration-150 cursor-pointer whitespace-nowrap ${
+                className={`flex items-center gap-1.5 lg:gap-2 px-2.5 py-1.5 lg:px-4 lg:py-2.5 rounded-[8px] lg:rounded-[10px] text-[12px] lg:text-[14px] font-semibold transition duration-150 cursor-pointer whitespace-nowrap ${
                   isActive
                     ? "bg-heading text-white shadow-xs"
                     : "text-slate-muted hover:text-slate hover:bg-black/5"
                 }`}
               >
-                <Icon className={`w-4 h-4 ${isActive ? "text-white" : "text-slate-muted"}`} />
+                <Icon className={`w-3.5 h-3.5 lg:w-4 lg:h-4 ${isActive ? "text-white" : "text-slate-muted"}`} />
                 <span>{tab.label}</span>
               </button>
             );

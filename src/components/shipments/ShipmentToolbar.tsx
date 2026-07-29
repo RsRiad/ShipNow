@@ -134,7 +134,7 @@ export default function ShipmentToolbar({
       </div>
 
       {/* TABLET & DESKTOP VIEW: Single-Line Bar (hidden on mobile, visible on sm and above) */}
-      <div className="hidden sm:flex w-full flex-row items-center justify-between gap-2 sm:gap-4 py-1.5 px-5 md:px-8 bg-transparent overflow-x-auto no-scrollbar">
+      <div className="hidden sm:flex w-full flex-row items-center justify-between gap-2 sm:gap-4 py-1.5 px-4 lg:px-8 bg-transparent overflow-x-auto no-scrollbar">
         {/* Left: Status Filter Tabs */}
         <div className="flex items-center gap-1 shrink-0 overflow-x-auto no-scrollbar py-1">
           {statusOptions.map((status) => {

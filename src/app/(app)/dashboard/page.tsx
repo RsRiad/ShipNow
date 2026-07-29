@@ -21,7 +21,7 @@ export default function DashboardPage() {
         <Header />
 
         {/* Dashboard Content Container — Figma: pad 20, gap 20 */}
-        <div className="p-5 max-w-[1440px] w-full mx-auto">
+        <div className="px-4 lg:px-8 py-5 max-w-[1440px] w-full mx-auto">
           {/* 1. MOBILE LAYOUT (< 768px) */}
           <div className="md:hidden space-y-5">
             <SummaryMetrics />
