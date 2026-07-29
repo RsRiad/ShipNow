@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-nunito-sans);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Brand */
+  --color-brand: #856DF3;
+  --color-brand-dark: #2A1298;
+  --color-brand-light: #E3DDFF;
+  --color-brand-pale: #E4DFFA;
+  --color-brand-tooltip: #EAE6FF;
+
+  /* Text */
+  --color-heading: #333333;
+  --color-dark: #333333;
+  --color-dark-hover: #1A1A1A;
+  --color-body: #757575;
+  --color-success: #007837;
+  --color-link: #235BC2;
+  --color-slate: #1E293B;
+  --color-slate-dark: #0F172A;
+  --color-slate-muted: #64748B;
+  --color-slate-light: #94A3B8;
+  --color-label: #334155;
+  --color-muted: #9E9E9E;
+
+  /* Backgrounds */
+  --color-card: #FEFEFE;
+  --color-card-alt: #F8F8FA;
+  --color-surface: #F5F5F7;
+  --color-surface-alt: #F4F4F6;
+  --color-input: #F0F0F0;
+  --color-hover: #EAEAEA;
+  --color-row-hover: #FAFAFA;
+  --color-page: #FAFAFC;
+  --color-success-bg: #D9F9E7;
+  --color-info-bg: #E3EDFF;
+  --color-delete-btn: #EFEFEF;
+  --color-tooltip-gray: #F2F2F4;
+
+  /* Borders */
+  --color-border: #E5E5E7;
+  --color-border-card: #F0F0F2;
+  --color-border-input: #EBEBEF;
+  --color-border-muted: #D1D5DB;
+  --color-border-line: #E0E0E5;
+  --color-border-tracking: #F0F0F4;
+  --color-divider: #E0E0E0;
+
+  /* Charts */
+  --color-chart-dark: #262626;
+  --color-pale-gray: #EBEBEF;
+
+  /* Misc */
+  --color-toggle-off: #E2E8F0;
+  --color-warning-bg: #FEF1A7;
+  --color-table-header: #F8FAFC;
+  --color-purple-tint: #F3E8FF;
+  --color-purple: #7E22CE;
+  --color-processing-bg: #F1F5F9;
+  --color-brand-pill: #ECE6FF;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
 }
 
@@ -48,3 +89,12 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #C4C4C8 transparent;
 }
+
+/* Remove default focus outline/border from phone input field */
+.PhoneInputInput {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+

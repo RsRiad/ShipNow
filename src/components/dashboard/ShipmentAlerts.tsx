@@ -20,16 +20,16 @@ const ICON_MAP: Record<string, LucideIcon> = {
 
 export default function ShipmentAlerts() {
   return (
-    <div className="w-full bg-[#FEFEFE] p-4 rounded-[12px] border border-[#F0F0F2] flex flex-col gap-3.5 h-full">
+    <div className="w-full bg-card p-4 rounded-[12px] border border-border-card flex flex-col gap-3.5 h-full">
       {/* Header */}
       <div className="flex items-center justify-between gap-2">
-        <h3 className="font-semibold text-[14px] md:text-[16px] leading-[19px] text-[#333333]">
+        <h3 className="font-semibold text-[14px] md:text-[16px] leading-[19px] text-heading">
           Shipment Alerts
         </h3>
         <button
           type="button"
           aria-label="More options"
-          className="w-7 h-7 rounded-lg bg-[#F0F0F0] hover:bg-[#EAEAEA] flex items-center justify-center text-[#363B3F] transition duration-150 cursor-pointer"
+          className="w-7 h-7 rounded-lg bg-input hover:bg-hover flex items-center justify-center text-heading transition duration-150 cursor-pointer"
         >
           <MoreHorizontal className="w-4 h-4" />
         </button>
@@ -37,10 +37,10 @@ export default function ShipmentAlerts() {
 
       {/* Total Delays */}
       <div className="flex items-baseline gap-2">
-        <span className="font-bold text-[20px] md:text-[22px] leading-[24px] text-[#333333]">
+        <span className="font-bold text-[20px] md:text-[22px] leading-[24px] text-heading">
           {alertSummaryStats.reduce((acc, curr) => acc + curr.count, 0)}
         </span>
-        <span className="font-normal text-[12px] md:text-[13px] leading-[17px] text-[#757575]">
+        <span className="font-normal text-[12px] md:text-[13px] leading-[17px] text-body">
           Delays Detected
         </span>
       </div>
@@ -50,12 +50,12 @@ export default function ShipmentAlerts() {
         {alertSummaryStats.map((stat) => (
           <div
             key={stat.label}
-            className="flex-1 bg-[#E3DDFF] rounded-[8px] pt-2.5 px-2 pb-2 flex flex-col items-center gap-1.5 text-center"
+            className="flex-1 bg-brand-light rounded-[8px] pt-2.5 px-2 pb-2 flex flex-col items-center gap-1.5 text-center"
           >
-            <span className="font-bold text-[20px] leading-[22px] text-[#333333]">
+            <span className="font-bold text-[20px] leading-[22px] text-heading">
               {stat.count}
             </span>
-            <span className="font-normal text-[10px] leading-[13px] text-[#333333]">
+            <span className="font-normal text-[10px] leading-[13px] text-heading">
               {stat.label}
             </span>
           </div>
@@ -69,26 +69,26 @@ export default function ShipmentAlerts() {
           return (
             <div key={`${alert.id}-${i}`} className="flex items-center gap-3">
               {/* Icon */}
-              <div className="w-[32px] h-[32px] shrink-0 rounded-[8px] bg-[#F0F0F0] flex items-center justify-center">
+              <div className="w-[32px] h-[32px] shrink-0 rounded-[8px] bg-input flex items-center justify-center">
                 <Icon
-                  className="w-[16px] h-[16px] text-[#333333]"
+                  className="w-[16px] h-[16px] text-heading"
                   strokeWidth={1.75}
                 />
               </div>
 
               {/* Info */}
               <div className="flex flex-col gap-0.5 min-w-0 flex-1">
-                <span className="font-semibold text-[12px] leading-[16px] text-[#333333] truncate">
+                <span className="font-semibold text-[12px] leading-[16px] text-heading truncate">
                   {alert.issue}
                 </span>
                 <div className="flex items-center gap-1.5 text-[10px] leading-[13px]">
-                  <span className="font-bold text-[#856DF3]">{alert.id}</span>
-                  <span className="w-[3px] h-[3px] rounded-full bg-[#E0E0E0]" />
-                  <span className="font-normal text-[#757575]">
+                  <span className="font-bold text-brand">{alert.id}</span>
+                  <span className="w-[3px] h-[3px] rounded-full bg-divider" />
+                  <span className="font-normal text-body">
                     {alert.freight}
                   </span>
-                  <span className="w-[3px] h-[3px] rounded-full bg-[#E0E0E0]" />
-                  <span className="font-normal text-[#757575]">
+                  <span className="w-[3px] h-[3px] rounded-full bg-divider" />
+                  <span className="font-normal text-body">
                     {alert.date}
                   </span>
                 </div>
@@ -98,7 +98,7 @@ export default function ShipmentAlerts() {
               <button
                 type="button"
                 aria-label="Open alert"
-                className="shrink-0 text-[#757575] hover:text-[#333333] transition cursor-pointer"
+                className="shrink-0 text-body hover:text-heading transition cursor-pointer"
               >
                 <ArrowUpRight className="w-4 h-4" />
               </button>

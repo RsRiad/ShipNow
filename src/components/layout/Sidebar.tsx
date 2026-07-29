@@ -27,7 +27,7 @@ export const primaryNavItems = [
     iconSrc: "/Assets/IconShipments.svg",
   },
   { label: "Tracking", href: "#", iconSrc: "/Assets/IconTracking.svg" },
-  { label: "Warehouse", href: "#", iconSrc: "/Assets/IconWarehouse.svg" },
+  { label: "Warehouse", href: "/warehouse", iconSrc: "/Assets/IconWarehouse.svg" },
   { label: "Fleets", href: "#", iconSrc: "/Assets/IconFleets.svg" },
   { label: "Drivers", href: "#", iconSrc: "/Assets/IconDrivers.svg" },
   {
@@ -103,7 +103,7 @@ export default function Sidebar({
       </nav>
 
       {/* Divider */}
-      <div className="my-3 mx-3 border-t border-[#E5E5E7] shrink-0" />
+      <div className="my-3 mx-3 border-t border-border shrink-0" />
 
       {/* Secondary Nav Items */}
       <nav className="flex flex-col py-1 space-y-0.5">
@@ -136,7 +136,7 @@ export default function Sidebar({
   return (
     <>
       {/* 1. DESKTOP & TABLET SIDEBAR (Static Rail / Expanded) */}
-      <aside className="hidden md:flex flex-col shrink-0 border-r border-[#E5E5E7] bg-[#FEFEFE] h-full z-30 transition-all duration-300 md:w-20 lg:w-[223px]">
+      <aside className="hidden md:flex flex-col shrink-0 border-r border-border bg-card h-full z-30 transition-all duration-300 md:w-20 lg:w-[223px]">
         {/* Tablet Rail View (768px - 1023px) */}
         <div className="hidden md:block lg:hidden h-full w-full">
           {renderNavContent(true, false)}
@@ -159,7 +159,7 @@ export default function Sidebar({
           />
 
           {/* Slide-over Drawer Panel */}
-          <aside className="relative flex flex-col w-[280px] max-w-[85vw] h-full bg-[#FEFEFE] shadow-2xl z-10 animate-in slide-in-from-left duration-200">
+          <aside className="relative flex flex-col w-[280px] max-w-[85vw] h-full bg-card shadow-2xl z-10 animate-in slide-in-from-left duration-200">
             {renderNavContent(false, true)}
           </aside>
         </div>

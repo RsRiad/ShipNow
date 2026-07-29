@@ -61,16 +61,16 @@ export default function ShipmentTypeChart() {
   const totalShipments = 2500;
 
   return (
-    <div className="w-full bg-[#FEFEFE] p-4 rounded-[12px] border border-[#F0F0F2] shadow-2xs flex flex-col gap-6 h-full">
+    <div className="w-full bg-card p-4 rounded-[12px] border border-border-card shadow-2xs flex flex-col gap-6 h-full">
       {/* Header Row */}
       <div className="flex items-center justify-between gap-2">
-        <h3 className="font-semibold text-[14px] md:text-[16px] leading-[19px] text-[#333333]">
+        <h3 className="font-semibold text-[14px] md:text-[16px] leading-[19px] text-heading">
           Shipment Type
         </h3>
         <button
           type="button"
           aria-label="More options"
-          className="w-7 h-7 rounded-lg bg-[#F0F0F0] hover:bg-[#EAEAEA] flex items-center justify-center text-[#363B3F] transition duration-150 cursor-pointer"
+          className="w-7 h-7 rounded-lg bg-input hover:bg-hover flex items-center justify-center text-heading transition duration-150 cursor-pointer"
         >
           <MoreHorizontal className="w-4 h-4" />
         </button>
@@ -101,10 +101,10 @@ export default function ShipmentTypeChart() {
 
         {/* Center Text Overlay */}
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 pointer-events-none">
-          <span className="font-normal text-[11px] md:text-[12px] leading-[16px] text-[#757575]">
+          <span className="font-normal text-[11px] md:text-[12px] leading-[16px] text-body">
             Total Shipment
           </span>
-          <span className="font-bold text-[22px] md:text-[24px] lg:text-[28px] leading-[31px] text-[#333333] tracking-tight">
+          <span className="font-bold text-[22px] md:text-[24px] lg:text-[28px] leading-[31px] text-heading tracking-tight">
             {totalShipments.toLocaleString()}
           </span>
         </div>
@@ -127,10 +127,10 @@ export default function ShipmentTypeChart() {
 
             {/* Item Title & Shipment Count */}
             <div className="flex flex-col gap-0.5 min-w-0">
-              <span className="font-semibold text-[11px] md:text-[12px] leading-[16px] text-[#333333] truncate">
+              <span className="font-semibold text-[11px] md:text-[12px] leading-[16px] text-heading truncate">
                 {item.name}
               </span>
-              <span className="font-normal text-[9px] md:text-[10px] leading-[13px] text-[#757575] truncate">
+              <span className="font-normal text-[9px] md:text-[10px] leading-[13px] text-body truncate">
                 {item.unitText}
               </span>
             </div>

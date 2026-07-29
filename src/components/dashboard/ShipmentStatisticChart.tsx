@@ -87,11 +87,11 @@ function CustomTooltip({ active, payload }: CustomTooltipProps) {
   }
   const item = payload[0].payload;
   return (
-    <div className="bg-[#EAE6FF] text-[#333333] px-3 py-1.5 rounded-[10px] text-center shadow-xs">
-      <div className="text-[10px] text-[#757575] font-normal leading-tight">
+    <div className="bg-brand-tooltip text-heading px-3 py-1.5 rounded-[10px] text-center shadow-xs">
+      <div className="text-[10px] text-body font-normal leading-tight">
         {item.fullLabel}
       </div>
-      <div className="text-[14px] font-bold text-[#333333] leading-tight mt-0.5">
+      <div className="text-[14px] font-bold text-heading leading-tight mt-0.5">
         {item.shipments.toLocaleString()}
       </div>
     </div>
@@ -102,29 +102,29 @@ export default function ShipmentStatisticChart() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <div className="w-full bg-[#FEFEFE] pt-4 px-4 pb-3 rounded-[12px] border border-[#F0F0F2] shadow-2xs flex flex-col h-full">
+    <div className="w-full bg-card pt-4 px-4 pb-3 rounded-[12px] border border-border-card shadow-2xs flex flex-col h-full">
       {/* Header Row */}
       <div className="flex items-center justify-between gap-2">
-        <h3 className="font-semibold text-[14px] md:text-[16px] leading-[19px] text-[#333333]">
+        <h3 className="font-semibold text-[14px] md:text-[16px] leading-[19px] text-heading">
           Shipment Statistic
         </h3>
 
         {/* Filter Dropdown */}
         <button
           type="button"
-          className="flex items-center gap-1.5 px-2.5 py-1 md:px-3 md:py-1.5 bg-[#F5F5F7] hover:bg-[#EAEAEA] rounded-lg text-[11px] md:text-[13px] font-medium text-[#333333] transition duration-150 cursor-pointer"
+          className="flex items-center gap-1.5 px-2.5 py-1 md:px-3 md:py-1.5 bg-surface hover:bg-hover rounded-lg text-[11px] md:text-[13px] font-medium text-heading transition duration-150 cursor-pointer"
         >
           <span className="font-bold">Last Year</span>
-          <ChevronDown className="w-3.5 h-3.5 text-[#757575]" />
+          <ChevronDown className="w-3.5 h-3.5 text-body" />
         </button>
       </div>
 
       {/* Main Metric & Trend */}
       <div className="flex items-center gap-1 mt-4 mb-2">
-        <span className="font-bold text-[20px] md:text-[24px] leading-[26px] text-[#333333] tracking-tight">
+        <span className="font-bold text-[20px] md:text-[24px] leading-[26px] text-heading tracking-tight">
           4,352
         </span>
-        <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-[10px] bg-[#D9F9E7] text-[#007837] font-normal text-[10px] leading-[13px]">
+        <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-[10px] bg-success-bg text-success font-normal text-[10px] leading-[13px]">
           <TrendingUp className="w-3 h-3 stroke-[2.5]" />
           <span>+8.7%</span>
         </span>

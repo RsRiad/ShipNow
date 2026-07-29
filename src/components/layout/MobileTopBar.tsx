@@ -38,6 +38,7 @@ export default function MobileTopBar({
   const isCreateShipmentPage =
     pathname === "/shipments/create" || pathname === "/shipments/new";
   const isShipmentsPage = pathname.startsWith("/shipments");
+  const isWarehousePage = pathname === "/warehouse";
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value;
@@ -48,19 +49,19 @@ export default function MobileTopBar({
   };
 
   return (
-    <header className="sticky top-0 z-40 flex flex-col md:hidden w-full bg-white border-b border-[#E5E5E7] shadow-2xs">
+    <header className="sticky top-0 z-40 flex flex-col md:hidden w-full bg-white border-b border-border shadow-2xs">
       {isCreateShipmentPage ? (
-        /* Mobile Top Bar for Create Shipment Page (Matching reference screenshot: < Create New Shipment [≡]) */
+        /* Mobile Top Bar for Create Shipment Page */
         <div className="flex items-center justify-between h-14 px-4">
           <Link
             href="/shipments"
-            className="p-1 rounded-lg text-[#333333] hover:bg-[#F5F5F7] transition cursor-pointer shrink-0"
+            className="p-1 rounded-lg text-heading hover:bg-surface transition cursor-pointer shrink-0"
             aria-label="Back to Shipments"
           >
             <ChevronLeft className="w-6 h-6 stroke-[1.75]" />
           </Link>
 
-          <h1 className="font-semibold text-[17px] leading-none text-[#333333] text-left flex-1 ml-2 truncate">
+          <h1 className="font-semibold text-[17px] leading-none text-heading text-left flex-1 ml-2 truncate">
             Create New Shipment
           </h1>
 
@@ -68,7 +69,7 @@ export default function MobileTopBar({
             type="button"
             onClick={onOpenMobile}
             aria-label="Open sidebar navigation"
-            className="p-1.5 rounded-lg text-[#333333] hover:bg-[#F5F5F7] transition cursor-pointer shrink-0"
+            className="p-1.5 rounded-lg text-heading hover:bg-surface transition cursor-pointer shrink-0"
           >
             <Menu className="w-6 h-6 stroke-[1.75]" />
           </button>
@@ -90,7 +91,7 @@ export default function MobileTopBar({
             </div>
 
             {/* Center Dynamic Title */}
-            <h1 className="font-semibold text-[17px] leading-none text-[#333333] text-center truncate px-2">
+            <h1 className="font-semibold text-[17px] leading-none text-heading text-center truncate px-2">
               {pageTitle}
             </h1>
 
@@ -99,23 +100,23 @@ export default function MobileTopBar({
               type="button"
               onClick={onOpenMobile}
               aria-label="Open sidebar navigation"
-              className="p-1.5 rounded-lg text-[#333333] hover:bg-[#F5F5F7] transition cursor-pointer shrink-0"
+              className="p-1.5 rounded-lg text-heading hover:bg-surface transition cursor-pointer shrink-0"
             >
               <Menu className="w-6 h-6 stroke-[1.75]" />
             </button>
           </div>
 
-          {/* Second Row: Search input + Dark Plus Action Button (Hidden on Shipments pages) */}
-          {!isShipmentsPage && (
+          {/* Second Row: Search input + Dark Plus Action Button (Hidden on Shipments & Warehouse pages) */}
+          {!isShipmentsPage && !isWarehousePage && (
             <div className="flex items-center gap-2.5 px-4 pb-3 pt-0.5">
-              <div className="relative flex items-center flex-1 min-w-0 bg-[#F0F0F0] rounded-[10px] px-3.5 py-2">
-                <Search className="w-4 h-4 text-[#757575] shrink-0 mr-2" />
+              <div className="relative flex items-center flex-1 min-w-0 bg-input rounded-[10px] px-3.5 py-2">
+                <Search className="w-4 h-4 text-body shrink-0 mr-2" />
                 <input
                   type="text"
                   value={searchValue}
                   onChange={handleSearch}
                   placeholder="Search anything"
-                  className="w-full bg-transparent text-[13px] text-[#333333] placeholder:text-[#757575] outline-none font-normal"
+                  className="w-full bg-transparent text-[13px] text-heading placeholder:text-body outline-none font-normal"
                 />
               </div>
 
@@ -123,7 +124,7 @@ export default function MobileTopBar({
                 type="button"
                 onClick={onAddShipping}
                 aria-label="Add new shipping"
-                className="w-9 h-9 bg-[#232325] hover:bg-[#1a1a1a] active:bg-black text-white rounded-[10px] flex items-center justify-center shrink-0 transition duration-150 cursor-pointer shadow-2xs"
+                className="w-9 h-9 bg-heading hover:bg-dark-hover active:bg-black text-white rounded-[10px] flex items-center justify-center shrink-0 transition duration-150 cursor-pointer shadow-2xs"
               >
                 <Plus className="w-5 h-5 stroke-[2]" />
               </button>

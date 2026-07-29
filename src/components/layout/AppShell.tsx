@@ -13,7 +13,7 @@ export default function AppShell({ children }: AppShellProps) {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   return (
-    <div className="h-screen w-full flex bg-[#F5F5F7] text-gray-900 font-sans overflow-hidden">
+    <div className="h-screen w-full flex bg-surface text-gray-900 font-sans overflow-hidden">
       {/* Sidebar for Desktop / Tablet / Mobile Drawer */}
       <Sidebar
         isMobileOpen={isMobileOpen}

@@ -31,7 +31,7 @@ export default function UserProfileCard({
     <div className="px-3 my-2">
       <button
         type="button"
-        className="w-full flex items-center justify-between p-2.5 rounded-xl bg-[#F5F5F7] hover:bg-[#EBEBEF] transition duration-150 group cursor-pointer"
+        className="w-full flex items-center justify-between p-2.5 rounded-xl bg-surface hover:bg-pale-gray transition duration-150 group cursor-pointer"
       >
         <div className="flex items-center gap-3 min-w-0">
           <div className="relative w-9 h-9 rounded-full overflow-hidden border border-gray-200 shadow-xs shrink-0">
@@ -44,15 +44,15 @@ export default function UserProfileCard({
             />
           </div>
           <div className="flex flex-col text-left truncate">
-            <span className="font-bold text-[13px] leading-tight text-[#333333] group-hover:text-black truncate">
+            <span className="font-bold text-[13px] leading-tight text-heading group-hover:text-black truncate">
               John Doe
             </span>
-            <span className="font-normal text-[11px] leading-tight text-[#757575] truncate">
+            <span className="font-normal text-[11px] leading-tight text-body truncate">
               Admin
             </span>
           </div>
         </div>
-        <ChevronDown className="w-4 h-4 text-[#757575] group-hover:text-[#333333] transition shrink-0 ml-1" />
+        <ChevronDown className="w-4 h-4 text-body group-hover:text-heading transition shrink-0 ml-1" />
       </button>
     </div>
   );

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Eye, EyeOff, Loader2 } from "lucide-react";
+import Button from "@/components/common/Button";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -86,9 +87,9 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen lg:h-screen lg:max-h-screen w-full flex flex-col lg:flex-row items-stretch bg-[#fefefe] overflow-x-hidden lg:overflow-hidden">
+    <div className="min-h-screen lg:h-screen lg:max-h-screen w-full flex flex-col lg:flex-row items-stretch bg-card overflow-x-hidden lg:overflow-hidden">
       {/* Left / Top Purple Hero Section */}
-      <div className="w-full lg:w-1/2 bg-[#856DF3] flex flex-col items-center justify-center gap-6 sm:gap-2.5 lg:gap-0 px-6 pt-12 pb-12 sm:px-10 sm:py-8 lg:px-[clamp(2rem,4vw,70px)] lg:py-8 text-[#fefefe] relative lg:h-full lg:overflow-hidden shrink-0">
+      <div className="min-h-screen lg:min-h-0 w-full lg:w-1/2 bg-brand flex flex-col items-center justify-center gap-6 sm:gap-2.5 lg:gap-0 px-6 pt-12 pb-12 sm:px-10 sm:py-8 lg:px-[clamp(2rem,4vw,70px)] lg:py-8 text-card relative lg:h-full lg:overflow-hidden shrink-0">
         {/* Logo */}
         <div className="flex items-center justify-center shrink-0 sm:mb-2 lg:mb-3">
           <Image
@@ -116,18 +117,18 @@ export default function LoginPage() {
         {/* Headline */}
         <div className="flex flex-col items-center gap-3 lg:gap-[12px] text-center max-w-[326px] md:max-w-[487px] shrink-0">
           {/* Heading */}
-          <h1 className="font-extrabold text-[40px] leading-[1.15] text-[#fefefe] max-lg:[-webkit-text-stroke:1px_black] max-lg:[paint-order:stroke_fill]">
+          <h1 className="font-extrabold text-[40px] leading-[1.15] text-card max-lg:[-webkit-text-stroke:1px_black] max-lg:[paint-order:stroke_fill]">
             Welcome to ShipNow
           </h1>
           {/* Sub Heading */}
-          <p className="font-normal text-[16px] leading-[1.25] text-[#fefefe]">
+          <p className="font-normal text-[16px] leading-[1.25] text-card">
             Manage your shipments, fleet, and warehouse in one smart dashboard.
           </p>
         </div>
       </div>
 
       {/* Right / Bottom Login Form Section */}
-      <div className="w-full lg:w-1/2 flex flex-col items-center justify-center px-6 pt-16 pb-24 sm:px-10 sm:pt-16 sm:pb-24 lg:px-[clamp(2rem,4vw,64px)] lg:py-6 bg-[#fefefe] lg:h-full lg:overflow-y-auto">
+      <div className="min-h-screen lg:min-h-0 w-full lg:w-1/2 flex flex-col items-center justify-center px-6 pt-16 pb-24 sm:px-10 sm:pt-16 sm:pb-24 lg:px-[clamp(2rem,4vw,64px)] lg:py-6 bg-card lg:h-full lg:overflow-y-auto">
         <div className="w-full max-w-[400px] flex flex-col items-center gap-6 sm:gap-8 my-auto">
           {/* Brand Icon */}
           <Image
@@ -141,11 +142,11 @@ export default function LoginPage() {
           {/* Headline */}
           <div className="flex flex-col items-center gap-2 text-center w-full">
             {/* Heading */}
-            <h2 className="font-bold text-[24px] leading-[26px] text-[#333333]">
+            <h2 className="font-bold text-[24px] leading-[26px] text-heading">
               Welcome Back
             </h2>
             {/* Sub Heading */}
-            <p className="font-normal text-[14px] leading-[18px] text-[#757575]">
+            <p className="font-normal text-[14px] leading-[18px] text-body">
               Log in to continue managing your logistics with ShipNow
             </p>
           </div>
@@ -163,7 +164,7 @@ export default function LoginPage() {
                 {/* Title */}
                 <label
                   htmlFor="email"
-                  className="font-semibold text-[11px] leading-[14px] text-[#333333] pb-1.5 px-px"
+                  className="font-semibold text-[11px] leading-[14px] text-heading pb-1.5 px-px"
                 >
                   Email Address
                 </label>
@@ -174,10 +175,10 @@ export default function LoginPage() {
                   value={email}
                   onChange={handleEmailChange}
                   placeholder="Enter a valid email address"
-                  className={`w-full h-[38px] px-3 py-[9px] rounded-lg border font-normal text-[12px] leading-[16px] text-[#333333] placeholder:text-[#757575] outline-none transition duration-150 ${
+                  className={`w-full h-[38px] px-3 py-[9px] rounded-lg border font-normal text-[12px] leading-[16px] text-heading placeholder:text-body outline-none transition duration-150 ${
                     emailError
-                      ? "border-red-500 bg-[#f5f5f5] focus:ring-2 focus:ring-red-200"
-                      : "border-transparent bg-[#f5f5f5] focus:border-[#856DF3] focus:bg-white focus:ring-2 focus:ring-[#856DF3]/20"
+                      ? "border-red-500 bg-surface focus:ring-2 focus:ring-red-200"
+                      : "border-transparent bg-surface focus:border-brand focus:bg-white focus:ring-2 focus:ring-brand/20"
                   }`}
                 />
                 {emailError && (
@@ -191,7 +192,7 @@ export default function LoginPage() {
               <div className="flex flex-col">
                 <label
                   htmlFor="password"
-                  className="font-semibold text-[11px] leading-[14px] text-[#333333] pb-1.5 px-px"
+                  className="font-semibold text-[11px] leading-[14px] text-heading pb-1.5 px-px"
                 >
                   Password
                 </label>
@@ -202,10 +203,10 @@ export default function LoginPage() {
                     value={password}
                     onChange={handlePasswordChange}
                     placeholder="Create a strong password"
-                    className={`w-full h-[38px] pl-3 pr-10 py-[9px] rounded-lg border font-normal text-[12px] leading-[16px] text-[#333333] placeholder:text-[#757575] outline-none transition duration-150 ${
+                    className={`w-full h-[38px] pl-3 pr-10 py-[9px] rounded-lg border font-normal text-[12px] leading-[16px] text-heading placeholder:text-body outline-none transition duration-150 ${
                       passwordError
-                        ? "border-red-500 bg-[#f5f5f5] focus:ring-2 focus:ring-red-200"
-                        : "border-transparent bg-[#f5f5f5] focus:border-[#856DF3] focus:bg-white focus:ring-2 focus:ring-[#856DF3]/20"
+                        ? "border-red-500 bg-surface focus:ring-2 focus:ring-red-200"
+                        : "border-transparent bg-surface focus:border-brand focus:bg-white focus:ring-2 focus:ring-brand/20"
                     }`}
                   />
                   <button
@@ -214,7 +215,7 @@ export default function LoginPage() {
                     aria-label={
                       showPassword ? "Hide password" : "Show password"
                     }
-                    className="absolute right-3 text-[#757575] hover:text-[#333333] focus:outline-none"
+                    className="absolute right-3 text-body hover:text-heading focus:outline-none"
                   >
                     {showPassword ? (
                       <EyeOff className="w-[18px] h-[18px]" />
@@ -237,16 +238,16 @@ export default function LoginPage() {
                     type="checkbox"
                     checked={rememberMe}
                     onChange={(e) => setRememberMe(e.target.checked)}
-                    className="w-3 h-3 rounded-[3px] border-[#856DF3] text-[#856DF3] focus:ring-[#856DF3] accent-[#856DF3]"
+                    className="w-3 h-3 rounded-[3px] border-brand text-brand focus:ring-brand accent-brand"
                   />
-                  <span className="font-normal text-[11px] leading-[14px] text-[#757575]">
+                  <span className="font-normal text-[11px] leading-[14px] text-body">
                     Remember Me
                   </span>
                 </label>
                 <a
                   href="#"
                   onClick={(e) => e.preventDefault()}
-                  className="font-semibold text-[11px] leading-[11px] text-[#856DF3] hover:underline"
+                  className="font-semibold text-[11px] leading-[11px] text-brand hover:underline"
                 >
                   Forgot Password?
                 </a>
@@ -256,30 +257,27 @@ export default function LoginPage() {
             {/* Action group */}
             <div className="flex flex-col gap-4">
               {/* Submit Button */}
-              <button
+              <Button
                 type="submit"
+                variant="primary"
+                size="lg"
+                fullWidth
                 disabled={isSubmitting}
-                className="w-full py-3 px-[18px] bg-[#333333] hover:bg-[#1f1f1f] active:bg-black disabled:opacity-75 text-[#fefefe] font-semibold text-[16px] leading-[16px] rounded-lg transition duration-150 flex items-center justify-center gap-1.5 cursor-pointer"
+                className="text-[16px] font-semibold leading-[16px] text-card py-3 h-auto rounded-lg"
+                leftIcon={isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : undefined}
               >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                    <span>Logging in...</span>
-                  </>
-                ) : (
-                  <span>Login</span>
-                )}
-              </button>
+                {isSubmitting ? "Logging in..." : "Login"}
+              </Button>
 
               {/* Footer Text */}
               <div className="flex items-center justify-center gap-1">
-                <span className="font-normal text-[12px] leading-[16px] text-[#757575]">
+                <span className="font-normal text-[12px] leading-[16px] text-body">
                   Don&apos;t have an account?
                 </span>
                 <a
                   href="#"
                   onClick={(e) => e.preventDefault()}
-                  className="font-semibold text-[12px] leading-[12px] text-[#856DF3] hover:underline"
+                  className="font-semibold text-[12px] leading-[12px] text-brand hover:underline"
                 >
                   Register
                 </a>

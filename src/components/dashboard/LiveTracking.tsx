@@ -6,9 +6,9 @@ import { Search, Plus, Minus, Truck } from "lucide-react";
 
 export default function LiveTracking() {
   return (
-    <div className="relative w-full bg-[#FEFEFE] p-3 sm:p-3.5 rounded-[12px] border border-[#F0F0F2] flex flex-col h-full overflow-hidden">
+    <div className="relative w-full bg-card p-3 sm:p-3.5 rounded-[12px] border border-border-card flex flex-col h-full overflow-hidden">
       {/* Map Container */}
-      <div className="relative w-full h-[260px] sm:min-h-[340px] md:min-h-[360px] lg:min-h-[400px] xl:min-h-[420px] rounded-[10px] bg-[#F5F5F7] overflow-hidden flex flex-col shrink-0">
+      <div className="relative w-full h-[260px] sm:min-h-[340px] md:min-h-[360px] lg:min-h-[400px] xl:min-h-[420px] rounded-[10px] bg-surface overflow-hidden flex flex-col shrink-0">
         {/* Static Map Background */}
         <Image
           src="/Assets/static-map.png"
@@ -61,61 +61,61 @@ export default function LiveTracking() {
         </div>
 
         {/* Search Input Bar (Top Left) */}
-        <div className="absolute top-3.5 left-3.5 right-3.5 sm:right-auto sm:w-[280px] z-10 bg-white rounded-[12px] px-3.5 py-2 flex items-center justify-between shadow-md border border-[#EBEBEF]">
+        <div className="absolute top-3.5 left-3.5 right-3.5 sm:right-auto sm:w-[280px] z-10 bg-white rounded-[12px] px-3.5 py-2 flex items-center justify-between shadow-md border border-border-input">
           <input
             type="text"
             placeholder="Search by Shipping ID..."
-            className="w-full bg-transparent text-[13px] text-[#333333] placeholder-[#9E9E9E] outline-none font-normal"
+            className="w-full bg-transparent text-[13px] text-heading placeholder-text-body outline-none font-normal"
             readOnly
           />
-          <Search className="w-4 h-4 text-[#757575] shrink-0 ml-2" />
+          <Search className="w-4 h-4 text-body shrink-0 ml-2" />
         </div>
 
         {/* Zoom Controls (+ / -) */}
-        <div className="absolute bottom-3.5 right-3.5 sm:bottom-auto sm:top-3.5 z-10 bg-white rounded-[10px] flex flex-col shadow-sm border border-[#EBEBEF] overflow-hidden">
+        <div className="absolute bottom-3.5 right-3.5 sm:bottom-auto sm:top-3.5 z-10 bg-white rounded-[10px] flex flex-col shadow-sm border border-border-input overflow-hidden">
           <button
             type="button"
             aria-label="Zoom in"
-            className="w-8 h-8 flex items-center justify-center text-[#333333] hover:bg-[#F5F5F7] transition cursor-pointer"
+            className="w-8 h-8 flex items-center justify-center text-heading hover:bg-surface transition cursor-pointer"
           >
             <Plus className="w-4 h-4" />
           </button>
-          <div className="h-px bg-[#EBEBEF]" />
+          <div className="h-px bg-border-input" />
           <button
             type="button"
             aria-label="Zoom out"
-            className="w-8 h-8 flex items-center justify-center text-[#333333] hover:bg-[#F5F5F7] transition cursor-pointer"
+            className="w-8 h-8 flex items-center justify-center text-heading hover:bg-surface transition cursor-pointer"
           >
             <Minus className="w-4 h-4" />
           </button>
         </div>
 
         {/* TABLET & DESKTOP FLOATING CARD (#SH8743921) -> INSIDE MAP CONTAINER */}
-        <div className="hidden sm:flex absolute bottom-3.5 left-3.5 w-[380px] md:w-[400px] lg:w-[420px] z-10 bg-white rounded-[14px] p-3.5 md:p-4 shadow-md border border-[#F0F0F4] flex-col gap-3">
+        <div className="hidden sm:flex absolute bottom-3.5 left-3.5 w-[380px] md:w-[400px] lg:w-[420px] z-10 bg-white rounded-[14px] p-3.5 md:p-4 shadow-md border border-border-tracking flex-col gap-3">
           {/* Top Row: ID, Status Badges & Courier Info */}
           <div className="flex items-start justify-between gap-2">
             <div className="flex flex-col gap-0.5">
-              <span className="font-bold text-[14px] leading-tight text-[#232325] tracking-tight">
+              <span className="font-bold text-[14px] leading-tight text-heading tracking-tight">
                 #SH8743921
               </span>
               <div className="flex items-center gap-2 mt-0.5">
-                <span className="bg-[#E3DDFF] text-[#333333] font-semibold text-[11px] leading-none px-2.5 py-1 rounded-full">
+                <span className="bg-brand-light text-heading font-semibold text-[11px] leading-none px-2.5 py-1 rounded-full">
                   In Transit
                 </span>
-                <span className="font-normal text-[11px] leading-none text-[#757575]">
+                <span className="font-normal text-[11px] leading-none text-body">
                   On Schedule
                 </span>
               </div>
             </div>
 
             <div className="flex flex-col gap-0.5 text-left">
-              <span className="font-normal text-[11px] leading-none text-[#757575]">
+              <span className="font-normal text-[11px] leading-none text-body">
                 Courier:
               </span>
-              <span className="font-bold text-[13px] leading-snug text-[#232325]">
+              <span className="font-bold text-[13px] leading-snug text-heading">
                 Daniel Cooper
               </span>
-              <span className="font-normal text-[11px] leading-none text-[#757575]">
+              <span className="font-normal text-[11px] leading-none text-body">
                 SkyLogix Express
               </span>
             </div>
@@ -123,33 +123,33 @@ export default function LiveTracking() {
 
           {/* Progress Bar Row */}
           <div className="flex items-center gap-0 w-full my-1">
-            <div className="w-4 h-4 rounded-full border-1 border-[#856DF3] bg-white flex items-center justify-center shrink-0">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#856DF3]" />
+            <div className="w-4 h-4 rounded-full border-1 border-brand bg-white flex items-center justify-center shrink-0">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand" />
             </div>
-            <div className="h-[6px] md:h-[4px] bg-[#856DF3] flex-1" />
-            <div className="w-6 h-6 rounded-full bg-[#856DF3] flex items-center justify-center shrink-0 text-white shadow-xs">
+            <div className="h-[6px] md:h-[4px] bg-brand flex-1" />
+            <div className="w-6 h-6 rounded-full bg-brand flex items-center justify-center shrink-0 text-white shadow-xs">
               <Truck className="w-3 h-3 text-white" strokeWidth={2.2} />
             </div>
-            <div className="h-[3px] bg-[#E0E0E5] flex-1" />
-            <div className="w-4 h-4 rounded-full border-1 border-[#D1D1D6] bg-white shrink-0" />
+            <div className="h-[3px] bg-border-line flex-1" />
+            <div className="w-4 h-4 rounded-full border-1 border-border-muted bg-white shrink-0" />
           </div>
 
           {/* Bottom Address Row */}
           <div className="flex items-start justify-between gap-2 w-full">
             <div className="flex flex-col gap-0.5">
-              <span className="font-bold text-[13px] leading-tight text-[#232325] whitespace-nowrap">
+              <span className="font-bold text-[13px] leading-tight text-heading whitespace-nowrap">
                 San Francisco, CA, USA
               </span>
-              <span className="font-normal text-[11px] leading-tight text-[#757575] whitespace-nowrap">
+              <span className="font-normal text-[11px] leading-tight text-body whitespace-nowrap">
                 Mar 19, 2035 – 10:30 AM
               </span>
             </div>
 
             <div className="flex flex-col gap-0.5 text-right ml-auto">
-              <span className="font-bold text-[13px] leading-tight text-[#232325] whitespace-nowrap">
+              <span className="font-bold text-[13px] leading-tight text-heading whitespace-nowrap">
                 New York, NY, USA
               </span>
-              <span className="font-normal text-[11px] leading-tight text-[#757575] whitespace-nowrap">
+              <span className="font-normal text-[11px] leading-tight text-body whitespace-nowrap">
                 Mar 23, 2035 – 03:00 PM (estimated)
               </span>
             </div>
@@ -162,27 +162,27 @@ export default function LiveTracking() {
         {/* Top Row */}
         <div className="flex items-start justify-between gap-2">
           <div className="flex flex-col gap-1">
-            <span className="font-bold text-[15px] leading-tight text-[#232325] tracking-tight">
+            <span className="font-bold text-[15px] leading-tight text-heading tracking-tight">
               #SH8743921
             </span>
             <div className="flex items-center gap-2 mt-0.5">
-              <span className="bg-[#EBE7FE] text-[#7858F5] font-semibold text-[11px] leading-none px-2.5 py-1 rounded-full">
+              <span className="bg-brand-light text-heading font-semibold text-[11px] leading-none px-2.5 py-1 rounded-full">
                 In Transit
               </span>
-              <span className="font-normal text-[11px] leading-none text-[#757575]">
+              <span className="font-normal text-[11px] leading-none text-body">
                 On Schedule
               </span>
             </div>
           </div>
 
           <div className="flex flex-col gap-0.5 text-right">
-            <span className="font-normal text-[11px] leading-none text-[#757575]">
+            <span className="font-normal text-[11px] leading-none text-body">
               Courier:
             </span>
-            <span className="font-bold text-[13px] leading-snug text-[#232325]">
+            <span className="font-bold text-[13px] leading-snug text-heading">
               Daniel Cooper
             </span>
-            <span className="font-normal text-[11px] leading-none text-[#757575]">
+            <span className="font-normal text-[11px] leading-none text-body">
               SkyLogix Express
             </span>
           </div>
@@ -190,36 +190,36 @@ export default function LiveTracking() {
 
         {/* Progress Bar Row */}
         <div className="flex items-center gap-0 w-full my-1">
-          <div className="w-4 h-4 rounded-full border-2 border-[#856DF3] bg-white flex items-center justify-center shrink-0">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#856DF3]" />
+          <div className="w-4 h-4 rounded-full border-2 border-brand bg-white flex items-center justify-center shrink-0">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand" />
           </div>
-          <div className="h-[3px] bg-[#856DF3] flex-1" />
-          <div className="w-6 h-6 rounded-full bg-[#856DF3] flex items-center justify-center shrink-0 text-white shadow-xs">
+          <div className="h-[3px] bg-brand flex-1" />
+          <div className="w-6 h-6 rounded-full bg-brand flex items-center justify-center shrink-0 text-white shadow-xs">
             <Truck className="w-3 h-3 text-white" strokeWidth={2.2} />
           </div>
-          <div className="h-[3px] bg-[#E0E0E5] flex-1" />
-          <div className="w-4 h-4 rounded-full border-2 border-[#D1D1D6] bg-white shrink-0" />
+          <div className="h-[3px] bg-border-line flex-1" />
+          <div className="w-4 h-4 rounded-full border-2 border-border-muted bg-white shrink-0" />
         </div>
 
         {/* Bottom Address Row */}
         <div className="flex items-start justify-between gap-2 w-full">
           <div className="flex flex-col gap-0.5 max-w-[48%]">
-            <span className="font-bold text-[11px] leading-tight text-[#232325]">
+            <span className="font-bold text-[11px] leading-tight text-heading">
               San Francisco, CA, USA
             </span>
-            <span className="font-normal text-[10px] leading-tight text-[#757575]">
+            <span className="font-normal text-[10px] leading-tight text-body">
               Mar 19, 2035 – 10:30 AM
             </span>
           </div>
 
           <div className="flex flex-col gap-0.5 text-right max-w-[48%] ml-auto">
-            <span className="font-bold text-[11px] leading-tight text-[#232325]">
+            <span className="font-bold text-[11px] leading-tight text-heading">
               New York, NY, USA
             </span>
-            <span className="font-normal text-[10px] leading-tight text-[#757575]">
+            <span className="font-normal text-[10px] leading-tight text-body">
               Mar 23, 2035 – 03:00 PM
             </span>
-            <span className="font-normal text-[10px] leading-tight text-[#757575]">
+            <span className="font-normal text-[10px] leading-tight text-body">
               (estimated)
             </span>
           </div>

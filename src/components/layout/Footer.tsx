@@ -5,23 +5,23 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="w-full py-6 sm:py-4 px-4 sm:px-6 border-t border-[#E5E5E7] bg-transparent text-[#757575] text-[12px] leading-[16px] flex flex-col sm:flex-row items-center justify-between gap-3.5 sm:gap-4 shrink-0">
+    <footer className="w-full py-6 sm:py-4 px-4 sm:px-6 border-t border-border bg-transparent text-body text-[12px] leading-[16px] flex flex-col sm:flex-row items-center justify-between gap-3.5 sm:gap-4 shrink-0">
       {/* MOBILE LAYOUT (< sm): 3 Stacked Centered Rows */}
       <div className="flex flex-col items-center justify-center gap-3 w-full sm:hidden text-center">
         {/* Line 1: Copyright */}
-        <span className="text-[#333333] font-bold text-[14px] leading-tight">
+        <span className="text-heading font-bold text-[14px] leading-tight">
           Copyright © 2025 Peterdraw
         </span>
 
         {/* Line 2: Links */}
-        <div className="flex items-center justify-center gap-4 text-[#757575] text-[13px] font-normal">
-          <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-[#333333] transition">
+        <div className="flex items-center justify-center gap-4 text-body text-[13px] font-normal">
+          <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-heading transition">
             Privacy Policy
           </a>
-          <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-[#333333] transition">
+          <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-heading transition">
             Term and conditions
           </a>
-          <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-[#333333] transition">
+          <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-heading transition">
             Contact
           </a>
         </div>
@@ -47,15 +47,15 @@ export default function Footer() {
       </div>
 
       {/* DESKTOP / TABLET LAYOUT (>= sm): Horizontal Row */}
-      <div className="hidden sm:flex flex-wrap items-center gap-6 font-normal text-[#757575]">
-        <span className="text-[#333333] font-semibold">Copyright © 2025 Peterdraw</span>
-        <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-[#333333] transition">
+      <div className="hidden sm:flex flex-wrap items-center gap-6 font-normal text-body">
+        <span className="text-heading font-semibold">Copyright © 2025 Peterdraw</span>
+        <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-heading transition">
           Privacy Policy
         </a>
-        <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-[#333333] transition">
+        <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-heading transition">
           Term and conditions
         </a>
-        <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-[#333333] transition">
+        <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-heading transition">
           Contact
         </a>
       </div>

@@ -28,7 +28,7 @@ export default function SidebarHeader({
         />
 
         {!isTabletRail && (
-          <span className="font-extrabold tracking-tight text-[20px] leading-none text-[#333333] uppercase italic">
+          <span className="font-extrabold tracking-tight text-[20px] leading-none text-heading uppercase italic">
             SHIPNOW
           </span>
         )}

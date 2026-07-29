@@ -14,7 +14,7 @@ export default function CreateShipmentPage() {
   // Form State Seeded from Figma Design
   const [senderCompany, setSenderCompany] = useState("GreenHaven");
   const [senderEmail, setSenderEmail] = useState("logistics@greenhaven.com");
-  const [senderPhone, setSenderPhone] = useState("408-555-7210");
+  const [senderPhone, setSenderPhone] = useState("+14085557210");
   const [pickupAddress, setPickupAddress] = useState(
     "1120 Birch Street, Portland, OR 97205, USA"
   );
@@ -23,7 +23,7 @@ export default function CreateShipmentPage() {
   const [recipientEmail, setRecipientEmail] = useState(
     "warehouse@freshnest.com"
   );
-  const [recipientPhone, setRecipientPhone] = useState("786-555-4432");
+  const [recipientPhone, setRecipientPhone] = useState("+17865554432");
   const [deliveryAddress, setDeliveryAddress] = useState(""); // Empty for error state
 
   const [itemDescription, setItemDescription] = useState(
@@ -124,13 +124,13 @@ export default function CreateShipmentPage() {
 
   return (
     <AppShell>
-      <div className="w-full flex flex-col min-h-screen bg-[#FAFAFC]">
+      <div className="w-full flex flex-col min-h-screen bg-page">
         {/* Top Header */}
         <CreateShipmentHeader />
 
         {/* Main Form Content Container */}
         <div className="max-w-[1440px] w-full mx-auto px-4 md:px-8 py-3 sm:py-4 flex flex-col gap-3.5">
-          <h2 className="text-[18px] sm:text-[20px] font-bold text-[#1E293B]">Shipment Form</h2>
+          <h2 className="text-[18px] sm:text-[20px] font-bold text-slate">Shipment Form</h2>
 
           <form onSubmit={handleSubmit} className="w-full flex flex-col gap-3.5">
             {/* 1. Sender & Recipient Info (Split Card) */}
@@ -208,17 +208,17 @@ export default function CreateShipmentPage() {
             </div>
 
             {/* 3. Bottom Action Buttons Bar */}
-            <div className="w-full flex items-center justify-end gap-4 pt-4 border-t border-[#E5E5E7]/80 mt-2">
+            <div className="w-full flex items-center justify-end gap-4 pt-4 border-t border-border/80 mt-2">
               <button
                 type="button"
                 onClick={handleDeleteForm}
-                className="bg-[#EFEFEF] hover:bg-[#E2E2E2] text-[#333333] px-6 py-2.5 rounded-[12px] font-semibold text-[14px] transition cursor-pointer"
+                className="bg-delete-btn hover:bg-hover text-heading px-6 py-2.5 rounded-[12px] font-semibold text-[14px] transition cursor-pointer"
               >
                 Delete Form
               </button>
               <button
                 type="submit"
-                className="bg-[#1E293B] hover:bg-[#0F172A] text-white px-6 py-2.5 rounded-[12px] font-semibold text-[14px] transition shadow-2xs cursor-pointer"
+                className="bg-slate hover:bg-slate-dark text-white px-6 py-2.5 rounded-[12px] font-semibold text-[14px] transition shadow-2xs cursor-pointer"
               >
                 Submit Shipment
               </button>

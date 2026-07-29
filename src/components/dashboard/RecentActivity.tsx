@@ -57,16 +57,16 @@ function actorLabel(item: ActivityItem): { prefix: string; suffix: string } {
 
 export default function RecentActivity() {
   return (
-    <div className="w-full bg-[#FEFEFE] p-4 md:p-5 rounded-[12px] border border-[#F0F0F2] flex flex-col justify-between gap-4 h-full shadow-2xs">
+    <div className="w-full bg-card p-4 md:p-5 rounded-[12px] border border-border-card flex flex-col justify-between gap-4 h-full shadow-2xs">
       {/* Header */}
       <div className="flex items-center justify-between gap-2">
-        <h3 className="font-bold text-[14px] md:text-[16px] leading-[19px] text-[#333333]">
+        <h3 className="font-bold text-[14px] md:text-[16px] leading-[19px] text-heading">
           Recent Activity
         </h3>
         <button
           type="button"
           aria-label="More options"
-          className="w-7 h-7 rounded-lg bg-[#F0F0F0] hover:bg-[#EAEAEA] flex items-center justify-center text-[#363B3F] transition duration-150 cursor-pointer"
+          className="w-7 h-7 rounded-lg bg-input hover:bg-hover flex items-center justify-center text-heading transition duration-150 cursor-pointer"
         >
           <MoreHorizontal className="w-4 h-4" />
         </button>
@@ -95,7 +95,7 @@ export default function RecentActivity() {
                 </div>
                 {!isLast && (
                   <div
-                    className={`w-px flex-1 bg-[#E5E5E7] my-1 min-h-[14px] ${
+                    className={`w-px flex-1 bg-border my-1 min-h-[14px] ${
                       i === 3 ? "lg:hidden" : ""
                     }`}
                   />
@@ -104,12 +104,12 @@ export default function RecentActivity() {
 
               {/* Content */}
               <div className="flex flex-col gap-0.5 min-w-0 flex-1 justify-center">
-                <p className="font-normal text-[12px] leading-[17px] text-[#333333]">
+                <p className="font-normal text-[12px] leading-[17px] text-heading">
                   {prefix}{" "}
-                  <span className="font-semibold text-[#235BC2]">{item.username}</span>{" "}
+                  <span className="font-semibold text-link">{item.username}</span>{" "}
                   {suffix}
                 </p>
-                <span className="font-normal text-[10px] leading-[13px] text-[#757575]">
+                <span className="font-normal text-[10px] leading-[13px] text-body">
                   {item.time}
                 </span>
               </div>

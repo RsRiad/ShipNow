@@ -19,10 +19,10 @@ export default function ShipmentHeader({
   onNewShipment,
 }: ShipmentHeaderProps) {
   return (
-    <div className="w-full flex flex-col gap-2 sm:gap-2.5 py-1.5 sm:py-3 px-4 md:px-8 bg-transparent border-b border-[#E5E5E7]/50">
+    <div className="w-full flex flex-col gap-2 sm:gap-2.5 py-1.5 sm:py-3 px-4 md:px-8 bg-transparent border-b border-border/50">
       {/* Top Row: Title & Primary Action Button (Hidden on Mobile view) */}
       <div className="hidden sm:flex items-center justify-between gap-4">
-        <h1 className="text-[26px] md:text-[30px] font-bold text-[#1E293B] tracking-tight leading-none">
+        <h1 className="text-[26px] md:text-[30px] font-bold text-slate tracking-tight leading-none">
           Shipments
         </h1>
 
@@ -40,29 +40,29 @@ export default function ShipmentHeader({
       <div className="flex items-center justify-between gap-3 w-full">
         {/* Breadcrumb Navigation */}
         <nav
-          className="flex items-center gap-1.5 text-[13px] sm:text-[14px] text-[#757575] shrink-0"
+          className="flex items-center gap-1.5 text-[13px] sm:text-[14px] text-body shrink-0"
           aria-label="Breadcrumb"
         >
           <Link
             href="/dashboard"
-            className="text-[#856DF3] hover:text-[#6B52ED] font-medium transition duration-150"
+            className="text-brand hover:text-brand font-medium transition duration-150"
           >
             Dashboard
           </Link>
-          <span className="text-[#A1A1AA] font-normal">/</span>
-          <span className="text-[#64748B] font-normal">Shipments</span>
+          <span className="text-muted font-normal">/</span>
+          <span className="text-slate-muted font-normal">Shipments</span>
         </nav>
 
         {/* View Switcher Toggle (Requirement 4.5 - Compact on Mobile) */}
-        <div className="flex items-center bg-[#F4F4F6] p-0.5 sm:p-1 rounded-[8px] sm:rounded-[10px] border border-[#E5E5E7] gap-0.5 sm:gap-1 shrink-0">
+        <div className="flex items-center bg-surface-alt p-0.5 sm:p-1 rounded-[8px] sm:rounded-[10px] border border-border gap-0.5 sm:gap-1 shrink-0">
           <button
             type="button"
             onClick={() => onViewChange?.("table")}
             title="Table View"
             className={`flex items-center justify-center gap-1 px-2 py-1 sm:px-3 sm:py-1.5 rounded-[6px] sm:rounded-[7px] text-[12px] sm:text-[13px] font-semibold transition duration-150 cursor-pointer ${
               currentView === "table"
-                ? "bg-white text-[#2A1298] shadow-xs"
-                : "text-[#757575] hover:text-[#333333]"
+                ? "bg-white text-brand-dark shadow-xs"
+                : "text-body hover:text-heading"
             }`}
           >
             <LayoutList className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -75,8 +75,8 @@ export default function ShipmentHeader({
             title="Grid View"
             className={`flex items-center justify-center gap-1 px-2 py-1 sm:px-3 sm:py-1.5 rounded-[6px] sm:rounded-[7px] text-[12px] sm:text-[13px] font-semibold transition duration-150 cursor-pointer ${
               currentView === "grid"
-                ? "bg-white text-[#2A1298] shadow-xs"
-                : "text-[#757575] hover:text-[#333333]"
+                ? "bg-white text-brand-dark shadow-xs"
+                : "text-body hover:text-heading"
             }`}
           >
             <LayoutGrid className="w-3.5 h-3.5 sm:w-4 sm:h-4" />

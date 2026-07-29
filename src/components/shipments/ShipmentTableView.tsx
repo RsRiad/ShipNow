@@ -102,7 +102,7 @@ export default function ShipmentTableView({
       </div>
 
       {/* 2. Decomposed Modular Data Table */}
-      <div className="w-full bg-white border border-[#E5E5E7] rounded-[18px] shadow-2xs overflow-hidden">
+      <div className="w-full bg-white border border-border rounded-[18px] shadow-2xs overflow-hidden">
         <div className="overflow-x-auto lg:overflow-x-visible no-scrollbar">
           <table className="w-full text-left border-collapse min-w-[850px] lg:min-w-0">
             <ShipmentTableHeader
@@ -110,7 +110,7 @@ export default function ShipmentTableView({
               isAllSelected={isAllSelected}
               onSort={handleSort}
             />
-            <tbody className="divide-y divide-[#E2E8F0]/80 text-[12px] xl:text-[13px] text-[#334155]">
+            <tbody className="divide-y divide-border-card/80 text-[12px] xl:text-[13px] text-label">
               {paginatedShipments.map((shipment) => (
                 <ShipmentTableRow
                   key={shipment.id}

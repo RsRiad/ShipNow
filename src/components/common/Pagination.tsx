@@ -44,7 +44,7 @@ export default function Pagination({
   };
 
   return (
-    <div className="w-full flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 py-3 sm:py-4 px-2 bg-transparent text-[13px] text-[#757575]">
+    <div className="w-full flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 py-3 sm:py-4 px-2 bg-transparent text-[13px] text-body">
       {/* Showing entries count & Page size dropdown (Hidden on mobile view) */}
       <div className="hidden sm:flex items-center gap-3 flex-wrap">
         <div className="flex items-center gap-1.5 ml-2">
@@ -52,7 +52,7 @@ export default function Pagination({
           <select
             value={pageSize}
             onChange={(e) => onPageSizeChange(Number(e.target.value))}
-            className="bg-white border border-[#E5E5E7] rounded-[8px] px-2 py-1 text-[13px] font-medium text-[#1E293B] outline-none cursor-pointer focus:ring-2 focus:ring-[#856DF3]/20 transition"
+            className="bg-white border border-border rounded-[8px] px-2 py-1 text-[13px] font-medium text-slate outline-none cursor-pointer focus:ring-2 focus:ring-brand/20 transition"
           >
             {pageSizeOptions.map((opt) => (
               <option key={opt} value={opt}>
@@ -60,7 +60,8 @@ export default function Pagination({
               </option>
             ))}
           </select>
-          <strong className="text-[#1E293B]">of {totalItems}</strong> {itemLabel}
+          <strong className="text-slate">of {totalItems}</strong>{" "}
+          {itemLabel}
         </div>
       </div>
 
@@ -84,10 +85,10 @@ export default function Pagination({
               size="md"
             />
           ) : (
-            <span key={idx} className="px-1 text-[#9E9E9E]">
+            <span key={idx} className="px-1 text-body">
               {page}
             </span>
-          )
+          ),
         )}
 
         <IconButton

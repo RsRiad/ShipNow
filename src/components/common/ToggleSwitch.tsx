@@ -28,9 +28,9 @@ export default function ToggleSwitch({
         aria-label={ariaLabel}
         disabled={disabled}
         onClick={() => !disabled && onChange(!checked)}
-        className={`w-11 h-6 rounded-full transition-colors duration-200 relative p-0.5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#856DF3]/20 ${
+        className={`w-11 h-6 rounded-full transition-colors duration-200 relative p-0.5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand/20 ${
           disabled ? "opacity-50 cursor-not-allowed" : ""
-        } ${checked ? "bg-[#856DF3]" : "bg-[#E2E8F0]"}`}
+        } ${checked ? "bg-brand" : "bg-toggle-off"}`}
       >
         <div
           className={`w-5 h-5 rounded-full bg-white shadow-xs transition-transform duration-200 ${
@@ -41,7 +41,7 @@ export default function ToggleSwitch({
       {label && (
         <span
           onClick={() => !disabled && onChange(!checked)}
-          className={`text-[14px] font-medium text-[#334155] select-none cursor-pointer ${
+          className={`text-[14px] font-medium text-label select-none cursor-pointer ${
             disabled ? "opacity-50 cursor-not-allowed" : ""
           }`}
         >

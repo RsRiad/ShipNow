@@ -2,7 +2,12 @@
 
 import React from "react";
 
-export type ButtonVariant = "primary" | "secondary" | "outline" | "chip" | "ghost";
+export type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "outline"
+  | "chip"
+  | "ghost";
 export type ButtonSize = "sm" | "md" | "lg";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -44,28 +49,28 @@ export default function Button({
   switch (variant) {
     case "primary":
       variantClasses =
-        "bg-[#232325] hover:bg-[#1A1A1A] active:bg-black text-white shadow-2xs";
+        "bg-heading hover:bg-dark-hover active:bg-black text-white shadow-2xs";
       break;
 
     case "secondary":
     case "outline":
       variantClasses =
-        "bg-white border border-[#E5E5E7] text-[#333333] hover:bg-[#F9F9FA] active:bg-[#F4F4F6] shadow-2xs";
+        "bg-white border border-border text-heading hover:bg-surface active:bg-surface-alt shadow-2xs";
       break;
 
     case "chip":
       variantClasses = isActive
-        ? "bg-[#232325] text-white shadow-2xs"
-        : "text-[#757575] hover:text-[#18181B] hover:bg-[#F4F4F6]";
+        ? "bg-heading text-white shadow-2xs"
+        : "text-body hover:text-heading hover:bg-surface-alt";
       break;
 
     case "ghost":
       variantClasses =
-        "bg-transparent text-[#757575] hover:text-[#18181B] hover:bg-[#F4F4F6]";
+        "bg-transparent text-body hover:text-heading hover:bg-surface-alt";
       break;
 
     default:
-      variantClasses = "bg-[#232325] text-white";
+      variantClasses = "bg-heading text-white";
   }
 
   const widthClass = fullWidth ? "w-full" : "";

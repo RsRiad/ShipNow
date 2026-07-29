@@ -18,7 +18,7 @@ export const getCompanyLogoPath = (company: string, logoKey?: string): string =>
   return "/Assets/TechGear.svg";
 };
 
-export const renderModeIcon = (mode: string, className: string = "w-3.5 h-3.5 text-[#757575]") => {
+export const renderModeIcon = (mode: string, className: string = "w-3.5 h-3.5 text-body") => {
   switch (mode) {
     case "Air Freight":
       return <Plane className={className} />;
@@ -38,22 +38,22 @@ export const getStatusStyle = (status: string) => {
     case "Completed":
     case "Delivered":
       return {
-        badge: "bg-[#E6F4EA] text-[#137333]",
-        dot: "bg-[#34A853]",
+        badge: "bg-success-bg text-success",
+        dot: "bg-[currentColor]",
       };
     case "In Transit":
     case "Delivery":
     case "Out for Delivery":
       return {
-        badge: "bg-[#F0ECFE] text-[#6B52ED]",
-        dot: "bg-[#856DF3]",
+        badge: "bg-brand-light text-brand",
+        dot: "bg-brand",
       };
     case "Pending":
     case "Processing":
     default:
       return {
-        badge: "bg-[#F1F5F9] text-[#475569]",
-        dot: "bg-[#64748B]",
+        badge: "bg-processing-bg text-slate-muted",
+        dot: "bg-slate-muted",
       };
   }
 };

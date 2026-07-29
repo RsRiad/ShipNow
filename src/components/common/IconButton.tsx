@@ -31,15 +31,15 @@ export default function IconButton({
   let variantClasses = "";
   switch (variant) {
     case "primary":
-      variantClasses = "bg-[#232325] text-white hover:bg-[#1A1A1A]";
+      variantClasses = "bg-heading text-white hover:bg-dark-hover";
       break;
     case "outline":
       variantClasses = isActive
-        ? "bg-[#856DF3] text-white border border-[#856DF3] shadow-2xs"
-        : "bg-white border border-[#E5E5E7] text-[#333333] hover:bg-[#F5F5F7]";
+        ? "bg-brand text-white border border-brand shadow-2xs"
+        : "bg-white border border-border text-heading hover:bg-surface";
       break;
     case "ghost":
-      variantClasses = "bg-transparent text-[#757575] hover:text-[#1E293B]";
+      variantClasses = "bg-transparent text-body hover:text-slate";
       break;
   }
 

@@ -40,7 +40,7 @@ export default function ShipmentGridView({
           ))}
         </div>
       ) : (
-        <div className="w-full p-12 bg-white border border-[#E5E5E7] rounded-[18px] text-center text-[#757575]">
+        <div className="w-full p-12 bg-white border border-border rounded-[18px] text-center text-body">
           No shipments found matching your filters.
         </div>
       )}

@@ -31,10 +31,10 @@ export default function Header({
     <div className="hidden md:flex flex-row items-center justify-between gap-4 pt-5 px-5 bg-transparent">
       {/* Left: Greeting & Title*/}
       <div className="flex flex-col gap-[3px]">
-        <span className="font-normal text-[16px] leading-tight text-[#757575]">
+        <span className="font-normal text-[16px] leading-tight text-body">
           Hello {userName}!
         </span>
-        <h1 className="font-bold text-[24px] leading-tight text-[#333333] tracking-tight">
+        <h1 className="font-bold text-[24px] leading-tight text-heading tracking-tight">
           {greeting}
         </h1>
       </div>
@@ -43,22 +43,18 @@ export default function Header({
       <div className="flex items-center gap-3">
         {/* Search Field */}
         <div className="relative flex items-center w-[160px] md:w-[200px] lg:w-[320px]">
-          <Search className="absolute left-3.5 w-4 h-4 text-[#757575] pointer-events-none" />
+          <Search className="absolute left-3.5 w-4 h-4 text-body pointer-events-none" />
           <input
             type="text"
             value={searchValue}
             onChange={handleSearch}
             placeholder="Search anything"
-            className="w-full h-10 pl-10 pr-3.5 bg-[#FEFEFE] border border-[#E5E5E7] rounded-[10px] text-[13px] md:text-[14px] text-[#333333] placeholder:text-[#9E9E9E] outline-none shadow-2xs focus:ring-2 focus:ring-[#856DF3]/20 focus:border-[#856DF3] transition duration-150"
+            className="w-full h-10 pl-10 pr-3.5 bg-card border border-border rounded-[10px] text-[13px] md:text-[14px] text-heading placeholder:text-body outline-none shadow-2xs focus:ring-2 focus:ring-brand/20 focus:border-brand transition duration-150"
           />
         </div>
 
         {/* New Shipping Action Button */}
-        <Button
-          variant="primary"
-          size="lg"
-          onClick={onAddShipping}
-        >
+        <Button variant="primary" size="lg" onClick={onAddShipping}>
           <span className="lg:hidden">New Shipping</span>
           <span className="hidden lg:inline">Add New Shipping</span>
         </Button>
