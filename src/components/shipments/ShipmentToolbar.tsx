@@ -115,7 +115,7 @@ export default function ShipmentToolbar({
         </div>
 
         {/* Mobile Bottom Row: Soft Rounded Status Filter Chips */}
-        <div className="w-full bg-surface-alt rounded-[14px] p-0.5 flex items-center gap-1 overflow-x-auto no-scrollbar">
+        <div className="w-full bg-[#FEFEFE] rounded-[14px] p-1 flex items-center gap-1 overflow-x-auto no-scrollbar border border-border/40">
           {statusOptions.map((status) => {
             const isActive = activeStatus === status;
             return (
@@ -136,7 +136,7 @@ export default function ShipmentToolbar({
       {/* TABLET & DESKTOP VIEW: Single-Line Bar (hidden on mobile, visible on sm and above) */}
       <div className="hidden sm:flex w-full flex-row items-center justify-between gap-2 sm:gap-4 py-1.5 px-3 md:px-4 lg:px-6 bg-transparent overflow-x-auto no-scrollbar">
         {/* Left: Status Filter Tabs */}
-        <div className="flex items-center gap-1 shrink-0 overflow-x-auto no-scrollbar py-1">
+        <div className="flex items-center gap-1 shrink-0 overflow-x-auto no-scrollbar p-1 bg-[#FEFEFE] rounded-[12px] border border-border/40">
           {statusOptions.map((status) => {
             const isActive = activeStatus === status;
             return (

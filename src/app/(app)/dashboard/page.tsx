@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import AppShell from "@/components/layout/AppShell";
 import Header from "@/components/layout/Header";
 import SummaryMetrics from "@/components/dashboard/SummaryMetrics";
 import ShipmentStatisticChart from "@/components/dashboard/ShipmentStatisticChart";
@@ -15,7 +14,6 @@ import RecentActivity from "@/components/dashboard/RecentActivity";
 
 export default function DashboardPage() {
   return (
-    <AppShell>
       <div className="w-full flex flex-col">
         {/* Top Bar Header */}
         <Header />
@@ -110,6 +108,5 @@ export default function DashboardPage() {
           </div>
         </div>
       </div>
-    </AppShell>
   );
 }

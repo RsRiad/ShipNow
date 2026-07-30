@@ -20,8 +20,13 @@ export default function MetricCard({
   trendPeriod,
   iconSrc,
 }: MetricCardProps) {
+  const isNegative = trendValue.startsWith("-");
+  const trendColor = isNegative ? "text-error" : "text-success";
+  const trendBg = isNegative ? "bg-error-bg" : "bg-success-bg";
+  const caretSrc = isNegative ? "/Assets/CaretDown.svg" : "/Assets/CaretUp.svg";
+  const caretAlt = isNegative ? "Caret Down" : "Caret Up";
   return (
-    <div className="w-full bg-card p-4 sm:p-3 lg:p-4 rounded-[16px] sm:rounded-[12px] border border-border-card flex flex-col sm:flex-row justify-between gap-3 sm:gap-2 transition-all duration-200 hover:shadow-xs overflow-hidden">
+    <div className="w-full bg-card p-4 sm:p-3 lg:p-4 rounded-[16px] sm:rounded-[12px] border border-border-card flex flex-col sm:flex-row justify-between gap-3 sm:gap-2 transition-all duration-200 hover:shadow-xs overflow-hidden focus-within:ring-2 focus-within:ring-brand/30">
       {/* --- MOBILE LAYOUT (< sm / < 640px) --- */}
       <div className="flex flex-col gap-2.5 sm:hidden w-full">
         {/* Top Row: Title on Left, Icon on Right */}
@@ -57,10 +62,10 @@ export default function MetricCard({
           {/* Trend Badge + Period */}
           <div className="flex items-center gap-1 shrink-0">
             <div className="flex items-center gap-1 rounded-[10px]">
-              <span className="w-4 h-4 rounded-full bg-success-bg text-success flex items-center justify-center shrink-0">
-                <Image src="/Assets/CaretUp.svg" alt="Caret Up" width={12} height={12} />
+              <span className={`w-4 h-4 rounded-full flex items-center justify-center shrink-0 ${trendBg} ${trendColor}`}>
+                <Image src={caretSrc} alt={caretAlt} width={12} height={12} />
               </span>
-              <span className="font-medium text-[11px] leading-[14px] text-success">
+              <span className={`font-medium text-[11px] leading-[14px] ${trendColor}`}>
                 {trendValue}
               </span>
             </div>
@@ -96,10 +101,10 @@ export default function MetricCard({
           <div className="flex items-center gap-1 min-w-0">
             {/* Percentage Badge */}
             <div className="flex items-center gap-0.5 rounded-[10px] shrink-0">
-              <span className="w-4 h-4 rounded-full bg-success-bg text-success flex items-center justify-center shrink-0">
-                <Image src="/Assets/CaretUp.svg" alt="Caret Up" width={12} height={12} />
+              <span className={`w-4 h-4 rounded-full flex items-center justify-center shrink-0 ${trendBg} ${trendColor}`}>
+                <Image src={caretSrc} alt={caretAlt} width={12} height={12} />
               </span>
-              <span className="font-normal text-[9px] md:text-[10px] leading-[13px] text-success">
+              <span className={`font-normal text-[9px] md:text-[10px] leading-[13px] ${trendColor}`}>
                 {trendValue}
               </span>
             </div>

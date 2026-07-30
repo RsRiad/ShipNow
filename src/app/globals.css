@@ -16,6 +16,7 @@
   --color-dark-hover: #1A1A1A;
   --color-body: #757575;
   --color-success: #007837;
+  --color-error: #C31515;
   --color-link: #235BC2;
   --color-slate: #1E293B;
   --color-slate-dark: #0F172A;
@@ -27,13 +28,14 @@
   /* Backgrounds */
   --color-card: #FEFEFE;
   --color-card-alt: #F8F8FA;
-  --color-surface: #F5F5F7;
+  --color-surface: #F0F0F0;
   --color-surface-alt: #F4F4F6;
   --color-input: #F0F0F0;
   --color-hover: #EAEAEA;
   --color-row-hover: #FAFAFA;
-  --color-page: #FAFAFC;
+  --color-page: #F0F0F0;
   --color-success-bg: #D9F9E7;
+  --color-error-bg: #F9D9D9;
   --color-info-bg: #E3EDFF;
   --color-delete-btn: #EFEFEF;
   --color-tooltip-gray: #F2F2F4;
@@ -92,6 +94,45 @@ body {
 
 /* Remove default focus outline/border from phone input field */
 .PhoneInputInput {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove default box-shadow across components */
+*,
+*::before,
+*::after {
+  box-shadow: none;
+}
+
+/* Preserve shadows exclusively for Live Tracking (+/- zoom buttons, search bar, floating card) */
+.live-tracking-shadow {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.live-tracking-shadow-sm {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Remove vertical column borders from all table headers and cells */
+table th,
+table td {
+  border-left: none !important;
+  border-right: none !important;
+}
+
+/* Remove outline/border on click or focus for Recharts and SVG elements */
+.recharts-wrapper,
+.recharts-surface,
+.recharts-responsive-container,
+.recharts-wrapper:focus,
+.recharts-surface:focus,
+.recharts-layer:focus,
+svg:focus,
+g:focus,
+path:focus,
+rect:focus {
   outline: none !important;
   border: none !important;
   box-shadow: none !important;

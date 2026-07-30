@@ -61,7 +61,7 @@ export default function LiveTracking() {
         </div>
 
         {/* Search Input Bar (Top Left) */}
-        <div className="absolute top-3.5 left-3.5 right-3.5 sm:right-auto sm:w-[280px] z-10 bg-white rounded-[12px] px-3.5 py-2 flex items-center justify-between shadow-md border border-border-input">
+        <div className="absolute top-3.5 left-3.5 right-3.5 sm:right-auto sm:w-[280px] z-10 bg-white rounded-[12px] px-3.5 py-2 flex items-center justify-between border border-border-input live-tracking-shadow">
           <input
             type="text"
             placeholder="Search by Shipping ID..."
@@ -72,7 +72,7 @@ export default function LiveTracking() {
         </div>
 
         {/* Zoom Controls (+ / -) */}
-        <div className="absolute bottom-3.5 right-3.5 sm:bottom-auto sm:top-3.5 z-10 bg-white rounded-[10px] flex flex-col shadow-sm border border-border-input overflow-hidden">
+        <div className="absolute bottom-3.5 right-3.5 sm:bottom-auto sm:top-3.5 z-10 bg-white rounded-[10px] flex flex-col border border-border-input overflow-hidden live-tracking-shadow-sm">
           <button
             type="button"
             aria-label="Zoom in"
@@ -91,7 +91,7 @@ export default function LiveTracking() {
         </div>
 
         {/* TABLET & DESKTOP FLOATING CARD (#SH8743921) -> INSIDE MAP CONTAINER */}
-        <div className="hidden sm:flex absolute bottom-[18px] left-[18px] md:bottom-[20px] md:left-[20px] w-[355px] md:w-[375px] lg:w-[390px] max-w-[calc(100%-2.5rem)] z-10 bg-white rounded-[14px] px-5 py-4 shadow-md border border-border-tracking flex-col gap-3">
+        <div className="hidden sm:flex absolute bottom-[18px] left-[18px] md:bottom-[20px] md:left-[20px] w-[355px] md:w-[375px] lg:w-[390px] max-w-[calc(100%-2.5rem)] z-10 bg-white rounded-[14px] px-5 py-4 border border-border-tracking flex-col gap-3 live-tracking-shadow">
           {/* Top Row: ID, Status Badges & Courier Info */}
           <div className="flex items-start justify-between gap-3 w-full">
             <div className="flex flex-col gap-0.5">

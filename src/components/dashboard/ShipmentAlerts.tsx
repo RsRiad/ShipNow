@@ -55,7 +55,7 @@ export default function ShipmentAlerts() {
             <span className="font-bold text-[20px] leading-[22px] text-heading">
               {stat.count}
             </span>
-            <span className="font-normal text-[10px] leading-[13px] text-heading">
+            <span className="font-normal text-[11px] leading-[14px] text-heading">
               {stat.label}
             </span>
           </div>
@@ -78,7 +78,7 @@ export default function ShipmentAlerts() {
 
               {/* Info */}
               <div className="flex flex-col gap-0.5 min-w-0 flex-1">
-                <span className="font-semibold text-[12px] leading-[16px] text-heading truncate">
+                <span className="font-semibold text-[13px] leading-[17px] text-heading truncate">
                   {alert.issue}
                 </span>
                 <div className="flex items-center gap-1.5 text-[10px] leading-[13px]">

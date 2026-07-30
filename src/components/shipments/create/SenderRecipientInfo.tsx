@@ -45,7 +45,7 @@ export default function SenderRecipientInfo({
   addressError,
 }: SenderRecipientInfoProps) {
   return (
-    <div className="w-full bg-surface rounded-[20px] p-4 md:p-5 mb-3.5">
+    <div className="w-full bg-[#FEFEFE] border border-border-card rounded-[20px] p-4 md:p-5 mb-3.5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-0">
         {/* Left Column: Sender Info (with Vertical Dividing Line on Tablet/Desktop) */}
         <div className="flex flex-col gap-4 pr-0 sm:pr-5 md:pr-6 border-b sm:border-b-0 sm:border-r border-border pb-6 sm:pb-0">
@@ -59,7 +59,7 @@ export default function SenderRecipientInfo({
               value={senderCompany}
               onChange={(e) => setSenderCompany(e.target.value)}
               placeholder="GreenHaven"
-              className="w-full bg-white rounded-[12px] px-4 py-3 text-[15px] text-slate outline-none focus:ring-2 focus:ring-brand/20 transition"
+              className="w-full bg-[#F0F0F0] rounded-[12px] px-4 py-3 text-[15px] text-slate outline-none focus:bg-white focus:ring-2 focus:ring-brand/20 transition"
             />
           </div>
 
@@ -71,7 +71,7 @@ export default function SenderRecipientInfo({
               value={senderEmail}
               onChange={(e) => setSenderEmail(e.target.value)}
               placeholder="logistics@greenhaven.com"
-              className="w-full bg-white rounded-[12px] px-4 py-3 text-[15px] text-slate outline-none focus:ring-2 focus:ring-brand/20 transition"
+              className="w-full bg-[#F0F0F0] rounded-[12px] px-4 py-3 text-[15px] text-slate outline-none focus:bg-white focus:ring-2 focus:ring-brand/20 transition"
             />
           </div>
 
@@ -92,7 +92,7 @@ export default function SenderRecipientInfo({
               value={pickupAddress}
               onChange={(e) => setPickupAddress(e.target.value)}
               placeholder="1120 Birch Street, Portland, OR 97205, USA"
-              className="w-full bg-white rounded-[12px] px-4 py-3 text-[15px] text-slate outline-none focus:ring-2 focus:ring-brand/20 transition"
+              className="w-full bg-[#F0F0F0] rounded-[12px] px-4 py-3 text-[15px] text-slate outline-none focus:bg-white focus:ring-2 focus:ring-brand/20 transition"
             />
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function SenderRecipientInfo({
               value={recipientCompany}
               onChange={(e) => setRecipientCompany(e.target.value)}
               placeholder="FreshNest"
-              className="w-full bg-white rounded-[12px] px-4 py-3 text-[15px] text-slate outline-none focus:ring-2 focus:ring-brand/20 transition"
+              className="w-full bg-[#F0F0F0] rounded-[12px] px-4 py-3 text-[15px] text-slate outline-none focus:bg-white focus:ring-2 focus:ring-brand/20 transition"
             />
           </div>
 
@@ -122,7 +122,7 @@ export default function SenderRecipientInfo({
               value={recipientEmail}
               onChange={(e) => setRecipientEmail(e.target.value)}
               placeholder="warehouse@freshnest.com"
-              className="w-full bg-white rounded-[12px] px-4 py-3 text-[15px] text-slate outline-none focus:ring-2 focus:ring-brand/20 transition"
+              className="w-full bg-[#F0F0F0] rounded-[12px] px-4 py-3 text-[15px] text-slate outline-none focus:bg-white focus:ring-2 focus:ring-brand/20 transition"
             />
           </div>
 
@@ -146,8 +146,8 @@ export default function SenderRecipientInfo({
               placeholder="Street address, city, state/province, ZIP code"
               className={`w-full rounded-[12px] px-4 py-3 text-[15px] text-slate outline-none transition placeholder:text-slate-light ${
                 addressError
-                  ? "bg-white border border-brand focus:ring-2 focus:ring-brand/20"
-                  : "bg-white focus:ring-2 focus:ring-brand/20"
+                  ? "bg-[#F0F0F0] border border-brand focus:bg-white focus:ring-2 focus:ring-brand/20"
+                  : "bg-[#F0F0F0] focus:bg-white focus:ring-2 focus:ring-brand/20"
               }`}
             />
             {addressError && (

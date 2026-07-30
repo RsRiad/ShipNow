@@ -24,6 +24,9 @@ const PATH_TITLES: Record<string, string> = {
   "/tracking": "Tracking",
   "/fleets": "Fleets",
   "/drivers": "Drivers",
+  "/message": "Message",
+  "/notification": "Notification",
+  "/settings": "Settings",
 };
 
 export default function MobileTopBar({

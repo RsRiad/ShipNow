@@ -26,7 +26,7 @@ const profitData: GroupedProfitData[] = [
   { month: "Mar", revenue: 52000, cost: 42000 },
   { month: "Apr", revenue: 73000, cost: 37000 },
   { month: "May", revenue: 87524, cost: 45680 },
-  { month: "Jan", revenue: 68000, cost: 46000 },
+  { month: "Jun", revenue: 68000, cost: 46000 },
   { month: "Jul", revenue: 59000, cost: 51000 },
   { month: "Aug", revenue: 70000, cost: 34000 },
 ];
@@ -75,7 +75,7 @@ export default function ProfitSummaryChart() {
         {/* Filter Dropdown */}
         <button
           type="button"
-          className="flex items-center gap-1.5 px-2.5 py-1 md:px-3 md:py-1.5 bg-surface hover:bg-hover rounded-lg text-[11px] md:text-[13px] font-medium text-heading transition duration-150 cursor-pointer"
+          className="flex items-center gap-1.5 px-2.5 py-1 md:px-3 md:py-1.5 bg-surface hover:bg-hover rounded-lg text-[11px] md:text-[13px] font-medium text-heading transition duration-150 cursor-pointer outline-none focus:outline-none focus:ring-0"
         >
           <span className="font-bold">Last 8 Months</span>
           <ChevronDown className="w-3.5 h-3.5 text-body" />

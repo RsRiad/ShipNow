@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Search } from "lucide-react";
+import { Search, Plus } from "lucide-react";
 import Button from "@/components/common/Button";
 
 interface HeaderProps {
@@ -54,7 +54,12 @@ export default function Header({
         </div>
 
         {/* New Shipping Action Button */}
-        <Button variant="primary" size="lg" onClick={onAddShipping}>
+        <Button
+          variant="primary"
+          size="lg"
+          onClick={onAddShipping}
+          leftIcon={<Plus className="w-4 h-4 text-white stroke-[2.5] hidden lg:block" />}
+        >
           <span className="lg:hidden">New Shipping</span>
           <span className="hidden lg:inline">Add New Shipping</span>
         </Button>

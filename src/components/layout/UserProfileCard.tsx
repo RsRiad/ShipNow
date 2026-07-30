@@ -31,7 +31,7 @@ export default function UserProfileCard({
     <div className="px-3 my-2">
       <button
         type="button"
-        className="w-full flex items-center justify-between p-2.5 rounded-xl bg-surface hover:bg-pale-gray transition duration-150 group cursor-pointer"
+        className="w-full flex items-center justify-between p-2.5 rounded-xl bg-surface hover:bg-pale-gray transition duration-150 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
       >
         <div className="flex items-center gap-3 min-w-0">
           <div className="relative w-9 h-9 rounded-full overflow-hidden border border-gray-200 shadow-xs shrink-0">

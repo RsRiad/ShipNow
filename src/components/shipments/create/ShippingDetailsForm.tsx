@@ -65,12 +65,16 @@ export default function ShippingDetailsForm({
 
   return (
     <div className="flex flex-col gap-3.5 border-t lg:border-t-0 lg:border-l border-border pt-5 lg:pt-0 lg:pl-8 xl:pl-10">
-      <h3 className="text-[18px] sm:text-[20px] font-bold text-slate">Shipping Details</h3>
+      <h3 className="text-[18px] sm:text-[20px] font-bold text-slate">
+        Shipping Details
+      </h3>
 
       {/* Freight Type Radio Group */}
       <div className="flex flex-col gap-1.5">
-        <label className="text-[14px] font-medium text-body">Freight Type</label>
-        <div className="grid grid-cols-3 sm:flex sm:items-center sm:gap-6 gap-3.5">
+        <label className="text-[14px] font-medium text-body">
+          Freight Type
+        </label>
+        <div className="grid grid-cols-2 sm:flex sm:items-center sm:gap-6 gap-3.5">
           {freightOptions.map((opt) => {
             const isSelected = freightType === opt.label;
             return (
@@ -106,7 +110,7 @@ export default function ShippingDetailsForm({
             <select
               value={carrier}
               onChange={(e) => setCarrier(e.target.value)}
-              className="w-full bg-surface-alt rounded-[12px] px-4 py-3 text-[15px] font-medium text-slate outline-none appearance-none cursor-pointer"
+              className="w-full bg-[#F0F0F0] rounded-[12px] px-4 py-3 text-[15px] font-medium text-slate outline-none appearance-none cursor-pointer"
             >
               <option value="FedEx">FedEx</option>
               <option value="DHL Express">DHL Express</option>
@@ -119,15 +123,17 @@ export default function ShippingDetailsForm({
 
         {/* Shipping Method (With Error State matching Figma screenshot) */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[14px] font-medium text-body">Shipping Method</label>
+          <label className="text-[14px] font-medium text-body">
+            Shipping Method
+          </label>
           <div className="relative flex items-center">
             <select
               value={shippingMethod}
               onChange={(e) => setShippingMethod(e.target.value)}
               className={`w-full rounded-[12px] px-4 py-3 text-[15px] font-medium text-slate outline-none appearance-none cursor-pointer transition ${
                 shippingMethodError
-                  ? "bg-surface-alt border border-brand text-body"
-                  : "bg-surface-alt focus:bg-white focus:ring-2 focus:ring-brand/20"
+                  ? "bg-[#F0F0F0] border border-brand text-body"
+                  : "bg-[#F0F0F0] focus:bg-white focus:ring-2 focus:ring-brand/20"
               }`}
             >
               <option value="">Select Method</option>
@@ -146,27 +152,33 @@ export default function ShippingDetailsForm({
 
         {/* Shipment ID */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[14px] font-medium text-body">Shipment ID</label>
+          <label className="text-[14px] font-medium text-body">
+            Shipment ID
+          </label>
           <input
             type="text"
             value={shipmentId}
             disabled
             readOnly
-            className="w-full bg-hover rounded-[12px] px-4 py-3 text-[15px] font-semibold text-slate-muted outline-none cursor-not-allowed"
+            className="w-full bg-[#EBEBEF] rounded-[12px] px-4 py-3 text-[15px] font-semibold text-slate-muted outline-none cursor-not-allowed"
           />
-          <span className="text-[12px] text-slate-light font-normal">Auto-generated</span>
+          <span className="text-[12px] text-slate-light font-normal">
+            Auto-generated
+          </span>
         </div>
 
         {/* Shipment Date */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[14px] font-medium text-body">Shipment Date</label>
+          <label className="text-[14px] font-medium text-body">
+            Shipment Date
+          </label>
           <div className="relative flex items-center">
             <input
               type="text"
               value={shipmentDate}
               onChange={(e) => setShipmentDate(e.target.value)}
               placeholder="March 21, 2035"
-              className="w-full bg-surface-alt rounded-[12px] pl-4 pr-10 py-3 text-[15px] font-medium text-slate outline-none"
+              className="w-full bg-[#F0F0F0] rounded-[12px] pl-4 pr-10 py-3 text-[15px] font-medium text-slate outline-none"
             />
             <Calendar className="w-4 h-4 text-body absolute right-3.5 pointer-events-none" />
           </div>
@@ -181,7 +193,7 @@ export default function ShippingDetailsForm({
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
           placeholder="Add special delivery notes (optional)"
-          className="w-full bg-surface-alt rounded-[12px] px-4 py-3 text-[15px] text-slate placeholder:text-slate-light outline-none focus:bg-white focus:ring-2 focus:ring-brand/20 transition resize-none"
+          className="w-full bg-[#F0F0F0] rounded-[12px] px-4 py-3 text-[15px] text-slate placeholder:text-slate-light outline-none focus:bg-white focus:ring-2 focus:ring-brand/20 transition resize-none"
         />
       </div>
 
@@ -189,7 +201,9 @@ export default function ShippingDetailsForm({
       <div className="pt-4 pb-4 border-t border-b border-border grid grid-cols-1 sm:grid-cols-12 gap-6 items-start my-1">
         {/* Additional Services (Left 7 Cols) */}
         <div className="sm:col-span-7 flex flex-col gap-3">
-          <label className="text-[14px] font-medium text-body">Additional Services</label>
+          <label className="text-[14px] font-medium text-body">
+            Additional Services
+          </label>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
             {/* Insurance Coverage */}
             <label className="flex items-center gap-2.5 cursor-pointer text-[14px] text-label font-medium select-none">
@@ -198,16 +212,27 @@ export default function ShippingDetailsForm({
                 className={`w-4.5 h-4.5 rounded-[5px] flex items-center justify-center transition cursor-pointer ${
                   insuranceCoverage
                     ? "bg-brand text-white"
-                    : "bg-surface-alt border border-border-muted"
+                    : "bg-[#F0F0F0] border border-border-muted"
                 }`}
               >
                 {insuranceCoverage && (
-                  <svg className="w-3 h-3 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  <svg
+                    className="w-3 h-3 stroke-[3]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
                   </svg>
                 )}
               </div>
-              <span onClick={() => setInsuranceCoverage(!insuranceCoverage)}>Insurance Coverage</span>
+              <span onClick={() => setInsuranceCoverage(!insuranceCoverage)}>
+                Insurance Coverage
+              </span>
             </label>
 
             {/* Temperature Control */}
@@ -217,16 +242,27 @@ export default function ShippingDetailsForm({
                 className={`w-4.5 h-4.5 rounded-[5px] flex items-center justify-center transition cursor-pointer ${
                   temperatureControl
                     ? "bg-brand text-white"
-                    : "bg-surface-alt border border-border-muted"
+                    : "bg-[#F0F0F0] border border-border-muted"
                 }`}
               >
                 {temperatureControl && (
-                  <svg className="w-3 h-3 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  <svg
+                    className="w-3 h-3 stroke-[3]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
                   </svg>
                 )}
               </div>
-              <span onClick={() => setTemperatureControl(!temperatureControl)}>Temperature Control</span>
+              <span onClick={() => setTemperatureControl(!temperatureControl)}>
+                Temperature Control
+              </span>
             </label>
 
             {/* Signature on Delivery */}
@@ -236,16 +272,29 @@ export default function ShippingDetailsForm({
                 className={`w-4.5 h-4.5 rounded-[5px] flex items-center justify-center transition cursor-pointer ${
                   signatureOnDelivery
                     ? "bg-brand text-white"
-                    : "bg-surface-alt border border-border-muted"
+                    : "bg-[#F0F0F0] border border-border-muted"
                 }`}
               >
                 {signatureOnDelivery && (
-                  <svg className="w-3 h-3 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  <svg
+                    className="w-3 h-3 stroke-[3]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
                   </svg>
                 )}
               </div>
-              <span onClick={() => setSignatureOnDelivery(!signatureOnDelivery)}>Signature on Delivery</span>
+              <span
+                onClick={() => setSignatureOnDelivery(!signatureOnDelivery)}
+              >
+                Signature on Delivery
+              </span>
             </label>
 
             {/* Fragile Item Handling */}
@@ -255,23 +304,36 @@ export default function ShippingDetailsForm({
                 className={`w-4.5 h-4.5 rounded-[5px] flex items-center justify-center transition cursor-pointer ${
                   fragileHandling
                     ? "bg-brand text-white"
-                    : "bg-surface-alt border border-border-muted"
+                    : "bg-[#F0F0F0] border border-border-muted"
                 }`}
               >
                 {fragileHandling && (
-                  <svg className="w-3 h-3 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  <svg
+                    className="w-3 h-3 stroke-[3]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
                   </svg>
                 )}
               </div>
-              <span onClick={() => setFragileHandling(!fragileHandling)}>Fragile Item Handling</span>
+              <span onClick={() => setFragileHandling(!fragileHandling)}>
+                Fragile Item Handling
+              </span>
             </label>
           </div>
         </div>
 
         {/* Tracking & Status Updates Toggle (Right 5 Cols) */}
         <div className="sm:col-span-5 flex flex-col gap-3">
-          <label className="text-[14px] font-medium text-body">Tracking & Status Updates</label>
+          <label className="text-[14px] font-medium text-body">
+            Tracking & Status Updates
+          </label>
           <ToggleSwitch
             checked={notifyRecipient}
             onChange={setNotifyRecipient}

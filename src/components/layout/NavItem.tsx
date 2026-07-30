@@ -26,7 +26,7 @@ export default function NavItem({
         type="button"
         onClick={onClick}
         title={label}
-        className={`relative flex items-center justify-center w-10 h-10 mx-auto my-1 rounded-[4px] transition duration-150 group cursor-pointer ${
+        className={`relative flex items-center justify-center w-10 h-10 mx-auto my-1 rounded-[4px] transition duration-150 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:ring-offset-1 ${
           isActive
             ? "bg-brand-light text-brand-dark"
             : "text-body hover:bg-surface hover:text-heading"
@@ -62,7 +62,7 @@ export default function NavItem({
     <button
       type="button"
       onClick={onClick}
-      className={`w-full flex items-center justify-between px-3 py-2.5 my-0.5 rounded-[4px] transition duration-150 group cursor-pointer text-left ${
+      className={`w-full flex items-center justify-between px-3 py-2.5 my-0.5 rounded-[4px] transition duration-150 group cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:ring-offset-1 ${
         isActive
           ? "bg-brand-light text-brand-dark"
           : "text-body hover:bg-surface hover:text-heading"

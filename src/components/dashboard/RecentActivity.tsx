@@ -73,7 +73,7 @@ export default function RecentActivity() {
       </div>
 
       {/* Timeline */}
-      <div className="flex-1 flex flex-col justify-between gap-2 py-1">
+      <div className="flex-1 flex flex-col justify-between py-1">
         {activities.map((item, i) => {
           const { prefix, suffix } = actorLabel(item);
           const isLast = i === activities.length - 1;
@@ -81,10 +81,10 @@ export default function RecentActivity() {
           return (
             <div
               key={`${item.username}-${i}`}
-              className={`flex gap-3 items-stretch ${i === 4 ? "lg:hidden" : ""}`}
+              className="flex gap-3 items-stretch"
             >
-              {/* Icon + vertical line */}
-              <div className="flex flex-col items-center">
+              {/* Icon + vertical connecting line */}
+              <div className="flex flex-col items-center shrink-0">
                 <div className="w-9 h-9 shrink-0 flex items-center justify-center">
                   <Image
                     src={item.iconSrc}
@@ -94,16 +94,12 @@ export default function RecentActivity() {
                   />
                 </div>
                 {!isLast && (
-                  <div
-                    className={`w-px flex-1 bg-border my-1 min-h-[14px] ${
-                      i === 3 ? "lg:hidden" : ""
-                    }`}
-                  />
+                  <div className="w-[1.5px] flex-1 bg-[#D1D5DB] my-0.5 min-h-[16px]" />
                 )}
               </div>
 
               {/* Content */}
-              <div className="flex flex-col gap-0.5 min-w-0 flex-1 justify-center">
+              <div className="flex flex-col gap-0.5 min-w-0 flex-1 justify-start pt-0.5 pb-2">
                 <p className="font-normal text-[12px] leading-[17px] text-heading">
                   {prefix}{" "}
                   <span className="font-semibold text-link">{item.username}</span>{" "}

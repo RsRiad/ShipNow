@@ -42,22 +42,26 @@ export default function PackageDetailsForm({
 }: PackageDetailsFormProps) {
   return (
     <div className="flex flex-col gap-4">
-      <h3 className="text-[18px] sm:text-[20px] font-bold text-slate">Package Details</h3>
+      <h3 className="text-[18px] sm:text-[20px] font-bold text-slate">
+        Package Details
+      </h3>
 
       {/* Item Description */}
       <div className="flex flex-col gap-1.5">
-        <label className="text-[14px] font-medium text-body">Item Description</label>
+        <label className="text-[14px] font-medium text-body">
+          Item Description
+        </label>
         <input
           type="text"
           value={itemDescription}
           onChange={(e) => setItemDescription(e.target.value)}
           placeholder="Premium Garden Tool Set"
-          className="w-full bg-surface-alt rounded-[12px] px-4 py-3 text-[15px] text-slate outline-none focus:bg-white focus:ring-2 focus:ring-brand/20 transition"
+          className="w-full bg-[#F0F0F0] rounded-[12px] px-4 py-3 text-[15px] text-slate outline-none focus:bg-white focus:ring-2 focus:ring-brand/20 transition"
         />
       </div>
 
-      {/* Quantity, Value, Weight, Units (4 Columns in Tablet & Desktop View) */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4">
+      {/* Quantity, Value, Weight, Units (1 Row on Tablet [md:grid-cols-4], 2 Rows on Desktop [lg:grid-cols-2]) */}
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 gap-3.5 sm:gap-4">
         {/* Quantity */}
         <div className="flex flex-col gap-1.5">
           <label className="text-[14px] font-medium text-body">Quantity</label>
@@ -66,7 +70,7 @@ export default function PackageDetailsForm({
               type="text"
               value={quantity}
               onChange={(e) => setQuantity(e.target.value)}
-              className="w-full bg-surface-alt rounded-[12px] pl-3.5 pr-8 py-3 text-[15px] font-bold text-slate outline-none"
+              className="w-full bg-[#F0F0F0] rounded-[12px] pl-3.5 pr-8 py-3 text-[15px] font-bold text-slate outline-none"
             />
             <div className="absolute right-2.5 flex flex-col gap-0.5 text-body shrink-0">
               <ChevronUp
@@ -75,7 +79,9 @@ export default function PackageDetailsForm({
               />
               <ChevronDown
                 className="w-3.5 h-3.5 cursor-pointer hover:text-slate"
-                onClick={() => setQuantity(Math.max(1, Number(quantity || 0) - 1))}
+                onClick={() =>
+                  setQuantity(Math.max(1, Number(quantity || 0) - 1))
+                }
               />
             </div>
           </div>
@@ -89,7 +95,7 @@ export default function PackageDetailsForm({
             value={value}
             onChange={(e) => setValue(e.target.value)}
             placeholder="$3,200"
-            className="w-full bg-surface-alt rounded-[12px] px-3.5 py-3 text-[15px] font-bold text-slate outline-none focus:bg-white focus:ring-2 focus:ring-brand/20 transition"
+            className="w-full bg-[#F0F0F0] rounded-[12px] px-3.5 py-3 text-[15px] font-bold text-slate outline-none focus:bg-white focus:ring-2 focus:ring-brand/20 transition"
           />
         </div>
 
@@ -101,7 +107,7 @@ export default function PackageDetailsForm({
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
             placeholder="125"
-            className="w-full bg-surface-alt rounded-[12px] px-3.5 py-3 text-[15px] font-bold text-slate outline-none focus:bg-white focus:ring-2 focus:ring-brand/20 transition"
+            className="w-full bg-[#F0F0F0] rounded-[12px] px-3.5 py-3 text-[15px] font-bold text-slate outline-none focus:bg-white focus:ring-2 focus:ring-brand/20 transition"
           />
         </div>
 
@@ -112,7 +118,7 @@ export default function PackageDetailsForm({
             <select
               value={units}
               onChange={(e) => setUnits(e.target.value)}
-              className="w-full bg-surface-alt rounded-[12px] pl-3.5 pr-8 py-3 text-[15px] font-medium text-slate outline-none appearance-none cursor-pointer"
+              className="w-full bg-[#F0F0F0] rounded-[12px] pl-3.5 pr-8 py-3 text-[15px] font-medium text-slate outline-none appearance-none cursor-pointer"
             >
               <option value="Kg">Kg</option>
               <option value="Lbs">Lbs</option>
@@ -135,13 +141,15 @@ export default function PackageDetailsForm({
                 value={length}
                 onChange={(e) => setLength(e.target.value)}
                 placeholder="80"
-                className="w-full bg-surface-alt rounded-[12px] pl-4 pr-9 py-3 text-[15px] font-bold text-slate outline-none"
+                className="w-full bg-[#F0F0F0] rounded-[12px] pl-4 pr-9 py-3 text-[15px] font-bold text-slate outline-none"
               />
               <span className="absolute right-3.5 text-[13px] text-body font-normal pointer-events-none">
                 cm
               </span>
             </div>
-            <span className="text-[12px] text-slate-light font-normal mt-1">Length</span>
+            <span className="text-[12px] text-slate-light font-normal mt-1">
+              Length
+            </span>
           </div>
 
           {/* Width */}
@@ -152,13 +160,15 @@ export default function PackageDetailsForm({
                 value={width}
                 onChange={(e) => setWidth(e.target.value)}
                 placeholder="60"
-                className="w-full bg-surface-alt rounded-[12px] pl-4 pr-9 py-3 text-[15px] font-bold text-slate outline-none"
+                className="w-full bg-[#F0F0F0] rounded-[12px] pl-4 pr-9 py-3 text-[15px] font-bold text-slate outline-none"
               />
               <span className="absolute right-3.5 text-[13px] text-body font-normal pointer-events-none">
                 cm
               </span>
             </div>
-            <span className="text-[12px] text-slate-light font-normal mt-1">Width</span>
+            <span className="text-[12px] text-slate-light font-normal mt-1">
+              Width
+            </span>
           </div>
 
           {/* Height */}
@@ -169,13 +179,15 @@ export default function PackageDetailsForm({
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
                 placeholder="ex. 20"
-                className="w-full bg-surface-alt rounded-[12px] pl-4 pr-9 py-3 text-[15px] font-normal text-slate placeholder:text-slate-light outline-none"
+                className="w-full bg-[#F0F0F0] rounded-[12px] pl-4 pr-9 py-3 text-[15px] font-normal text-slate placeholder:text-slate-light outline-none"
               />
               <span className="absolute right-3.5 text-[13px] text-body font-normal pointer-events-none">
                 cm
               </span>
             </div>
-            <span className="text-[12px] text-slate-light font-normal mt-1">Height</span>
+            <span className="text-[12px] text-slate-light font-normal mt-1">
+              Height
+            </span>
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ export const summaryMetricsData: MetricCardProps[] = [
     title: "Delivery Performance",
     value: "94.3%",
     unit: "on-time",
-    trendValue: "-1.2%",
+    trendValue: "+1.2%",
     trendPeriod: "from last week",
     iconSrc: "/Assets/IconDeliPerfo.svg",
   },

@@ -186,7 +186,7 @@ export default function ShipmentCard({ shipment, onClick }: ShipmentCardProps) {
       <div className="flex flex-col gap-1.5 pt-1">
         <div className="flex items-center justify-between text-[13px]">
           <div className="flex items-center gap-1">
-            <span className="text-body">Progres</span>
+            <span className="text-body">Progress</span>
             <span className="font-bold text-slate">
               {shipment.progress}%
             </span>

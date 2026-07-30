@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import AppShell from "@/components/layout/AppShell";
 import WarehouseHeader, {
   FreightTab,
 } from "@/components/warehouse/WarehouseHeader";
@@ -18,7 +17,6 @@ export default function WarehousePage() {
   const [activeFreightTab, setActiveFreightTab] = useState<FreightTab>("road");
 
   return (
-    <AppShell>
       <div className="flex flex-col w-full min-h-screen bg-table-header">
         {/* Topbar Header matching design pattern */}
         <WarehouseHeader
@@ -65,6 +63,5 @@ export default function WarehousePage() {
           </div>
         </div>
       </div>
-    </AppShell>
   );
 }

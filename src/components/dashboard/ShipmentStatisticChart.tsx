@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronDown, TrendingUp } from "lucide-react";
+import Image from "next/image";
+import { ChevronDown } from "lucide-react";
 import {
   BarChart,
   Bar,
@@ -25,7 +26,7 @@ const chartData: MonthlyData[] = [
   { month: "Mar", fullLabel: "Mar 2030", shipments: 1100 },
   { month: "Apr", fullLabel: "Apr 2030", shipments: 1900 },
   { month: "May", fullLabel: "May 2030", shipments: 3124 },
-  { month: "Jan", fullLabel: "Jun 2030", shipments: 2600 },
+  { month: "Jun", fullLabel: "Jun 2030", shipments: 2600 },
   { month: "Jul", fullLabel: "Jul 2030", shipments: 3500 },
   { month: "Aug", fullLabel: "Aug 2030", shipments: 4100 },
 ];
@@ -112,7 +113,7 @@ export default function ShipmentStatisticChart() {
         {/* Filter Dropdown */}
         <button
           type="button"
-          className="flex items-center gap-1.5 px-2.5 py-1 md:px-3 md:py-1.5 bg-surface hover:bg-hover rounded-lg text-[11px] md:text-[13px] font-medium text-heading transition duration-150 cursor-pointer"
+          className="flex items-center gap-1.5 px-2.5 py-1 md:px-3 md:py-1.5 bg-surface hover:bg-hover rounded-lg text-[11px] md:text-[13px] font-medium text-heading transition duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
         >
           <span className="font-bold">Last Year</span>
           <ChevronDown className="w-3.5 h-3.5 text-body" />
@@ -125,7 +126,7 @@ export default function ShipmentStatisticChart() {
           4,352
         </span>
         <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-[10px] bg-success-bg text-success font-normal text-[10px] leading-[13px]">
-          <TrendingUp className="w-3 h-3 stroke-[2.5]" />
+          <Image src="/Assets/Icon (17).svg" alt="Trend up" width={12} height={12} />
           <span>+8.7%</span>
         </span>
       </div>

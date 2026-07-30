@@ -33,7 +33,7 @@ export default function PhoneInput({
       placeholder={placeholder}
       flags={flags}
       disabled={disabled}
-      className={`bg-white rounded-[12px] px-4 py-3 text-[15px] text-slate outline-none focus-within:ring-2 focus-within:ring-[#856DF3]/20 transition [&_input]:outline-none [&_input]:border-none [&_input]:bg-transparent ${className}`}
+      className={`bg-[#F0F0F0] rounded-[12px] px-4 py-3 text-[15px] text-slate outline-none focus-within:ring-2 focus-within:ring-[#856DF3]/20 transition [&_input]:outline-none [&_input]:border-none [&_input]:bg-transparent ${className}`}
     />
   );
 }

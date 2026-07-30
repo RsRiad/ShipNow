@@ -2,7 +2,6 @@
 
 import React, { useState, useMemo, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import AppShell from "@/components/layout/AppShell";
 import ShipmentHeader, { ShipmentViewMode } from "@/components/shipments/ShipmentHeader";
 import ShipmentToolbar from "@/components/shipments/ShipmentToolbar";
 import ShipmentMetricCards from "@/components/shipments/ShipmentMetricCards";
@@ -79,10 +78,12 @@ function ShipmentsContent() {
           onNewShipment={handleNewShipment}
         />
 
-        {/* MOBILE VIEW ONLY: 2x2 Metric Cards FIRST above Toolbar */}
-        <div className="sm:hidden px-4 pt-3 pb-1">
-          <ShipmentMetricCards shipments={filteredShipments} />
-        </div>
+        {/* MOBILE VIEW ONLY: 2x2 Metric Cards FIRST above Toolbar — Table view only */}
+        {currentView === "table" && (
+          <div className="sm:hidden px-4 pt-3 pb-1">
+            <ShipmentMetricCards shipments={filteredShipments} />
+          </div>
+        )}
 
         {/* Shipment Filter & Search Toolbar (Renders BELOW Metric Cards on Mobile View) */}
         <ShipmentToolbar
@@ -134,10 +135,8 @@ function ShipmentsContent() {
 
 export default function ShipmentsPage() {
   return (
-    <AppShell>
       <Suspense fallback={<div className="p-5 text-gray-500">Loading Shipments...</div>}>
         <ShipmentsContent />
       </Suspense>
-    </AppShell>
   );
 }

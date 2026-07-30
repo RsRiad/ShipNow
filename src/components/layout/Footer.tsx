@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="w-full py-6 sm:py-4 px-4 sm:px-6 border-t border-border bg-transparent text-body text-[12px] leading-[16px] flex flex-col sm:flex-row items-center justify-between gap-3.5 sm:gap-4 shrink-0">
+    <footer className="w-full py-6 sm:py-4 px-4 sm:px-6 bg-transparent text-body text-[12px] leading-[16px] flex flex-col sm:flex-row items-center justify-between gap-3.5 sm:gap-4 shrink-0">
       {/* MOBILE LAYOUT (< sm): 3 Stacked Centered Rows */}
       <div className="flex flex-col items-center justify-center gap-3 w-full sm:hidden text-center">
         {/* Line 1: Copyright */}

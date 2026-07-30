@@ -19,20 +19,20 @@ export const primaryNavItems = [
     href: "/dashboard",
     iconSrc: "/Assets/IconDashboard.svg",
   },
-  { label: "Analytics", href: "#", iconSrc: "/Assets/IconAnalytics.svg" },
-  { label: "Calendar", href: "#", iconSrc: "/Assets/IconCalendar.svg" },
+  { label: "Analytics", href: "/analytics", iconSrc: "/Assets/IconAnalytics.svg" },
+  { label: "Calendar", href: "/calendar", iconSrc: "/Assets/IconCalendar.svg" },
   {
     label: "Shipments",
     href: "/shipments",
     iconSrc: "/Assets/IconShipments.svg",
   },
-  { label: "Tracking", href: "#", iconSrc: "/Assets/IconTracking.svg" },
+  { label: "Tracking", href: "/tracking", iconSrc: "/Assets/IconTracking.svg" },
   { label: "Warehouse", href: "/warehouse", iconSrc: "/Assets/IconWarehouse.svg" },
-  { label: "Fleets", href: "#", iconSrc: "/Assets/IconFleets.svg" },
-  { label: "Drivers", href: "#", iconSrc: "/Assets/IconDrivers.svg" },
+  { label: "Fleets", href: "/fleets", iconSrc: "/Assets/IconFleets.svg" },
+  { label: "Drivers", href: "/drivers", iconSrc: "/Assets/IconDrivers.svg" },
   {
     label: "Invoices & Billing",
-    href: "#",
+    href: "/invoices",
     iconSrc: "/Assets/IconInvoice.svg",
   },
 ];
@@ -40,17 +40,17 @@ export const primaryNavItems = [
 export const secondaryNavItems = [
   {
     label: "Message",
-    href: "#",
+    href: "/message",
     iconSrc: "/Assets/IconMessage.svg",
     badgeCount: 19,
   },
   {
     label: "Notification",
-    href: "#",
+    href: "/notification",
     iconSrc: "/Assets/IconNotification.svg",
     badgeCount: 5,
   },
-  { label: "Settings", href: "#", iconSrc: "/Assets/IconSetting.svg" },
+  { label: "Settings", href: "/settings", iconSrc: "/Assets/IconSetting.svg" },
 ];
 
 export default function Sidebar({

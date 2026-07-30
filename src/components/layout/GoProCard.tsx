@@ -50,7 +50,7 @@ export default function GoProCard({ isTabletRail = false }: GoProCardProps) {
         {/* Button */}
         <button
           type="button"
-          className="mt-4 w-full py-3 px-3 bg-white hover:bg-gray-100 active:bg-gray-200 text-heading font-semibold text-[13px] leading-none rounded-[8px] transition duration-150 cursor-pointer text-center"
+          className="mt-4 w-full py-3 px-3 bg-white hover:bg-gray-100 active:bg-gray-200 text-heading font-semibold text-[13px] leading-none rounded-[8px] transition duration-150 cursor-pointer text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2"
         >
           Go Pro Today
         </button>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo } from "react";
+import Image from "next/image";
 import { Shipment } from "@/data/data";
 import {
   Truck,
@@ -55,7 +56,15 @@ const fallbackMetrics: MetricCardData[] = [
     badgeText: "4.2%",
     subtext: "from last week",
     isPositive: false,
-    icon: <Truck className="w-5 h-5 text-brand stroke-[2]" />,
+    icon: (
+      <Image
+        src="/Assets/IconDelivery.svg"
+        alt="Delivery"
+        width={24}
+        height={24}
+        className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
+      />
+    ),
   },
   {
     id: "completed",
@@ -69,18 +78,24 @@ const fallbackMetrics: MetricCardData[] = [
   },
 ];
 
-export default function ShipmentMetricCards({ shipments }: ShipmentMetricCardsProps) {
+export default function ShipmentMetricCards({
+  shipments,
+}: ShipmentMetricCardsProps) {
   const cards = useMemo(() => {
     if (!shipments || shipments.length === 0) {
       return fallbackMetrics;
     }
 
     const totalCount = shipments.length;
-    const pendingCount = shipments.filter((s) => s.status === "Processing").length;
-    const deliveryCount = shipments.filter(
-      (s) => s.status === "In Transit" || s.status === "Out for Delivery"
+    const pendingCount = shipments.filter(
+      (s) => s.status === "Processing",
     ).length;
-    const completedCount = shipments.filter((s) => s.status === "Delivered").length;
+    const deliveryCount = shipments.filter(
+      (s) => s.status === "In Transit" || s.status === "Out for Delivery",
+    ).length;
+    const completedCount = shipments.filter(
+      (s) => s.status === "Delivered",
+    ).length;
 
     return [
       {
@@ -111,7 +126,15 @@ export default function ShipmentMetricCards({ shipments }: ShipmentMetricCardsPr
         badgeText: "4.2%",
         subtext: "from last week",
         isPositive: false,
-        icon: <Truck className="w-5 h-5 text-brand stroke-[2]" />,
+        icon: (
+          <Image
+            src="/Assets/IconDelivery.svg"
+            alt="Delivery"
+            width={24}
+            height={24}
+            className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
+          />
+        ),
       },
       {
         id: "completed",
