@@ -53,8 +53,9 @@ export default function SenderRecipientInfo({
 
           {/* Company */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-[14px] font-medium text-body">Company</label>
+            <label htmlFor="sender-company" className="text-[14px] font-medium text-body">Company</label>
             <input
+              id="sender-company"
               type="text"
               value={senderCompany}
               onChange={(e) => setSenderCompany(e.target.value)}
@@ -65,8 +66,9 @@ export default function SenderRecipientInfo({
 
           {/* Email & Phone */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-[14px] font-medium text-body">Email</label>
+            <label htmlFor="sender-email" className="text-[14px] font-medium text-body">Email</label>
             <input
+              id="sender-email"
               type="email"
               value={senderEmail}
               onChange={(e) => setSenderEmail(e.target.value)}
@@ -76,8 +78,9 @@ export default function SenderRecipientInfo({
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <label className="text-[14px] font-medium text-body">Phone Number</label>
+            <label htmlFor="sender-phone" className="text-[14px] font-medium text-body">Phone Number</label>
             <PhoneInput
+              id="sender-phone"
               value={senderPhone}
               onChange={setSenderPhone}
               placeholder="408-555-7210"
@@ -86,8 +89,9 @@ export default function SenderRecipientInfo({
 
           {/* Pickup Address */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-[14px] font-medium text-body">Pickup Address</label>
+            <label htmlFor="pickup-address" className="text-[14px] font-medium text-body">Pickup Address</label>
             <input
+              id="pickup-address"
               type="text"
               value={pickupAddress}
               onChange={(e) => setPickupAddress(e.target.value)}
@@ -104,8 +108,9 @@ export default function SenderRecipientInfo({
 
           {/* Company */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-[14px] font-medium text-body">Company</label>
+            <label htmlFor="recipient-company" className="text-[14px] font-medium text-body">Company</label>
             <input
+              id="recipient-company"
               type="text"
               value={recipientCompany}
               onChange={(e) => setRecipientCompany(e.target.value)}
@@ -116,8 +121,9 @@ export default function SenderRecipientInfo({
 
           {/* Email & Phone */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-[14px] font-medium text-body">Email</label>
+            <label htmlFor="recipient-email" className="text-[14px] font-medium text-body">Email</label>
             <input
+              id="recipient-email"
               type="email"
               value={recipientEmail}
               onChange={(e) => setRecipientEmail(e.target.value)}
@@ -127,8 +133,9 @@ export default function SenderRecipientInfo({
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <label className="text-[14px] font-medium text-body">Phone Number</label>
+            <label htmlFor="recipient-phone" className="text-[14px] font-medium text-body">Phone Number</label>
             <PhoneInput
+              id="recipient-phone"
               value={recipientPhone}
               onChange={setRecipientPhone}
               placeholder="786-555-4432"
@@ -138,12 +145,15 @@ export default function SenderRecipientInfo({
 
           {/* Delivery Address (With Error State matching Figma screenshot) */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-[14px] font-medium text-body">Delivery Address</label>
+            <label htmlFor="delivery-address" className="text-[14px] font-medium text-body">Delivery Address</label>
             <input
+              id="delivery-address"
               type="text"
               value={deliveryAddress}
               onChange={(e) => setDeliveryAddress(e.target.value)}
               placeholder="Street address, city, state/province, ZIP code"
+              aria-invalid={!!addressError}
+              aria-describedby={addressError ? "delivery-address-error" : undefined}
               className={`w-full rounded-[12px] px-4 py-3 text-[15px] text-slate outline-none transition placeholder:text-slate-light ${
                 addressError
                   ? "bg-[#F0F0F0] border border-brand focus:bg-white focus:ring-2 focus:ring-brand/20"
@@ -151,7 +161,7 @@ export default function SenderRecipientInfo({
               }`}
             />
             {addressError && (
-              <span className="text-brand text-[13px] font-medium mt-1">
+              <span id="delivery-address-error" className="text-brand text-[13px] font-medium mt-1">
                 {addressError}
               </span>
             )}

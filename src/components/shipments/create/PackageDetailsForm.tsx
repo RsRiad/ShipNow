@@ -48,10 +48,11 @@ export default function PackageDetailsForm({
 
       {/* Item Description */}
       <div className="flex flex-col gap-1.5">
-        <label className="text-[14px] font-medium text-body">
+        <label htmlFor="item-description" className="text-[14px] font-medium text-body">
           Item Description
         </label>
         <input
+          id="item-description"
           type="text"
           value={itemDescription}
           onChange={(e) => setItemDescription(e.target.value)}
@@ -64,9 +65,10 @@ export default function PackageDetailsForm({
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 gap-3.5 sm:gap-4">
         {/* Quantity */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[14px] font-medium text-body">Quantity</label>
+          <label htmlFor="pkg-quantity" className="text-[14px] font-medium text-body">Quantity</label>
           <div className="relative flex items-center">
             <input
+              id="pkg-quantity"
               type="text"
               value={quantity}
               onChange={(e) => setQuantity(e.target.value)}
@@ -89,8 +91,9 @@ export default function PackageDetailsForm({
 
         {/* Value */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[14px] font-medium text-body">Value</label>
+          <label htmlFor="pkg-value" className="text-[14px] font-medium text-body">Value</label>
           <input
+            id="pkg-value"
             type="text"
             value={value}
             onChange={(e) => setValue(e.target.value)}
@@ -101,8 +104,9 @@ export default function PackageDetailsForm({
 
         {/* Weight */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[14px] font-medium text-body">Weight</label>
+          <label htmlFor="pkg-weight" className="text-[14px] font-medium text-body">Weight</label>
           <input
+            id="pkg-weight"
             type="text"
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
@@ -113,9 +117,10 @@ export default function PackageDetailsForm({
 
         {/* Units */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[14px] font-medium text-body">Units</label>
+          <label htmlFor="pkg-units" className="text-[14px] font-medium text-body">Units</label>
           <div className="relative flex items-center">
             <select
+              id="pkg-units"
               value={units}
               onChange={(e) => setUnits(e.target.value)}
               className="w-full bg-[#F0F0F0] rounded-[12px] pl-3.5 pr-8 py-3 text-[15px] font-medium text-slate outline-none appearance-none cursor-pointer"
@@ -137,6 +142,8 @@ export default function PackageDetailsForm({
           <div className="flex flex-col">
             <div className="relative flex items-center">
               <input
+                id="pkg-length"
+                aria-label="Length"
                 type="text"
                 value={length}
                 onChange={(e) => setLength(e.target.value)}
@@ -156,6 +163,8 @@ export default function PackageDetailsForm({
           <div className="flex flex-col">
             <div className="relative flex items-center">
               <input
+                id="pkg-width"
+                aria-label="Width"
                 type="text"
                 value={width}
                 onChange={(e) => setWidth(e.target.value)}
@@ -175,6 +184,8 @@ export default function PackageDetailsForm({
           <div className="flex flex-col">
             <div className="relative flex items-center">
               <input
+                id="pkg-height"
+                aria-label="Height"
                 type="text"
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}

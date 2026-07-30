@@ -70,44 +70,56 @@ export default function ShippingDetailsForm({
       </h3>
 
       {/* Freight Type Radio Group */}
-      <div className="flex flex-col gap-1.5">
-        <label className="text-[14px] font-medium text-body">
+      <fieldset className="flex flex-col gap-1.5 border-0 p-0 m-0">
+        <legend className="text-[14px] font-medium text-body">
           Freight Type
-        </label>
+        </legend>
         <div className="grid grid-cols-2 sm:flex sm:items-center sm:gap-6 gap-3.5">
           {freightOptions.map((opt) => {
             const isSelected = freightType === opt.label;
             return (
               <label
                 key={opt.id}
+                htmlFor={`freight-${opt.id}`}
                 className="flex items-center gap-2 cursor-pointer text-[14px] text-label font-medium select-none"
-                onClick={() => setFreightType(opt.label)}
               >
-                <div
-                  className={`w-4 h-4 rounded-full border flex items-center justify-center transition ${
-                    isSelected
-                      ? "border-brand bg-white"
-                      : "border-border-muted bg-white"
-                  }`}
-                >
-                  {isSelected && (
-                    <div className="w-2 h-2 rounded-full bg-brand" />
-                  )}
-                </div>
+                <span className="relative flex items-center justify-center">
+                  <input
+                    type="radio"
+                    id={`freight-${opt.id}`}
+                    name="freight-type"
+                    value={opt.label}
+                    checked={isSelected}
+                    onChange={() => setFreightType(opt.label)}
+                    className="sr-only peer"
+                  />
+                  <span
+                    className={`w-4 h-4 rounded-full border flex items-center justify-center transition peer-focus-visible:ring-2 peer-focus-visible:ring-brand/40 ${
+                      isSelected
+                        ? "border-brand bg-white"
+                        : "border-border-muted bg-white"
+                    }`}
+                  >
+                    {isSelected && (
+                      <span className="w-2 h-2 rounded-full bg-brand" />
+                    )}
+                  </span>
+                </span>
                 <span>{opt.label}</span>
               </label>
             );
           })}
         </div>
-      </div>
+      </fieldset>
 
       {/* Carrier, Shipping Method, Shipment ID, Date Controls Row (4 Columns in Tablet & Desktop View) */}
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-3.5 sm:gap-4">
         {/* Carrier */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[14px] font-medium text-body">Carrier</label>
+          <label htmlFor="carrier" className="text-[14px] font-medium text-body">Carrier</label>
           <div className="relative flex items-center">
             <select
+              id="carrier"
               value={carrier}
               onChange={(e) => setCarrier(e.target.value)}
               className="w-full bg-[#F0F0F0] rounded-[12px] px-4 py-3 text-[15px] font-medium text-slate outline-none appearance-none cursor-pointer"
@@ -123,13 +135,16 @@ export default function ShippingDetailsForm({
 
         {/* Shipping Method (With Error State matching Figma screenshot) */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[14px] font-medium text-body">
+          <label htmlFor="shipping-method" className="text-[14px] font-medium text-body">
             Shipping Method
           </label>
           <div className="relative flex items-center">
             <select
+              id="shipping-method"
               value={shippingMethod}
               onChange={(e) => setShippingMethod(e.target.value)}
+              aria-invalid={!!shippingMethodError}
+              aria-describedby={shippingMethodError ? "shipping-method-error" : undefined}
               className={`w-full rounded-[12px] px-4 py-3 text-[15px] font-medium text-slate outline-none appearance-none cursor-pointer transition ${
                 shippingMethodError
                   ? "bg-[#F0F0F0] border border-brand text-body"
@@ -144,7 +159,7 @@ export default function ShippingDetailsForm({
             <ChevronDown className="w-4 h-4 text-body absolute right-3 pointer-events-none" />
           </div>
           {shippingMethodError && (
-            <span className="text-brand text-[13px] font-medium mt-1">
+            <span id="shipping-method-error" className="text-brand text-[13px] font-medium mt-1">
               {shippingMethodError}
             </span>
           )}
@@ -152,10 +167,11 @@ export default function ShippingDetailsForm({
 
         {/* Shipment ID */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[14px] font-medium text-body">
+          <label htmlFor="shipment-id" className="text-[14px] font-medium text-body">
             Shipment ID
           </label>
           <input
+            id="shipment-id"
             type="text"
             value={shipmentId}
             disabled
@@ -169,11 +185,12 @@ export default function ShippingDetailsForm({
 
         {/* Shipment Date */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[14px] font-medium text-body">
+          <label htmlFor="shipment-date" className="text-[14px] font-medium text-body">
             Shipment Date
           </label>
           <div className="relative flex items-center">
             <input
+              id="shipment-date"
               type="text"
               value={shipmentDate}
               onChange={(e) => setShipmentDate(e.target.value)}
@@ -187,8 +204,9 @@ export default function ShippingDetailsForm({
 
       {/* Notes Textarea */}
       <div className="flex flex-col gap-1.5">
-        <label className="text-[14px] font-medium text-body">Notes</label>
+        <label htmlFor="notes" className="text-[14px] font-medium text-body">Notes</label>
         <textarea
+          id="notes"
           rows={3}
           value={notes}
           onChange={(e) => setNotes(e.target.value)}

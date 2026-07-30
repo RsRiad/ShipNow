@@ -31,7 +31,7 @@ export default function PlaceholderPage() {
           </div>
           <h1 className="text-[24px] font-bold text-heading mb-2">{label}</h1>
           <p className="text-body text-[14px] leading-relaxed">
-            This page is coming soon. We are working hard to bring you the{" "}
+            This page is coming soon. I am working hard to bring you the{" "}
             {label.toLowerCase()} experience.
           </p>
         </div>
