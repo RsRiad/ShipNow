@@ -136,7 +136,7 @@ export default function Sidebar({
   return (
     <>
       {/* 1. DESKTOP & TABLET SIDEBAR (Static Rail / Expanded) */}
-      <aside className="hidden md:flex flex-col shrink-0 border-r border-border bg-card h-full z-30 transition-all duration-300 md:w-20 lg:w-[223px]">
+      <aside className="hidden md:flex flex-col shrink-0 border-r border-border bg-card h-full z-30 transition-all duration-300 md:w-20 lg:w-[208px]">
         {/* Tablet Rail View (768px - 1023px) */}
         <div className="hidden md:block lg:hidden h-full w-full">
           {renderNavContent(true, false)}

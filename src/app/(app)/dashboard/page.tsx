@@ -21,7 +21,7 @@ export default function DashboardPage() {
         <Header />
 
         {/* Dashboard Content Container — Figma: pad 20, gap 20 */}
-        <div className="px-4 lg:px-8 py-5 max-w-[1440px] w-full mx-auto">
+        <div className="px-3 md:px-4 lg:px-6 py-4 max-w-[1440px] w-full mx-auto">
           {/* 1. MOBILE LAYOUT (< 768px) */}
           <div className="md:hidden space-y-5">
             <SummaryMetrics />
@@ -71,39 +71,39 @@ export default function DashboardPage() {
 
           {/* 2. DESKTOP LAYOUT (>= 1024px / 1440px) */}
           <div className="hidden lg:block space-y-5">
-            {/* Main Dashboard Upper Layout: Left (858) + Right (299) */}
-            <div className="grid grid-cols-12 gap-5 items-stretch">
+            {/* Main Dashboard Upper Layout: Left + Right (ShipmentTypeChart - 325fr) */}
+            <div className="grid grid-cols-[828fr_325fr] gap-5 items-stretch">
               {/* Left Area */}
-              <div className="col-span-9 flex flex-col gap-5">
+              <div className="flex flex-col gap-5 min-w-0">
                 {/* Row 1: 3 Summary Metric Cards Side-by-Side */}
                 <SummaryMetrics />
 
                 {/* Row 2: 2 Charts Side-by-Side (Shipment Statistic & Profit Summary) */}
-                <div className="grid grid-cols-[369fr_469fr] gap-5 flex-1 items-stretch">
+                <div className="grid grid-cols-[369fr_459fr] gap-5 flex-1 items-stretch min-w-0">
                   <ShipmentStatisticChart />
                   <ProfitSummaryChart />
                 </div>
               </div>
 
               {/* Right Area: Shipment Type Donut Chart Card */}
-              <div className="col-span-3 flex">
+              <div className="flex min-w-0">
                 <ShipmentTypeChart />
               </div>
             </div>
 
-            {/* Middle Row: Product Categories (370) + Live Tracking (469) + Shipment Alerts (299) */}
-            <div className="grid grid-cols-[370fr_469fr_299fr] gap-5 items-stretch">
+            {/* Middle Row: Product Categories (365) + Live Tracking (463) + Shipment Alerts (325fr) */}
+            <div className="grid grid-cols-[365fr_463fr_325fr] gap-5 items-stretch">
               <ProductCategories />
               <LiveTracking />
               <ShipmentAlerts />
             </div>
 
-            {/* Bottom Row: Recent Shipments (858) + Recent Activity (299) */}
-            <div className="grid grid-cols-12 gap-5 items-start">
-              <div className="col-span-9">
+            {/* Bottom Row: Recent Shipments + Recent Activity (325fr) */}
+            <div className="grid grid-cols-[828fr_325fr] gap-5 items-start">
+              <div className="min-w-0">
                 <RecentShipments />
               </div>
-              <div className="col-span-3">
+              <div className="min-w-0">
                 <RecentActivity />
               </div>
             </div>

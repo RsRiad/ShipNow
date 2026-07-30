@@ -17,7 +17,7 @@ export default function SidebarHeader({
   onCloseMobile,
 }: SidebarHeaderProps) {
   return (
-    <div className="flex items-center justify-between px-4 py-5 shrink-0 border-b border-transparent">
+    <div className="flex items-center justify-between px-4 py-3.5 shrink-0 border-b border-transparent">
       <Link href="/dashboard" className="flex items-center gap-2.5 group">
         <Image
           src="/Assets/Icon.svg"

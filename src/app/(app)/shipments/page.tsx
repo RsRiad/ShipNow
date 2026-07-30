@@ -102,7 +102,7 @@ function ShipmentsContent() {
         />
 
         {/* View Content Area */}
-        <div className="px-4 lg:px-8 pt-2 pb-6">
+        <div className="px-3 md:px-4 lg:px-6 pt-2 pb-6">
           {currentView === "table" ? (
             <ShipmentTableView
               shipments={filteredShipments}

@@ -9,17 +9,7 @@ interface GoProCardProps {
 
 export default function GoProCard({ isTabletRail = false }: GoProCardProps) {
   if (isTabletRail) {
-    return (
-      <div className="p-2 my-2 text-center">
-        <button
-          type="button"
-          title="Go Pro Today"
-          className="w-10 h-10 mx-auto flex items-center justify-center bg-heading text-brand hover:text-white rounded-xl shadow-xs transition duration-150 group cursor-pointer"
-        >
-          <Sparkles className="w-5 h-5 group-hover:scale-110 transition duration-150" />
-        </button>
-      </div>
-    );
+    return null;
   }
 
   return (

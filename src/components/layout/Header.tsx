@@ -28,7 +28,7 @@ export default function Header({
   };
 
   return (
-    <div className="hidden md:flex flex-row items-center justify-between gap-4 pt-5 px-4 lg:px-8 bg-transparent">
+    <div className="hidden md:flex flex-row items-center justify-between gap-4 pt-3.5 px-3 md:px-4 lg:px-6 bg-transparent">
       {/* Left: Greeting & Title*/}
       <div className="flex flex-col gap-[3px]">
         <span className="font-normal text-[16px] leading-tight text-body">

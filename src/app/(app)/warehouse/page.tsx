@@ -27,7 +27,7 @@ export default function WarehousePage() {
         />
 
         {/* Warehouse Main Content Area */}
-        <div className="px-3 md:px-4 lg:px-8 py-4 md:py-6 flex flex-col gap-4">
+        <div className="px-3 md:px-4 lg:px-6 py-3.5 md:py-4 flex flex-col gap-4">
           {/* Main 2-Column Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-3 items-start">
             {/* Left Main Column (8 cols on desktop) */}

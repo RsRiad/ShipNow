@@ -129,7 +129,7 @@ export default function CreateShipmentPage() {
         <CreateShipmentHeader />
 
         {/* Main Form Content Container */}
-        <div className="max-w-[1440px] w-full mx-auto px-4 lg:px-8 py-3 sm:py-4 flex flex-col gap-3.5">
+        <div className="max-w-[1440px] w-full mx-auto px-3 md:px-4 lg:px-6 py-3 sm:py-4 flex flex-col gap-3.5">
           <h2 className="text-[18px] sm:text-[20px] font-bold text-slate">Shipment Form</h2>
 
           <form onSubmit={handleSubmit} className="w-full flex flex-col gap-3.5">

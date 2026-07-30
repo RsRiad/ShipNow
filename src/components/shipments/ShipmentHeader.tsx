@@ -19,7 +19,7 @@ export default function ShipmentHeader({
   onNewShipment,
 }: ShipmentHeaderProps) {
   return (
-    <div className="w-full flex flex-col gap-2 sm:gap-2.5 py-1.5 sm:py-3 px-4 lg:px-8 bg-transparent border-b border-border/50">
+    <div className="w-full flex flex-col gap-2 sm:gap-2.5 py-1.5 sm:py-3 px-3 md:px-4 lg:px-6 bg-transparent border-b border-border/50">
       {/* Top Row: Title & Primary Action Button (Hidden on Mobile view) */}
       <div className="hidden sm:flex items-center justify-between gap-4">
         <h1 className="text-[26px] md:text-[30px] font-bold text-slate tracking-tight leading-none">

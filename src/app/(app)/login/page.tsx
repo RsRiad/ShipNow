@@ -87,48 +87,48 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen lg:h-screen lg:max-h-screen w-full flex flex-col lg:flex-row items-stretch bg-card overflow-x-hidden lg:overflow-hidden">
+    <div className="h-screen max-h-screen w-full flex flex-col lg:flex-row items-stretch bg-card overflow-y-auto lg:overflow-hidden snap-y snap-mandatory scroll-smooth lg:snap-none">
       {/* Left / Top Purple Hero Section */}
-      <div className="min-h-screen lg:min-h-0 w-full lg:w-1/2 bg-brand flex flex-col items-center justify-center gap-6 sm:gap-2.5 lg:gap-0 px-6 pt-12 pb-12 sm:px-10 sm:py-8 lg:px-[clamp(2rem,4vw,70px)] lg:py-8 text-card relative lg:h-full lg:overflow-hidden shrink-0">
+      <div className="h-screen min-h-screen lg:min-h-0 w-full lg:w-1/2 bg-brand flex flex-col items-center justify-between px-6 py-4 sm:px-10 lg:px-[clamp(1.5rem,3vw,50px)] lg:py-6 text-card relative lg:h-full lg:overflow-hidden shrink-0 snap-start snap-always">
         {/* Logo */}
-        <div className="flex items-center justify-center shrink-0 sm:mb-2 lg:mb-3">
+        <div className="flex items-center justify-center shrink-0">
           <Image
             src="/Assets/Logo.svg"
             alt="ShipNow Logo"
             width={265}
             height={72}
             priority
-            className="h-12 sm:h-14 lg:h-[clamp(44px,6vh,68px)] w-auto object-contain"
+            className="h-10 sm:h-12 lg:h-[clamp(40px,5.5vh,64px)] w-auto object-contain"
           />
         </div>
 
-        {/* Hero Graphic */}
-        <div className="relative w-full max-w-[340px] sm:max-w-[460px] lg:max-w-[clamp(420px,46vw,553px)] lg:max-h-[58vh] aspect-[553/499] shrink min-h-0 sm:mb-2 lg:mb-2">
+        {/* Hero Graphic - Takes full available vertical space */}
+        <div className="relative w-full flex-1 max-w-[420px] sm:max-w-[560px] lg:max-w-[clamp(480px,52vw,640px)] min-h-0 my-1">
           <Image
             src="/Assets/loginPageImage.png"
             alt="ShipNow Logistics"
             fill
-            sizes="(max-width: 768px) 420px, 553px"
+            sizes="(max-width: 768px) 560px, 640px"
             priority
             className="object-contain"
           />
         </div>
 
         {/* Headline */}
-        <div className="flex flex-col items-center gap-3 lg:gap-[12px] text-center max-w-[326px] md:max-w-[487px] shrink-0">
+        <div className="flex flex-col items-center gap-1 lg:gap-2 text-center max-w-[326px] md:max-w-[487px] shrink-0">
           {/* Heading */}
-          <h1 className="font-extrabold text-[40px] leading-[1.15] text-card max-lg:[-webkit-text-stroke:1px_black] max-lg:[paint-order:stroke_fill]">
+          <h1 className="font-extrabold text-[32px] sm:text-[40px] leading-[1.15] text-card max-lg:[-webkit-text-stroke:1px_black] max-lg:[paint-order:stroke_fill]">
             Welcome to ShipNow
           </h1>
           {/* Sub Heading */}
-          <p className="font-normal text-[16px] leading-[1.25] text-card">
+          <p className="font-normal text-[14px] sm:text-[16px] leading-[1.25] text-card">
             Manage your shipments, fleet, and warehouse in one smart dashboard.
           </p>
         </div>
       </div>
 
       {/* Right / Bottom Login Form Section */}
-      <div className="min-h-screen lg:min-h-0 w-full lg:w-1/2 flex flex-col items-center justify-center px-6 pt-16 pb-24 sm:px-10 sm:pt-16 sm:pb-24 lg:px-[clamp(2rem,4vw,64px)] lg:py-6 bg-card lg:h-full lg:overflow-y-auto">
+      <div className="h-screen min-h-screen lg:min-h-0 w-full lg:w-1/2 flex flex-col items-center justify-center px-6 py-8 sm:px-10 lg:px-[clamp(2rem,4vw,64px)] lg:py-6 bg-card shrink-0 snap-start snap-always overflow-y-auto lg:h-full">
         <div className="w-full max-w-[400px] flex flex-col items-center gap-6 sm:gap-8 my-auto">
           {/* Brand Icon */}
           <Image

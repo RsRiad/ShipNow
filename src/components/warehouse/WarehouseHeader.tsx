@@ -33,7 +33,7 @@ export default function WarehouseHeader({
   return (
     <div className="w-full flex flex-col bg-transparent">
       {/* DESKTOP VIEW ONLY (hidden on mobile md:flex) */}
-      <div className="hidden md:flex flex-row items-center justify-between gap-4 py-4 px-4 lg:px-8 border-b border-border/50">
+      <div className="hidden md:flex flex-row items-center justify-between gap-4 py-3.5 px-3 md:px-4 lg:px-6 border-b border-border/50">
         {/* Left: Title & Breadcrumb Navigation */}
         <div className="flex flex-col gap-1.5">
           <h1 className="text-[28px] lg:text-[30px] font-bold text-slate tracking-tight leading-none">

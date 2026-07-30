@@ -91,66 +91,66 @@ export default function LiveTracking() {
         </div>
 
         {/* TABLET & DESKTOP FLOATING CARD (#SH8743921) -> INSIDE MAP CONTAINER */}
-        <div className="hidden sm:flex absolute bottom-3.5 left-3.5 w-[380px] md:w-[400px] lg:w-[420px] z-10 bg-white rounded-[14px] p-3.5 md:p-4 shadow-md border border-border-tracking flex-col gap-3">
+        <div className="hidden sm:flex absolute bottom-[18px] left-[18px] md:bottom-[20px] md:left-[20px] w-[355px] md:w-[375px] lg:w-[390px] max-w-[calc(100%-2.5rem)] z-10 bg-white rounded-[14px] px-5 py-4 shadow-md border border-border-tracking flex-col gap-3">
           {/* Top Row: ID, Status Badges & Courier Info */}
-          <div className="flex items-start justify-between gap-2">
+          <div className="flex items-start justify-between gap-3 w-full">
             <div className="flex flex-col gap-0.5">
               <span className="font-bold text-[14px] leading-tight text-heading tracking-tight">
                 #SH8743921
               </span>
               <div className="flex items-center gap-2 mt-0.5">
-                <span className="bg-brand-light text-heading font-semibold text-[11px] leading-none px-2.5 py-1 rounded-full">
+                <span className="bg-brand-light text-heading font-semibold text-[10px] leading-none px-2 py-1 rounded-full whitespace-nowrap">
                   In Transit
                 </span>
-                <span className="font-normal text-[11px] leading-none text-body">
+                <span className="font-normal text-[10px] leading-none text-body whitespace-nowrap">
                   On Schedule
                 </span>
               </div>
             </div>
 
-            <div className="flex flex-col gap-0.5 text-left">
-              <span className="font-normal text-[11px] leading-none text-body">
+            <div className="flex flex-col gap-0.5 text-right shrink-0">
+              <span className="font-normal text-[10px] leading-none text-body">
                 Courier:
               </span>
-              <span className="font-bold text-[13px] leading-snug text-heading">
+              <span className="font-bold text-[12px] leading-snug text-heading">
                 Daniel Cooper
               </span>
-              <span className="font-normal text-[11px] leading-none text-body">
+              <span className="font-normal text-[10px] leading-none text-body">
                 SkyLogix Express
               </span>
             </div>
           </div>
 
           {/* Progress Bar Row */}
-          <div className="flex items-center gap-0 w-full my-1">
-            <div className="w-4 h-4 rounded-full border-1 border-brand bg-white flex items-center justify-center shrink-0">
-              <span className="w-2.5 h-2.5 rounded-full bg-brand" />
+          <div className="flex items-center gap-0 w-full my-0.5">
+            <div className="w-3.5 h-3.5 rounded-full border-1 border-brand bg-white flex items-center justify-center shrink-0">
+              <span className="w-2 h-2 rounded-full bg-brand" />
             </div>
-            <div className="h-[6px] md:h-[4px] bg-brand flex-1" />
-            <div className="w-6 h-6 rounded-full bg-brand flex items-center justify-center shrink-0 text-white shadow-xs">
-              <Truck className="w-3 h-3 text-white" strokeWidth={2.2} />
+            <div className="h-[4px] bg-brand flex-1" />
+            <div className="w-5 h-5 rounded-full bg-brand flex items-center justify-center shrink-0 text-white shadow-xs">
+              <Truck className="w-2.5 h-2.5 text-white" strokeWidth={2.2} />
             </div>
             <div className="h-[3px] bg-border-line flex-1" />
-            <div className="w-4 h-4 rounded-full border-1 border-border-muted bg-white shrink-0" />
+            <div className="w-3.5 h-3.5 rounded-full border-1 border-border-muted bg-white shrink-0" />
           </div>
 
           {/* Bottom Address Row */}
-          <div className="flex items-start justify-between gap-2 w-full">
-            <div className="flex flex-col gap-0.5">
-              <span className="font-bold text-[13px] leading-tight text-heading whitespace-nowrap">
+          <div className="flex items-start justify-between gap-3 w-full">
+            <div className="flex flex-col gap-0.5 min-w-0">
+              <span className="font-bold text-[12px] leading-tight text-heading truncate">
                 San Francisco, CA, USA
               </span>
-              <span className="font-normal text-[11px] leading-tight text-body whitespace-nowrap">
+              <span className="font-normal text-[10px] sm:text-[11px] leading-tight text-body whitespace-nowrap">
                 Mar 19, 2035 – 10:30 AM
               </span>
             </div>
 
-            <div className="flex flex-col gap-0.5 text-right ml-auto">
-              <span className="font-bold text-[13px] leading-tight text-heading whitespace-nowrap">
+            <div className="flex flex-col gap-0.5 text-right min-w-0 ml-auto">
+              <span className="font-bold text-[12px] leading-tight text-heading truncate">
                 New York, NY, USA
               </span>
-              <span className="font-normal text-[11px] leading-tight text-body whitespace-nowrap">
-                Mar 23, 2035 – 03:00 PM (estimated)
+              <span className="font-normal text-[10px] sm:text-[11px] leading-tight text-body whitespace-nowrap">
+                Mar 23, 2035 – 03:00 PM
               </span>
             </div>
           </div>
