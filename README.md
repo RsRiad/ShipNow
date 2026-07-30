@@ -6,7 +6,7 @@ A high-fidelity, responsive frontend web application for **ShipNow**, a modern l
 
 ## 🚀 Live Demo & Repository
 
-- **Live Deployment**: [Deploying to Vercel](https://shipnow-beta.vercel.app/)
+- **Live Deployment**: [Deployed to Vercel](https://shipnow-beta.vercel.app/)
 - Email: Any valid email format
 - Password: Any more that 8 char
 - **GitHub Repository**: [https://github.com/RsRiad/ShipNow](https://github.com/RsRiad/ShipNow)
