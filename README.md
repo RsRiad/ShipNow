@@ -6,7 +6,9 @@ A high-fidelity, responsive frontend web application for **ShipNow**, a modern l
 
 ## 🚀 Live Demo & Repository
 
-- **Live Deployment**: [Deploying to Vercel / Netlify — Insert Live Link Here]
+- **Live Deployment**: [Deploying to Vercel](https://shipnow-beta.vercel.app/)
+- Email: Any valid email format
+- Password: Any more that 8 char
 - **GitHub Repository**: [https://github.com/RsRiad/ShipNow](https://github.com/RsRiad/ShipNow)
 
 ---
@@ -65,18 +67,18 @@ Ensure you have **Node.js 18.0.0** or higher installed on your system.
 
 2. **Install dependencies**:
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. **Run the development server**:
    ```bash
-   npm run dev
+   pnpm run dev
    ```
    Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 4. **Build for production**:
    ```bash
-   npm run build
+   pnpm run build
    ```
 
 ---
